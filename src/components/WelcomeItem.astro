@@ -1,0 +1,98 @@
+---
+import IconSvg from "./IconSvg.astro";
+
+interface Props {
+	iconID: string;
+}
+const { iconID } = Astro.props;
+---
+
+<article class="items">
+	<div class="icons">
+		<IconSvg iconID={iconID} otherClass="icon--sm" />
+	</div>
+
+	<div class="content">
+		<h3 class="title">
+			<slot name="heading" slot="heading" />
+		</h3>
+
+		<p>
+			<slot name="description" slot="description" />
+		</p>
+
+		<slot name="others" slot="others" />
+	</div>
+</article>
+
+<style lang="scss">
+	.items {
+		position: relative;
+		display: flex;
+		margin-top: var(--space-8);
+		gap: var(--space-4);
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			gap: var(--space-8);
+			margin-top: 0;
+			padding: var(--space-2) 0;
+
+			&:last-of-type {
+				& .icons {
+					&:first-of-type:before,
+					&:first-of-type:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		flex: 1;
+	}
+
+	.icons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: var(--sizes-full, 100%);
+		max-width: var(--space-8, 32px);
+		max-height: var(--space-8, 32px);
+		color: var(--colors-gray-600);
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			border: 1px solid var(--colors-gray-800);
+			background: var(--colors-gray-900);
+			border-radius: var(--radii-lg, 8px);
+			max-width: var(--sizes-12, 50px);
+			max-height: var(--sizes-12, 50px);
+
+			&::before,
+			&::after {
+				content: " ";
+				display: block;
+				position: absolute;
+				border-left: 1px solid var(--colors-gray-800);
+				height: calc(50% - 25px);
+			}
+
+			&::before {
+				bottom: calc(50% - 30px);
+			}
+
+			&::after {
+				top: calc(50% + 30px);
+			}
+		}
+	}
+
+	.title {
+		font-family: var(--heading-font);
+		font-size: 1.2rem;
+		font-weight: 500;
+		margin-bottom: 0.4rem;
+		color: var(--color-heading);
+	}
+</style>

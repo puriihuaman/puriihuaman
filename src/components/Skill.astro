@@ -1,0 +1,77 @@
+---
+import { SKILLS_LIST } from "@data/skills-list";
+import type { ISkill } from "@interfaces/ISkill";
+import IconSvg from "./IconSvg.astro";
+---
+
+<div class="skills">
+	{
+		SKILLS_LIST.map((skill: ISkill): any => (
+			<a
+				class="skill"
+				href={skill.href}
+				title={skill.label}
+				aria-label={skill.label}
+				target="_blank"
+				id={skill.id}
+				rel="nofollow noopener noreferrer"
+			>
+				<IconSvg iconID={skill.iconId} otherClass="icon--sm" />
+
+				<small class="skill__tech">{skill.tech}</small>
+			</a>
+		))
+	}
+</div>
+
+<style lang="scss">
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+
+	.skill {
+		flex: 0;
+
+		// width: var(--sizes-28);
+		width: fit-content;
+		height: 100%;
+		text-align: center;
+		text-wrap: nowrap;
+		padding: var(--space-1) var(--space-2);
+		background-color: var(--colors-gray-800);
+		border: 1px solid transparent;
+		border-radius: var(--radii-md);
+		box-shadow: var(--shadow-md);
+		transition:
+			var(--transition-property-common),
+			var(--transition-duration-300) var(--transition-easing-ease-in-out);
+
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			gap: var(--space-2);
+			transition:
+				var(--transition-property-common),
+				var(--transition-duration-2000) var(--transition-easing-ease-in-out);
+			& .skill__tech {
+				position: relative;
+				opacity: 1;
+				transform: scale(1);
+				visibility: visible;
+				text-transform: capitalize;
+			}
+		}
+
+		&__tech {
+			// font-size: var(--fontSizes-sm);
+			font-size: var(--fontSizes-xs);
+			position: absolute;
+			transform: scale(0);
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+</style>

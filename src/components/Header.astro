@@ -1,0 +1,43 @@
+---
+import Avatar from "./Avatar.astro";
+import Navigation from "./Navigation.astro";
+import TheWelcome from "./TheWelcome.astro";
+---
+
+<header class="header">
+	<Avatar />
+
+	<div class="header__wrapper">
+		<TheWelcome />
+
+		<Navigation />
+	</div>
+</header>
+
+<style lang="scss">
+	.header,
+	.header__wrapper {
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			display: flex;
+		}
+	}
+
+	.header {
+		max-height: 100vh;
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			// place-items: center;
+			// padding-right: calc(var(--section-gap) / 2);
+			justify-content: center;
+			align-items: center;
+			padding-right: calc(var(--sizes-20) / 2);
+		}
+
+		&__wrapper {
+			@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+				place-items: flex-start;
+				flex-wrap: wrap;
+			}
+		}
+	}
+</style>

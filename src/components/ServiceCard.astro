@@ -1,0 +1,56 @@
+---
+import type { IService } from "@interfaces/IService";
+import IconSvg from "./IconSvg.astro";
+
+interface Props {
+	service: IService;
+}
+
+const { service } = Astro.props;
+---
+
+<article class="card">
+	<div class="card__picture">
+		<IconSvg iconID={service.iconId} otherClass="icon--md" />
+	</div>
+
+	<div class="card__content">
+		<h3 class="card__title">{service.title}</h3>
+
+		<p>{service.description}</p>
+	</div>
+</article>
+
+<style lang="scss">
+	.card {
+		display: flex;
+		align-items: self-start;
+		gap: var(--space-2);
+		text-align: center;
+		padding: var(--space-4);
+		border: 1px solid var(--colors-gray-800);
+		box-shadow: var(--shadow-md);
+		border-radius: var(--radii-md);
+
+		&__picture {
+			display: inline-block;
+			margin-left: auto;
+			margin-right: auto;
+			padding: var(--space-2);
+			border-radius: var(--radii-md);
+			color: var(--colors-gray-600);
+		}
+
+		&__content {
+			text-align: left;
+			color: var(--colors-gray-300);
+		}
+
+		&__title {
+			font-size: var(--fontSizes-xl);
+			line-height: var(--lineHeights-7);
+			text-transform: capitalize;
+			margin-bottom: var(--space-2);
+		}
+	}
+</style>

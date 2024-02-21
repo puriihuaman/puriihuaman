@@ -1,0 +1,85 @@
+---
+import { Projects } from "@components/Projects";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Proyectos - Puriihuaman">
+	<main class="project">
+		<h2 class="title">Proyectos</h2>
+
+		<div class="content">
+			<Projects client:load />
+		</div>
+	</main>
+</Layout>
+
+<style lang="scss">
+	.project {
+		padding-top: var(--space-8);
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px} ) {
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 0;
+		}
+	}
+
+	.title {
+		font-family: var(--heading-font);
+		font-size: var(--fontSizes-3xl);
+		border-bottom: 1px solid var(--colors-gray-800);
+
+		@media screen and (min-width: #{var(--breakpoint-md,  768px) and 768px}) {
+			font-size: var(--fontSizes-3xl, --fontSizes-2xl);
+		}
+
+		@media screen and (min-width: #{var(--breakpoint-lg,  1024px) and 1024px}) {
+			font-size: var(--fontSizes-4xl, --fontSizes-3xl);
+		}
+	}
+
+	.content {
+		width: var(--sizes-full);
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-8);
+		padding-top: var(--sizes-8);
+	}
+
+	// .projects {
+	// 	--amount-of-columns: 1;
+
+	// 	display: grid;
+	// 	grid-template-columns: repeat(var(--amount-of-columns, 1), 1fr);
+	// 	gap: var(--space-8);
+
+	// 	@media screen and (min-width: #{var(--breakpoint-md, 768px) and 768px} ) {
+	// 		--amount-of-columns: 2;
+	// 	}
+
+	// 	@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px} ) {
+	// 		--amount-of-columns: 1;
+	// 	}
+	// }
+
+	// .filtered {
+	// 	margin-top: var(--space-4);
+	// 	padding: var(--space-4) 0;
+	// }
+
+	// .selected {
+	// 	border: none;
+	// 	outline: none;
+	// 	display: block;
+	// 	width: var(--sizes-full);
+	// 	padding: var(--sizes-3) var(--sizes-4);
+	// 	border-radius: var(--radii-md);
+	// 	font-family: inherit;
+	// 	font-size: inherit;
+	// 	background-color: var(--colors-gray-950);
+	// 	color: var(--colors-gray-50);
+	// }
+</style>

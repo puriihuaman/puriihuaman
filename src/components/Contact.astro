@@ -1,0 +1,81 @@
+---
+import IconSvg from "@components/IconSvg.astro";
+---
+
+<div class="contact">
+	<a
+		href="https://www.linkedin.com/in/puriihuaman/"
+		target="_blank"
+		rel="noopener"
+		class="contact__linkedin"
+	>
+		<IconSvg iconID="linkedin" otherClass="icon--sm" />
+		<span>linkedin</span>
+	</a>
+
+	<a
+		href="https://github.com/puriihuaman"
+		target="_blank"
+		rel="noopener"
+		class="contact__github"
+	>
+		<IconSvg iconID="github" otherClass="icon--sm" />
+		<span>Github</span>
+	</a>
+</div>
+
+<style lang="scss">
+	.contact,
+	.contact__linkedin,
+	.contact__github {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.contact {
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		margin-top: var(--space-8);
+		text-transform: capitalize;
+		font-family: var(--main-font);
+
+		&__linkedin,
+		&__github {
+			gap: var(--space-2);
+			color: var(--colors-gray-50);
+			padding: var(--space-2) var(--space-3);
+			border: 1px solid transparent;
+			border-radius: var(--radii-md);
+			transition:
+				var(--transition-property-common),
+				var(--transition-duration-500) var(--transition-easing-ease-in-out);
+
+			&:is(:hover) {
+				background-color: transparent;
+			}
+		}
+
+		&__linkedin {
+			background-color: var(--colors-blue-500);
+
+			&:hover {
+				color: var(--colors-blue-500);
+				border-color: currentColor;
+			}
+		}
+
+		&__github {
+			background-color: var(--colors-gray-800);
+
+			&:hover {
+				color: var(--colors-gray-50);
+				border-color: currentColor;
+			}
+		}
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			justify-content: flex-start;
+		}
+	}
+</style>

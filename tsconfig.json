@@ -1,0 +1,17 @@
+{
+	"extends": "astro/tsconfigs/strict",
+	"compilerOptions": {
+		"baseUrl": "C:/workspace/github/puriihuaman",
+		"paths": {
+			"@components/*": ["./src/components/*"],
+			"@layouts/*": ["./src/layouts/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@data/*": ["./src/data/*"],
+			"@interfaces/*": ["./src/interfaces/*"],
+			"@services/*": ["./src/services/*"],
+			"@assets/*": ["./src/assets/*"]
+		},
+		"jsx": "react-jsx",
+		"jsxImportSource": "react"
+	}
+}

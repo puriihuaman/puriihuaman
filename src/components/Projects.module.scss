@@ -1,0 +1,15 @@
+.projects {
+	--amount-of-columns: 1;
+
+	display: grid;
+	grid-template-columns: repeat(var(--amount-of-columns, 1), 1fr);
+	gap: var(--space-8);
+
+	@media screen and (min-width: #{var(--breakpoint-md, 768px) and 768px} ) {
+		--amount-of-columns: 2;
+	}
+
+	@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px} ) {
+		--amount-of-columns: 1;
+	}
+}

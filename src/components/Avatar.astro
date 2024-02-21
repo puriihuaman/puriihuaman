@@ -1,0 +1,33 @@
+---
+const imageWebp = "/assets/images/webp/puriihuaman.webp";
+const imagePng = "/assets/images/puriihuaman.png";
+---
+
+<picture>
+	<source srcset={imageWebp} type="image/webp" class="avatar" />
+
+	<img
+		class="avatar"
+		alt="Foto Pedro Purihuaman"
+		src={imagePng}
+		width="125"
+		height="125"
+		decoding="async"
+		loading="lazy"
+	/>
+</picture>
+
+<style lang="scss">
+	.avatar {
+		margin: 0 auto var(--space-8, 2rem);
+		width: var(--sizes-36, 150px);
+		border-radius: var(--radii-full);
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: center;
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			margin: 0 var(--space-8, 2rem) 0 0;
+		}
+	}
+</style>

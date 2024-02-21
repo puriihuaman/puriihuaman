@@ -1,0 +1,40 @@
+---
+import Contact from "./Contact.astro";
+---
+
+<div class="greetings">
+	<h1 class="greetings__post">Desarrollador Backend</h1>
+	<h2 class="greetings__name">Pedro Purihuaman</h2>
+
+	<Contact />
+</div>
+
+<style lang="scss">
+	.greetings {
+		text-align: center;
+		font-family: var(--heading-font);
+
+		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
+			text-align: left;
+		}
+
+		&__post {
+			position: relative;
+			color: var(--colors-blue-500);
+			font-size: var(--fontSizes-4xl, 2.6rem);
+			top: -10px;
+
+			@media screen and (min-width: #{var(--breakpoint-md,  768px) and 768px}) {
+				font-size: var(--fontSizes-5xl, --fontSizes-4xl);
+			}
+		}
+
+		&__name {
+			font-size: var(--fontSizes-3xl);
+
+			@media screen and (min-width: #{var(--breakpoint-md,  768px) and 768px}) {
+				font-size: var(--fontSizes-4xl, --fontSizes-3xl);
+			}
+		}
+	}
+</style>

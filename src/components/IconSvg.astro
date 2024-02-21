@@ -1,0 +1,48 @@
+---
+interface Props {
+	iconID: string;
+	otherClass?: string;
+}
+const path = "/assets/icons/svg-icons.svg#";
+
+const { iconID, otherClass } = Astro.props;
+---
+
+<span class="icon">
+	<svg class={`icon__svg ${otherClass}`}>
+		<use href={path + iconID}></use>
+	</svg>
+</span>
+
+<style is:global lang="scss">
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&__svg {
+			display: block;
+			color: currentColor;
+			fill: currentColor;
+		}
+
+		&--sm,
+		&--small {
+			color: currentColor;
+			width: var(--sizes-6);
+			height: var(--sizes-6);
+		}
+
+		&--medium,
+		&--md {
+			width: var(--sizes-8);
+			height: var(--sizes-8);
+		}
+
+		&--large,
+		&--lg {
+			width: var(--sizes-12);
+			height: var(--sizes-12);
+		}
+	}
+</style>
