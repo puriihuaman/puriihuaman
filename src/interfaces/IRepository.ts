@@ -1,5 +1,3 @@
-import type { IErrorType } from "./IErrorType";
-
 interface Owner {
 	login: string;
 	id: number;
@@ -113,10 +111,4 @@ export interface IRepository {
 	open_issues: number;
 	watchers: number;
 	default_branch: string;
-}
-
-export interface RepositoryResults {
-	data: IRepository[];
-	error: IErrorType;
-	isLoading: boolean;
 }
