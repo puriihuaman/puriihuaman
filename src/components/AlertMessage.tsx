@@ -1,14 +1,13 @@
-import type { IErrorType } from "@interfaces/IErrorType";
-import style from "./AlertMessage.module.scss";
+import type { CustomError } from '@services/custom-error';
 
-export function AlertMessage({ errors }: { errors: IErrorType }) {
+export function AlertMessage({ error }: { error: CustomError }) {
 	return (
-		<div className={style.alert}>
-			<h4 className={style.title}>{errors?.statusText}</h4>
+		<div className="text-center p-4 text-pink-500 text-base shadow-md border border-current rounded-md text-balance bg-pink-900/20">
+			<h4 className="text-base mb-2">{error.name}</h4>
 
 			<p>
-				<strong className={style.code}>{errors?.status}</strong> - &nbsp;
-				{errors?.message}
+				<strong className="text-xl block">{error.statusCode}</strong> - &nbsp;
+				{error.message}
 			</p>
 		</div>
 	);

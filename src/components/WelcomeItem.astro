@@ -1,5 +1,5 @@
 ---
-import IconSvg from "./IconSvg.astro";
+import IconSvg from './IconSvg.astro';
 
 interface Props {
 	iconID: string;
@@ -7,13 +7,15 @@ interface Props {
 const { iconID } = Astro.props;
 ---
 
-<article class="items">
-	<div class="icons">
-		<IconSvg iconID={iconID} otherClass="icon--sm" />
+<article class="relative flex gap-4 mt-8 lg:gap-8 lg:mt-0 lg:py-2">
+	<div
+		class="_icons flex justify-center items-center w-full max-w-8 max-h-8 text-slate-400 lg:max-w-12 lg:max-h-12 lg:border lg:border-slate-800 lg:bg-slate-900 lg:rounded-lg"
+	>
+		<IconSvg iconID={iconID} iconSize="sm" />
 	</div>
 
-	<div class="content">
-		<h3 class="title">
+	<div class="flex-1">
+		<h3 class="font-heading text-xl mb-2 text-slate-50">
 			<slot name="heading" slot="heading" />
 		</h3>
 
@@ -24,75 +26,3 @@ const { iconID } = Astro.props;
 		<slot name="others" slot="others" />
 	</div>
 </article>
-
-<style lang="scss">
-	.items {
-		position: relative;
-		display: flex;
-		margin-top: var(--space-8);
-		gap: var(--space-4);
-
-		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
-			gap: var(--space-8);
-			margin-top: 0;
-			padding: var(--space-2) 0;
-
-			&:last-of-type {
-				& .icons {
-					&:first-of-type:before,
-					&:first-of-type:after {
-						display: none;
-					}
-				}
-			}
-		}
-	}
-
-	.content {
-		flex: 1;
-	}
-
-	.icons {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		width: var(--sizes-full, 100%);
-		max-width: var(--space-8, 32px);
-		max-height: var(--space-8, 32px);
-		color: var(--colors-gray-600);
-
-		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
-			border: 1px solid var(--colors-gray-800);
-			background: var(--colors-gray-900);
-			border-radius: var(--radii-lg, 8px);
-			max-width: var(--sizes-12, 50px);
-			max-height: var(--sizes-12, 50px);
-
-			&::before,
-			&::after {
-				content: " ";
-				display: block;
-				position: absolute;
-				border-left: 1px solid var(--colors-gray-800);
-				height: calc(50% - 25px);
-			}
-
-			&::before {
-				bottom: calc(50% - 30px);
-			}
-
-			&::after {
-				top: calc(50% + 30px);
-			}
-		}
-	}
-
-	.title {
-		font-family: var(--heading-font);
-		font-size: 1.2rem;
-		font-weight: 500;
-		margin-bottom: 0.4rem;
-		color: var(--color-heading);
-	}
-</style>

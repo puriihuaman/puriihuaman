@@ -1,77 +1,32 @@
 ---
-import { SKILLS_LIST } from "@data/skills-list";
-import type { ISkill } from "@interfaces/ISkill";
-import IconSvg from "./IconSvg.astro";
+import { SKILLS_LIST } from '@data/skills-list';
+import type { ISkill } from '@interfaces/ISkill';
+import IconSvg from './IconSvg.astro';
 ---
 
-<div class="skills">
+<div class="_skills flex flex-wrap gap-2">
 	{
 		SKILLS_LIST.map((skill: ISkill): any => (
 			<a
-				class="skill"
+				class="relative flex-grow-0 flex items-center w-fit h-full text-center text-nowrap p-2 bg-slate-900 border border-slate-800 shadow rounded-md transition-colors duration-300"
 				href={skill.href}
 				title={skill.label}
 				aria-label={skill.label}
 				target="_blank"
 				id={skill.id}
 				rel="nofollow noopener noreferrer"
+				data-tooltip-target="tooltip"
 			>
-				<IconSvg iconID={skill.iconId} otherClass="icon--sm" />
+				<IconSvg iconID={skill.iconId} iconSize="md" />
 
-				<small class="skill__tech">{skill.tech}</small>
+				<small
+					class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-slate-50 transition-opacity duration-300 bg-slate-900 rounded-lg shadow-sm opacity-0 tooltip hover:visible hover:opacity-100 hover:-top-[90%] hover:z-50 hover:left-2/4 hover:-translate-x-1/2"
+					id="tooltip"
+					role="tooltip"
+				>
+					{skill.tech}
+				</small>
 			</a>
 		))
 	}
 </div>
-
-<style lang="scss">
-	.skills {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-	}
-
-	.skill {
-		flex: 0;
-
-		// width: var(--sizes-28);
-		width: fit-content;
-		height: 100%;
-		text-align: center;
-		text-wrap: nowrap;
-		padding: var(--space-1) var(--space-2);
-		background-color: var(--colors-gray-800);
-		border: 1px solid transparent;
-		border-radius: var(--radii-md);
-		box-shadow: var(--shadow-md);
-		transition:
-			var(--transition-property-common),
-			var(--transition-duration-300) var(--transition-easing-ease-in-out);
-
-		display: flex;
-		align-items: center;
-
-		&:hover {
-			gap: var(--space-2);
-			transition:
-				var(--transition-property-common),
-				var(--transition-duration-2000) var(--transition-easing-ease-in-out);
-			& .skill__tech {
-				position: relative;
-				opacity: 1;
-				transform: scale(1);
-				visibility: visible;
-				text-transform: capitalize;
-			}
-		}
-
-		&__tech {
-			// font-size: var(--fontSizes-sm);
-			font-size: var(--fontSizes-xs);
-			position: absolute;
-			transform: scale(0);
-			visibility: hidden;
-			opacity: 0;
-		}
-	}
-</style>

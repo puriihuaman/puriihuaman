@@ -1,6 +1,6 @@
 ---
-import Header from "@components/Header.astro";
-import { ViewTransitions } from "astro:transitions";
+import Header from '@components/Header.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -10,7 +10,10 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html
+	lang="es"
+	class="font-sans dark text-slate-50 bg-gradient-to-b from-blue-950 to-slate-950"
+>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -25,13 +28,15 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 
-	<body>
+	<body
+		class="min-h-screen max-w-7xl mx-auto p-8 lg:grid lg:grid-cols-2 lg:items-center lg:py-0"
+	>
 		<Header />
 
 		<slot />
 
 		<style is:global lang="scss">
-			@import "@assets/scss/styles.scss";
+			@import '@assets/scss/styles.scss';
 		</style>
 	</body>
 </html>

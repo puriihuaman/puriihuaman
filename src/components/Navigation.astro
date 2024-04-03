@@ -1,78 +1,21 @@
 ---
-import { LINKS_LIST } from "@data/links-list";
-import type { ILink } from "@interfaces/ILink";
+import { LINKS_LIST } from '@data/links-list';
+import type { ILink } from '@interfaces/ILink';
 
 const { pathname } = Astro.url;
 ---
 
-<nav class="navigation">
+<nav
+	class="flex justify-center items-center flex-wrap text-center w-full max-w-fit mx-auto mt-8 lg:text-left lg:ml-auto lg:mt-4 lg:py-4"
+>
 	{
 		LINKS_LIST.map((link: ILink): any => (
 			<a
 				href={link.href}
-				class={`link ${pathname === link.pathname ? "active" : ""}`}
+				class={`flex-1 flex justify-center items-center py-2 px-4 border-l first-of-type:border-none border-slate-800 hover:bg-blue-900 active:text-blue-500 transition-colors duration-300 ${pathname === link.pathname ? 'text-blue-500 font-heading hover:text-slate-50' : ''}`}
 			>
 				{link.name}
 			</a>
 		))
 	}
 </nav>
-
-<style lang="scss">
-	.navigation,
-	.link {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.navigation {
-		font-family: var(--main-font);
-		width: var(--sizes-full);
-		flex-wrap: wrap;
-		text-align: center;
-		max-width: fit-content;
-		margin-top: var(--space-8);
-		margin-left: auto;
-		margin-right: auto;
-
-		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
-			text-align: left;
-			margin-left: 0;
-			margin-top: var(--space-4);
-			font-size: var(--fontSizes-md);
-			padding: var(--space-4) 0;
-		}
-	}
-
-	.link {
-		flex: 1;
-		text-wrap: nowrap;
-		padding: var(--space-2) var(--space-4);
-		border-left: thin solid var(--colors-gray-800);
-		color: var(--colors-gray-50);
-		transition:
-			var(--transition-property-common),
-			var(--transition-duration-300) var(--transition-easing-ease-in-out);
-
-		&:is(:hover) {
-			background-color: var(--colors-blue-950);
-		}
-
-		&.active {
-			color: var(--colors-blue-500);
-		}
-
-		// &.router-link-exact-active {
-		// 	color: var(--colors-blue-500);
-		// }
-
-		// &.router-link-exact-active:hover {
-		// 	background-color: transparent;
-		// }
-
-		&:first-of-type {
-			border: 0;
-		}
-	}
-</style>

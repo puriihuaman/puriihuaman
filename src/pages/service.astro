@@ -1,17 +1,23 @@
 ---
-import ServiceCard from "@components/ServiceCard.astro";
-import { services } from "@data/services-list";
-import type { IService } from "@interfaces/IService";
-import Layout from "@layouts/Layout.astro";
+import ServiceCard from '@components/ServiceCard.astro';
+import { services } from '@data/services-list';
+import type { IService } from '@interfaces/IService';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="Servicios - Puriihuaman">
 	<main>
-		<section class="service">
-			<div class="content">
-				<h2 class="service__title">Servicios</h2>
+		<section class="_service py-8">
+			<div class="">
+				<h2
+					class="_service__title font-heading text-2xl border-b border-slate-800 md:text-3xl lg:text-4xl"
+				>
+					Servicios
+				</h2>
 
-				<div class="service__services">
+				<div
+					class="_service__services mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1"
+				>
 					{
 						services.map((service: IService): any => (
 							<ServiceCard service={service} />
@@ -22,42 +28,3 @@ import Layout from "@layouts/Layout.astro";
 		</section>
 	</main>
 </Layout>
-
-<style lang="scss">
-	.service {
-		// overflow-y: scroll;
-		// max-height: 100vh;
-		padding: var(--space-8) 0;
-
-		&__title {
-			font-family: var(--heading-font);
-			font-size: var(--fontSizes-3xl);
-			border-bottom: 1px solid var(--colors-gray-800);
-
-			@media screen and (min-width: #{var(--breakpoint-md,  768px) and 768px}) {
-				font-size: var(--fontSizes-3xl, --fontSizes-2xl);
-			}
-
-			@media screen and (min-width: #{var(--breakpoint-lg,  1024px) and 1024px}) {
-				font-size: var(--fontSizes-4xl, --fontSizes-3xl);
-			}
-		}
-
-		&__services {
-			--amount-of-columns: 1;
-
-			margin-top: var(--space-8);
-			display: grid;
-			grid-template-columns: repeat(var(--amount-of-columns, 1), 1fr);
-			gap: var(--space-8);
-
-			@media screen and (min-width: #{var(--breakpoint-md, 768px) and 768px} ) {
-				--amount-of-columns: 2;
-			}
-
-			@media screen and (min-width: #{var(--breakpoint-md, 1024px) and 1024px} ) {
-				--amount-of-columns: 1;
-			}
-		}
-	}
-</style>

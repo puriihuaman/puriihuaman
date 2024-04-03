@@ -1,13 +1,17 @@
 ---
-const imageWebp = "/assets/images/webp/puriihuaman.webp";
-const imagePng = "/assets/images/puriihuaman.png";
+const imageWebp = '/assets/images/webp/puriihuaman.webp';
+const imagePng = '/assets/images/puriihuaman.png';
 ---
 
-<picture>
-	<source srcset={imageWebp} type="image/webp" class="avatar" />
+<picture class="block max-w-full w-full">
+	<source
+		srcset={imageWebp}
+		type="image/webp"
+		class="mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
+	/>
 
 	<img
-		class="avatar"
+		class="mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
 		alt="Foto Pedro Purihuaman"
 		src={imagePng}
 		width="125"
@@ -16,18 +20,3 @@ const imagePng = "/assets/images/puriihuaman.png";
 		loading="lazy"
 	/>
 </picture>
-
-<style lang="scss">
-	.avatar {
-		margin: 0 auto var(--space-8, 2rem);
-		width: var(--sizes-36, 150px);
-		border-radius: var(--radii-full);
-		aspect-ratio: 1 / 1;
-		object-fit: cover;
-		object-position: center;
-
-		@media screen and (min-width: #{var(--breakpoint-lg, 1024px) and 1024px}) {
-			margin: 0 var(--space-8, 2rem) 0 0;
-		}
-	}
-</style>
