@@ -1,8 +1,8 @@
 :root {
-	--sb-track-color: var(--colors-gray-900);
-	--sb-thumb-color: var(--colors-gray-800);
-	--sb-thumb-hover: var(--colors-gray-700);
-	--sb-size: var(--radii-lg, 8px);
+	--sb-track-color: rgb(8, 8, 8, 90%);
+	--sb-thumb-color: rgb(12, 12, 12, 80%);
+	--sb-thumb-hover: rgb(20, 20, 20, 80%);
+	--sb-size: 8px;
 	--sb-radii: var(--sb-size);
 }
 
@@ -27,7 +27,8 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
 	background-color: var(--sb-thumb-color);
 	border-radius: var(--sb-radii);
-	transition: var(--transition-property-common),
+	transition:
+		var(--transition-property-common),
 		var(--transition-duration-1000) var(--transition-easing-ease-in-out);
 
 	&:hover {
