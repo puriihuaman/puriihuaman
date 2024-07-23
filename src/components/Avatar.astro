@@ -1,17 +1,23 @@
 ---
-const imageWebp = '/assets/images/webp/puriihuaman.webp';
-const imagePng = '/assets/images/puriihuaman.png';
+const imageWebp = "/assets/images/webp/puriihuaman.webp";
+const imagePng = "/assets/images/puriihuaman.png";
 ---
+
+<style>
+	.image {
+		mask-image: linear-gradient(black 60%, transparent);
+	}
+</style>
 
 <picture class="block max-w-full w-full">
 	<source
 		srcset={imageWebp}
 		type="image/webp"
-		class="mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
+		class="image mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
 	/>
 
 	<img
-		class="mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
+		class="image mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
 		alt="Foto Pedro Purihuaman"
 		src={imagePng}
 		width="125"

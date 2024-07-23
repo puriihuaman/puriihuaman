@@ -1,11 +1,11 @@
 ---
-type IconSize = 'xs' | 'sm' | 'md' | 'lg';
+type IconSize = "xs" | "sm" | "md" | "lg";
 
 const iconSizes: Record<IconSize, string> = {
-	xs: 'w-4 h-4',
-	sm: 'w-6 h-6',
-	md: 'w-8 h-8',
-	lg: 'w-12 h-12',
+	xs: "w-5 h-5",
+	sm: "w-7 h-7",
+	md: "w-9 h-9",
+	lg: "w-12 h-12",
 };
 
 interface Props {
@@ -13,11 +13,11 @@ interface Props {
 	iconSize?: IconSize;
 }
 
-const path = '/assets/icons/svg-icons.svg#';
+const path = "/assets/icons/svg-icons.svg#";
 
-const { iconID, iconSize = 'sm' } = Astro.props;
+const { iconID, iconSize = "sm" } = Astro.props;
 
-const sizeClass = iconSizes[iconSize] || iconSizes['sm'];
+const sizeClass: string = iconSizes[iconSize] || iconSizes["sm"];
 ---
 
 <span class="flex justify-center items-center">

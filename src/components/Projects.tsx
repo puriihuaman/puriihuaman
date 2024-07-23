@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import type { IRepository } from '@interfaces/IRepository';
-import { useFetching } from 'src/hooks/useFetching';
-import { AlertMessage } from './AlertMessage';
-import { Dropdown } from './Dropdown';
-import { Loading } from './Loading';
-import { ProjectCard } from './ProjectCard';
+import type { IRepository } from "@interfaces/IRepository";
+import { useFetching } from "src/hooks/useFetching";
+import { AlertMessage } from "./AlertMessage";
+import { Dropdown } from "./Dropdown";
+import { Loading } from "./Loading";
+import { ProjectCard } from "./ProjectCard";
 
 export function Projects() {
-	const [selectedTechnology, setSelectedTechnology] = useState<string>('todos');
+	const [selectedTechnology, setSelectedTechnology] = useState<string>("todos");
 	const { repositories, isLoading, error } = useFetching({
 		selectedTechnology,
 	});

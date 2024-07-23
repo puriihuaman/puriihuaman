@@ -1,14 +1,14 @@
 ---
-import { SKILLS_LIST } from '@data/skills-list';
-import type { ISkill } from '@interfaces/ISkill';
-import IconSvg from './IconSvg.astro';
+import { SKILLS_LIST } from "@data/skills-list";
+import type { ISkill } from "@interfaces/ISkill";
+import IconSvg from "./IconSvg.astro";
 ---
 
-<div class="_skills flex flex-wrap gap-2">
+<div class="flex flex-wrap gap-2">
 	{
 		SKILLS_LIST.map((skill: ISkill): any => (
 			<a
-				class="relative flex-grow-0 flex items-center w-fit h-full text-center text-nowrap p-2 bg-slate-900 border border-slate-800 shadow rounded-md transition-colors duration-300"
+				class="relative flex-grow-0 flex items-center w-fit h-full text-center text-nowrap p-2 bg-slate-900 border border-slate-900 shadow rounded-md transition-colors duration-300"
 				href={skill.href}
 				title={skill.label}
 				aria-label={skill.label}

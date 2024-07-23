@@ -1,6 +1,6 @@
 ---
-import { LINKS_LIST } from '@data/links-list';
-import type { ILink } from '@interfaces/ILink';
+import { LINKS_LIST } from "@data/links-list";
+import type { ILink } from "@interfaces/ILink";
 
 const { pathname } = Astro.url;
 ---
@@ -12,7 +12,8 @@ const { pathname } = Astro.url;
 		LINKS_LIST.map((link: ILink): any => (
 			<a
 				href={link.href}
-				class={`flex-1 flex justify-center items-center py-2 px-4 border-l first-of-type:border-none border-slate-800 hover:bg-blue-900 active:text-blue-500 transition-colors duration-300 ${pathname === link.pathname ? 'text-blue-500 font-heading hover:text-slate-50' : ''}`}
+				class={`flex-1 flex justify-center items-center py-2 px-4 border-l first-of-type:border-none border-slate-800 hover:text-blue-500 hover:underline active:text-blue-500 active:font-bold transition-colors duration-300 ${pathname === link.pathname ? "text-blue-500 hover:text-slate-50" : ""}`}
+				transition:animate="fade"
 			>
 				{link.name}
 			</a>

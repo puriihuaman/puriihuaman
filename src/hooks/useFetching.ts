@@ -1,8 +1,8 @@
-import type { HookResponse } from '@interfaces/hook-response';
-import type { IRepository } from '@interfaces/IRepository';
-import type { CustomError } from '@services/custom-error';
-import { fetchRepositories } from '@services/fetch-repositories';
-import { useEffect, useState } from 'react';
+import type { HookResponse } from "@interfaces/hook-response";
+import type { IRepository } from "@interfaces/IRepository";
+import type { CustomError } from "@services/custom-error";
+import { fetchRepositories } from "@services/fetch-repositories";
+import { useEffect, useState } from "react";
 
 export const useFetching = ({
 	selectedTechnology,

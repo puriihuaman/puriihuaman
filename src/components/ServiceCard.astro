@@ -1,6 +1,6 @@
 ---
-import type { IService } from '@interfaces/IService';
-import IconSvg from './IconSvg.astro';
+import type { IService } from "@interfaces/IService";
+import IconSvg from "./IconSvg.astro";
 
 interface Props {
 	service: IService;
@@ -10,19 +10,17 @@ const { service } = Astro.props;
 ---
 
 <article
-	class="_card flex self-start gap-2 text-center p-4 border border-blue-950 shadow-md rounded-md"
+	class="flex self-start gap-2 text-center p-4 border border-slate-900 shadow-md rounded-md"
 >
-	<div
-		class="_card__picture inline-block mx-auto p-2 rounded-md text-slate-400"
-	>
+	<div class="inline-block mx-auto p-2 rounded-md text-slate-400">
 		<IconSvg iconID={service.iconId} iconSize="md" />
 	</div>
 
-	<div class="_card__content text-left text-slate-200">
-		<h3 class="_card__title font-heading text-xl capitalize mb-2">
+	<div class="text-left text-slate-200">
+		<h3 class="font-heading text-xl capitalize mb-2">
 			{service.title}
 		</h3>
 
-		<p>{service.description}</p>
+		<p class="text-slate-300">{service.description}</p>
 	</div>
 </article>

@@ -1,5 +1,5 @@
 ---
-import IconSvg from './IconSvg.astro';
+import IconSvg from "./IconSvg.astro";
 
 interface Props {
 	iconID: string;
@@ -19,7 +19,7 @@ const { iconID } = Astro.props;
 			<slot name="heading" slot="heading" />
 		</h3>
 
-		<p>
+		<p class="text-slate-300">
 			<slot name="description" slot="description" />
 		</p>
 
