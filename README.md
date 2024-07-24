@@ -8,7 +8,7 @@
 <a class="heading-link" href="#about-me">Sobre mí :technologist:</a>
 </h3>
 
-:wave:¡Hola! Soy Pedro, un Desarrollador Backend Trainee que utiliza JavaScript como mi lenguaje de programación principal. Me gradué como Técnico en Desarrollo de Sistemas de Información en el Instituto El Buen Pastor (IBP) en Perú, estoy en las primeras etapas de mi carrera.
+:wave:¡Hola! Soy Pedro, un Desarrollador Backend Trainee que utiliza Java como mi lenguaje de programación principal. Me gradué como Técnico en Desarrollo de Sistemas de Información en el Instituto El Buen Pastor (IBP) en Perú, estoy en las primeras etapas de mi carrera.
 
 :dart:Mi objetivo principal es ofrecer soluciones de alta calidad, utilizando las mejores prácticas de desarrollo y aprovechando al máximo las tecnologías y herramientas disponibles, siempre en búsqueda de aprendizaje y mejora de manera proactiva.
 
@@ -18,11 +18,11 @@
 
 </article>
 
-> :seedling: Actualmente estoy aprendiendo **Backend con Node + Express**
+> :seedling: Actualmente sigo aprendiendo **Java + SpringBoot**
 >
 > :globe_with_meridians: Todos mis proyectos están disponibles en [https://puriihuaman.netlify.app/](https://puriihuaman.netlify.app/)
 >
-> :question: Pregúntame sobre **NodeJS + Express**
+> :question: Pregúntame sobre **Java**
 >
 > :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com**
 
@@ -30,21 +30,27 @@
 
 <!-- technologies -->
 
-<!-- [![Static Badge](https://img.shields.io/badge/PostgreSQL-postgresql?style=plastic&logo=postgresql&logoColor=white&color=blue)](https://www.postgresql.org/) -->
-<!-- [![Static Badge](https://img.shields.io/badge/Java-java?style=plastic&logo=java&color=red)](https://docs.oracle.com/javase/8/docs/api/) -->
+<!-- Java -->
 
-[![Static Badge](https://img.shields.io/badge/JavaScript-javascript?style=plastic&logo=javascript&labelColor=black&color=yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Static Badge](https://img.shields.io/badge/NodeJS-nodejs?style=plastic&logo=node.js&labelColor=black&color=%23339933)](https://nodejs.org/docs/latest/api/)
-[![Static Badge](https://img.shields.io/badge/Express-express?style=plastic&logo=express&labelColor=black&color=white)](https://expressjs.com/)
+[![Static Badge](https://img.shields.io/badge/Java-java?style=plastic&logo=java&color=red)](https://docs.oracle.com/javase/8/docs/api/)<!-- Postgres -->
+[![Static Badge](https://img.shields.io/badge/PostgreSQL-postgresql?style=plastic&logo=postgresql&logoColor=white&color=blue)](https://www.postgresql.org/)<!-- MySql -->
 [![Static Badge](https://img.shields.io/badge/MySQL-mysql?style=plastic&logo=mysql&logoColor=white&labelColor=blue&color=blue)](https://dev.mysql.com/doc/)
 
-[![Static Badge](https://img.shields.io/badge/HTML5-html5?style=plastic&logo=html5&logoColor=white&color=orange)](https://developer.mozilla.org/es/docs/Web/HTML)
-[![Static Badge](https://img.shields.io/badge/CSS3-css3?style=plastic&logo=css3&color=%231398fe)](https://developer.mozilla.org/es/docs/Web/CSS)
-[![Static Badge](https://img.shields.io/badge/Sass-sass?style=plastic&logo=sass&logoColor=white&color=%23f472b6)](https://sass-lang.com/)
-[![Static Badge](https://img.shields.io/badge/React-react?style=plastic&logo=react&logoColor=white&color=%230284c7)](https://es.react.dev/)
-[![Static Badge](https://img.shields.io/badge/TypeScript-typescript?style=plastic&logo=typescript&logoColor=white&color=%230988fe)](https://www.typescriptlang.org/)
+<!-- Javascript -->
 
-<!-- [![Static Badge](https://img.shields.io/badge/Angular-angular?style=plastic&logo=angular&labelColor=%23e11d48&color=%23e11d48)](https://angular.io/) -->
+[![Static Badge](https://img.shields.io/badge/JavaScript-javascript?style=plastic&logo=javascript&labelColor=black&color=yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<!-- Typescript -->
+[![Static Badge](https://img.shields.io/badge/TypeScript-typescript?style=plastic&logo=typescript&logoColor=white&color=%230988fe)](https://www.typescriptlang.org/)<!-- Angular -->
+[![Static Badge](https://img.shields.io/badge/Angular-angular?style=plastic&logo=angular&labelColor=%23e11d48&color=%23e11d48)](https://angular.io/)<!-- Html -->
+[![Static Badge](https://img.shields.io/badge/HTML5-html5?style=plastic&logo=html5&logoColor=white&color=orange)](https://developer.mozilla.org/es/docs/Web/HTML)<!-- Css -->
+[![Static Badge](https://img.shields.io/badge/CSS3-css3?style=plastic&logo=css3&color=%231398fe)](https://developer.mozilla.org/es/docs/Web/CSS)
+
+<!-- [![Static Badge](https://img.shields.io/badge/NodeJS-nodejs?style=plastic&logo=node.js&labelColor=black&color=%23339933)](https://nodejs.org/docs/latest/api/) -->
+<!-- [![Static Badge](https://img.shields.io/badge/Express-express?style=plastic&logo=express&labelColor=black&color=white)](https://expressjs.com/) -->
+
+<!-- [![Static Badge](https://img.shields.io/badge/Sass-sass?style=plastic&logo=sass&logoColor=white&color=%23f472b6)](https://sass-lang.com/) -->
+
+<!-- [![Static Badge](https://img.shields.io/badge/React-react?style=plastic&logo=react&logoColor=white&color=%230284c7)](https://es.react.dev/) -->
+
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJs-nodejs?style=plastic&logo=node.js&labelColor=white)](https://nodejs.org/en) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-expressjs?style=plastic&logo=express&labelColor=%23141414&color=white)](https://expressjs.com/) -->
 

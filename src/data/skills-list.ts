@@ -10,11 +10,18 @@ export const SKILLS_LIST: ISkill[] = [
 	},
 	{
 		id: crypto.randomUUID(),
-		href: "https://dev.mysql.com/",
-		iconId: "mysql",
-		label: "Documentación mysql",
-		tech: "MySQL",
+		href: "https://www.postgresql.org/",
+		iconId: "postgresql",
+		label: "Documentación postgresql",
+		tech: "PostgreSQL",
 	},
+	// {
+	// 	id: crypto.randomUUID(),
+	// 	href: "https://dev.mysql.com/",
+	// 	iconId: "mysql",
+	// 	label: "Documentación mysql",
+	// 	tech: "MySQL",
+	// },
 	{
 		id: crypto.randomUUID(),
 		href: "https://developer.mozilla.org/es/docs/Web/JavaScript",
