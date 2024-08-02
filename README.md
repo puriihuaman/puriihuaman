@@ -67,7 +67,7 @@
 
 ![Puriihuaman's GitHub stats](https://github-readme-stats.vercel.app/api?username=puriihuaman&show_icons=true&&theme=tokyonight#gh-dark-mode-only)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=puriihuaman&theme=tokyonight)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=puriihuaman&layout=donut-vertical&show_icons=true&theme=tokyonight&show_icons=true&hide_border&rank_icon=percentile)
 
 ![Pedro Purihuaman](https://komarev.com/ghpvc/?username=puriihuaman&style=square&color=blueviolet)
 
