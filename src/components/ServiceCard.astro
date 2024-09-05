@@ -9,18 +9,56 @@ interface Props {
 const { service } = Astro.props;
 ---
 
-<article
-	class="flex self-start gap-2 text-center p-4 border border-slate-900 shadow-md rounded-md"
->
-	<div class="inline-block mx-auto p-2 rounded-md text-slate-400">
+<style>
+	.card {
+		display: flex;
+		align-self: flex-start;
+		gap: var(--space-2);
+		text-align: center;
+		padding: var(--space-4);
+		/* border: 1px solid var(--gray-800); */
+		box-shadow: var(--shadow-md);
+		border-radius: var(--radii-md);
+		background-color: var(--gray-800);
+		/* flex self-start gap-2 text-center p-4 border border-slate-900 shadow-md rounded-md */
+	}
+	.card-icon {
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		padding: var(--space-1) var(--space-2);
+		border-radius: var(--radii-md);
+		color: var(--gray-400);
+		/* inline-block mx-auto p-2 rounded-md text-slate-400 */
+	}
+	.card-content {
+		text-align: left;
+		color: var(--gray-200);
+		/* text-left text-slate-200 */
+	}
+	.card-title {
+		font-family: var(--heading-font);
+		font-size: var(--fontSizes-xl);
+		text-transform: capitalize;
+		margin-bottom: var(--space-2);
+		/* font-heading text-xl capitalize mb-2 */
+	}
+	.card-description {
+		color: var(--gray-300);
+		/* text-slate-300 */
+	}
+</style>
+
+<article class="card">
+	<div class="card-icon">
 		<IconSvg iconID={service.iconId} iconSize="md" />
 	</div>
 
-	<div class="text-left text-slate-200">
-		<h3 class="font-heading text-xl capitalize mb-2">
+	<div class="card-content">
+		<h3 class="card-title">
 			{service.title}
 		</h3>
 
-		<p class="text-slate-300">{service.description}</p>
+		<p class="card-description">{service.description}</p>
 	</div>
 </article>

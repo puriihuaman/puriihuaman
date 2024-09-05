@@ -4,10 +4,33 @@ import Navigation from "./Navigation.astro";
 import TheWelcome from "./TheWelcome.astro";
 ---
 
-<header class="max-h-screen lg:flex lg:justify-center lg:items-center lg:pr-10">
+<style>
+	.header {
+		max-height: 100vh;
+		@media (width >= 1024px) {
+			/* display: flex;
+			justify-content: center;
+			align-items: center; */
+			/* padding-right: var(--space-10); */
+		}
+		/* max-h-screen lg:flex lg:justify-center lg:items-center lg:pr-10 */
+	}
+
+	.header-content {
+		@media (width >= 1024px) {
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+		/* lg:flex lg:items-start lg:justify-items-start lg:flex-wrap */
+	}
+</style>
+
+<header class="header">
 	<Avatar />
 
-	<div class="lg:flex lg:items-start lg:justify-items-start lg:flex-wrap">
+	<div class="header-content">
 		<TheWelcome />
 
 		<Navigation />

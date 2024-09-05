@@ -4,20 +4,38 @@ const imagePng = "/assets/images/puriihuaman.png";
 ---
 
 <style>
+	.picture {
+		display: block;
+		max-width: var(--sizes-full);
+		/* width: var(--sizes-full); */
+		/* block max-w-full w-full */
+	}
+
 	.image {
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: var(--space-8);
+		width: var(--sizes-36);
+		border-radius: var(--radii-full);
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: center;
 		mask-image: linear-gradient(black 60%, transparent);
+
+		@media (width >= 1024px) {
+			/* margin: 0;
+			margin-left: var(--space-8); */
+		}
+
+		/* image mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8 */
 	}
 </style>
 
-<picture class="block max-w-full w-full">
-	<source
-		srcset={imageWebp}
-		type="image/webp"
-		class="image mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
-	/>
+<picture class="picture">
+	<source srcset={imageWebp} type="image/webp" class="image" />
 
 	<img
-		class="image mx-auto mb-8 w-36 rounded-full aspect-square object-cover object-center lg:m-0 lg:ml-8"
+		class="image"
 		alt="Foto Pedro Purihuaman"
 		src={imagePng}
 		width="125"

@@ -7,19 +7,71 @@ interface Props {
 const { iconID } = Astro.props;
 ---
 
-<article class="relative flex gap-4 mt-8 lg:gap-8 lg:mt-0 lg:py-2">
-	<div
-		class="_icons flex justify-center items-center w-full max-w-8 max-h-8 text-slate-400 lg:max-w-12 lg:max-h-12 lg:border lg:border-slate-800 lg:bg-slate-900 lg:rounded-lg"
-	>
+<style>
+	.card {
+		position: relative;
+		display: flex;
+		column-gap: var(--space-4);
+		margin-top: var(--space-8);
+
+		@media (width >= 1024px) {
+			row-gap: var(--space-8);
+			margin-top: 0;
+			padding: var(--space-2) 0;
+		}
+		/* relative flex gap-4 mt-8 lg:gap-8 lg:mt-0 lg:py-2 bg-red-500 */
+	}
+
+	.card-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: var(--sizes-full);
+		max-width: var(--sizes-8);
+		max-height: var(--sizes-8);
+		color: var(--gray-400);
+
+		@media (width >= 1024px) {
+			max-width: var(--sizes-12);
+			max-height: var(--sizes-12);
+			border: 1px solid var(--gray-800);
+			background-color: var(--gray-900);
+			border-radius: var(--radii-lg);
+		}
+
+		/* flex justify-center items-center w-full max-w-8 max-h-8 text-slate-400 lg:max-w-12 lg:max-h-12 lg:border lg:border-slate-800 lg:bg-slate-900 lg:rounded-lg */
+	}
+
+	.card-content {
+		flex: 1;
+		/* flex-1 */
+	}
+
+	.card-title {
+		font-family: var(--heading-font);
+		font-size: var(--fontSizes-xl);
+		margin-bottom: var(--space-2);
+		color: var(--gray-50);
+		/* font-heading text-xl mb-2 text-slate-50 */
+	}
+
+	.card-description {
+		color: var(--gray-300);
+		/* text-slate-300 */
+	}
+</style>
+
+<article class="card">
+	<div class="card-icon">
 		<IconSvg iconID={iconID} iconSize="sm" />
 	</div>
 
-	<div class="flex-1">
-		<h3 class="font-heading text-xl mb-2 text-slate-50">
+	<div class="card-content">
+		<h3 class="card-title">
 			<slot name="heading" slot="heading" />
 		</h3>
 
-		<p class="text-slate-300">
+		<p class="card-description">
 			<slot name="description" slot="description" />
 		</p>
 

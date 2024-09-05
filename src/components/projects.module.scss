@@ -1,0 +1,15 @@
+.projects {
+	--columns: 1;
+	display: grid;
+	grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+	gap: var(--space-8);
+
+	@media (width >= 768px) {
+		--columns: 2;
+	}
+
+	@media (width >= 1024px) {
+		--columns: 1;
+	}
+	// grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1
+}

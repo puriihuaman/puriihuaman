@@ -4,11 +4,58 @@ import type { ISkill } from "@interfaces/ISkill";
 import IconSvg from "./IconSvg.astro";
 ---
 
-<div class="flex flex-wrap gap-2">
+<style>
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+		/* flex flex-wrap gap-2 */
+	}
+
+	.skill {
+		flex-grow: 0;
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: fit-content;
+		height: var(--sizes-full);
+		text-align: center;
+		text-wrap: nowrap;
+		padding: var(--space-2);
+		background-color: var(--gray-900);
+		border: 1px solid var(--gray-900);
+		box-shadow: var(--shadow);
+		border-radius: var(--radii-md);
+		transition: var(--transition-property-common),
+			var(--transition-easing-ease-in-out), var(--transition-duration-300);
+
+		/* relative flex-grow-0 flex items-center w-fit h-full text-center text-nowrap p-2 bg-slate-900 border border-slate-900 shadow rounded-md transition-colors duration-300 */
+	}
+
+	.skill-tech {
+		position: absolute;
+		z-index: var(--zIndices-docked);
+		display: inline-block;
+		padding: var(--space-2) var(--space-3);
+		font-size: var(--fontSizes-sm);
+		visibility: hidden;
+		opacity: 0;
+		box-shadow: var(--shadow);
+
+		&:hover {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		/* absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-slate-50 transition-opacity duration-300 bg-slate-900 rounded-lg shadow-sm opacity-0 tooltip hover:visible hover:opacity-100 hover:-top-[90%] hover:z-50 hover:left-2/4 hover:-translate-x-1/2 */
+	}
+</style>
+
+<div class="skills">
 	{
 		SKILLS_LIST.map((skill: ISkill): any => (
 			<a
-				class="relative flex-grow-0 flex items-center w-fit h-full text-center text-nowrap p-2 bg-slate-900 border border-slate-900 shadow rounded-md transition-colors duration-300"
+				class="skill"
 				href={skill.href}
 				title={skill.label}
 				aria-label={skill.label}
@@ -19,11 +66,7 @@ import IconSvg from "./IconSvg.astro";
 			>
 				<IconSvg iconID={skill.iconId} iconSize="md" />
 
-				<small
-					class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-slate-50 transition-opacity duration-300 bg-slate-900 rounded-lg shadow-sm opacity-0 tooltip hover:visible hover:opacity-100 hover:-top-[90%] hover:z-50 hover:left-2/4 hover:-translate-x-1/2"
-					id="tooltip"
-					role="tooltip"
-				>
+				<small class="skill-tech" id="tooltip" role="tooltip">
 					{skill.tech}
 				</small>
 			</a>

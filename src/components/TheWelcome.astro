@@ -3,13 +3,29 @@ import Contact from "./Contact.astro";
 ---
 
 <style>
-	h1 {
+	.hero {
+		font-family: var(--heading-font);
 		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		@media (width >= 1024px) {
+			/* text-align: left; */
+		}
+		/* font-heading text-center lg:text-left */
+	}
+
+	.title {
+		--purple: #a855f7;
+		--blue: #06a2f1;
+		position: relative;
+		font-size: var(--fontSizes-4xl);
+		color: transparent;
+		margin-bottom: var(--space-4);
 		background: linear-gradient(
 			to right,
-			#a855f7 10%,
-			#06a2f1 40% 60%,
-			#a855f7 90%
+			var(--purple) 10%,
+			var(--blue) 40% 60%,
+			var(--purple) 90%
 		);
 		background-size: 200% auto;
 		background-clip: text;
@@ -18,13 +34,27 @@ import Contact from "./Contact.astro";
 		animation: shine 6s linear infinite;
 		background-image: linear-gradient(
 			to right,
-			rgb(168, 85, 247) 10%,
-			rgb(6, 162, 241) 40% 60%,
-			rgb(168, 85, 247) 90%
+			var(--purple) 10%,
+			var(--blue) 40% 60%,
+			var(--purple) 90%
 		);
 		background-color: initial;
+
+		@media (width >= 768px) {
+			font-size: var(--fontSizes-5xl);
+		}
+
+		/* relative -top-3 text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500 */
 	}
 
+	.my-name {
+		font-size: var(--fontSizes-3xl);
+
+		@media (width >= 768px) {
+			font-size: var(--fontSizes-4xl);
+		}
+		/* text-3xl md:text-4xl */
+	}
 	@keyframes shine {
 		100% {
 			background-position: 200% center;
@@ -32,13 +62,9 @@ import Contact from "./Contact.astro";
 	}
 </style>
 
-<div class="font-heading text-center lg:text-left">
-	<h1
-		class="relative -top-3 text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500"
-	>
-		Desarrollador Backend
-	</h1>
-	<h2 class="text-3xl md:text-4xl">Pedro Purihuaman</h2>
+<div class="hero">
+	<h1 class="title">Desarrollador Backend</h1>
+	<h2 class="my-name">Pedro Purihuaman</h2>
 
 	<Contact />
 </div>

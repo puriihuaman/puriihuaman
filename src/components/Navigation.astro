@@ -5,14 +5,56 @@ import type { ILink } from "@interfaces/ILink";
 const { pathname } = Astro.url;
 ---
 
-<nav
-	class="flex justify-center items-center flex-wrap text-center w-full max-w-fit mx-auto mt-8 lg:text-left lg:ml-auto lg:mt-4 lg:py-4"
->
+<style>
+	.navegation {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		text-align: center;
+		width: var(--sizes-full);
+		max-width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: var(--space-8);
+
+		@media (width >= 1024px) {
+			text-align: left;
+			margin-left: auto;
+			margin-top: var(--space-4);
+			padding: var(--space-4) 0;
+		}
+		/* flex justify-center items-center flex-wrap text-center w-full max-w-fit mx-auto mt-8 lg:text-left lg:ml-auto lg:mt-4 lg:py-4 */
+	}
+	.navegation-item {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: var(--space-2) var(--space-4);
+		border-left: 1px solid var(--gray-800);
+		transition: var(--transition-property-common),
+			var(--transition-easing-ease-in-out), var(--transition-duration-300);
+		&:hover,
+		&:active {
+			color: var(--persian-blue-500);
+			text-decoration: underline;
+			color: var(--persian-blue-500);
+		}
+		&.active {
+			color: var(--persian-blue-500);
+			font-family: var(--heading-font);
+		}
+		/* `flex-1 flex justify-center items-center py-2 px-4 border-l first-of-type:border-none border-slate-800 hover:text-blue-500 hover:underline active:text-blue-500 active:font-bold transition-colors duration-300 ${pathname === link.pathname ? "text-blue-500 hover:text-slate-50" : ""}` */
+	}
+</style>
+
+<nav class="navegation">
 	{
 		LINKS_LIST.map((link: ILink): any => (
 			<a
 				href={link.href}
-				class={`flex-1 flex justify-center items-center py-2 px-4 border-l first-of-type:border-none border-slate-800 hover:text-blue-500 hover:underline active:text-blue-500 active:font-bold transition-colors duration-300 ${pathname === link.pathname ? "text-blue-500 hover:text-slate-50" : ""}`}
+				class={`navegation-item ${pathname === link.pathname ? "active" : ""}`}
 				transition:animate="fade"
 			>
 				{link.name}

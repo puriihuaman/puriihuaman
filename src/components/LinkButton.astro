@@ -1,0 +1,48 @@
+---
+import IconSvg from "./IconSvg.astro";
+
+interface Props {
+	href: string;
+	tech: string;
+	iconId: string;
+	iconSize: string;
+	linkClass: string;
+}
+
+const { href, tech, iconId, iconSize, linkClass } = Astro.props;
+---
+
+<style>
+	.link {
+		column-gap: var(--space-2);
+		color: var(--gray-50);
+		fill: currentColor;
+	}
+	.linkedin {
+		background-color: var(--persian-blue-500);
+		color: var(--persian-blue-50);
+		border-color: var(--persian-blue-500);
+		&:hover {
+			background-color: transparent;
+			color: var(--persian-blue-500);
+		}
+	}
+	.github {
+		background-color: var(--gray-800);
+		color: var(--gray-50);
+		border-color: var(--gray-800);
+		&:hover {
+			background-color: transparent;
+		}
+	}
+</style>
+
+<a
+	href={href}
+	target="_blank"
+	rel="noopener"
+	class:list={"button link " + linkClass}
+>
+	<IconSvg iconID={iconId} [iconSize]={iconSize} />
+	<span>{tech}</span>
+</a>

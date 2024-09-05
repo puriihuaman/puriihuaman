@@ -7,6 +7,8 @@ import { Dropdown } from "./Dropdown";
 import { Loading } from "./Loading";
 import { ProjectCard } from "./ProjectCard";
 
+import style from "./projects.module.scss";
+
 export function Projects() {
 	const [selectedTechnology, setSelectedTechnology] = useState<string>("todos");
 	const { repositories, isLoading, error } = useFetching({
@@ -23,7 +25,7 @@ export function Projects() {
 
 			{error && <AlertMessage error={error} />}
 
-			<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
+			<div className={style.projects}>
 				{repositories.map((repository: IRepository) => (
 					<ProjectCard key={repository.id} repository={repository} />
 				))}

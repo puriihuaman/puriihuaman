@@ -1,0 +1,10 @@
+.loading {
+	padding: var(--space-4);
+	color: var(--persian-blue-400);
+	background-color: var(--persian-blue-950);
+	text-align: center;
+	border: 1px solid currentColor;
+	border-radius: var(--radii-md);
+	box-shadow: var(--shadow-md);
+	// p-4 border border-current rounded-md shadow-md text-center text-blue-500 bg-blue-950/20
+}

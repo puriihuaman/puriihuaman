@@ -1,11 +1,32 @@
 ---
 import IconSvg from "@components/IconSvg.astro";
+import LinkButton from "./LinkButton.astro";
 ---
 
-<div
-	class="font-sans flex justify-center items-center flex-wrap gap-4 mt-8 capitalize lg:justify-start"
->
-	<a
+<style>
+	.contact {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--space-4);
+		margin-top: var(--space-8);
+		text-transform: capitalize;
+		font-family: var(--main-font);
+
+		/* // font-sans flex justify-center items-center flex-wrap gap-4 mt-8 capitalize lg:justify-start */
+	}
+</style>
+
+<div class="contact">
+	<LinkButton
+		href="https://www.linkedin.com/in/puriihuaman/"
+		tech="Linkedin"
+		iconId="linkedin"
+		iconSize="xs"
+		linkClass="linkedin"
+	/>
+	<!-- <a
 		href="https://www.linkedin.com/in/puriihuaman/"
 		target="_blank"
 		rel="noopener"
@@ -13,9 +34,9 @@ import IconSvg from "@components/IconSvg.astro";
 	>
 		<IconSvg iconID="linkedin" iconSize="xs" />
 		<span>linkedin</span>
-	</a>
+	</a> -->
 
-	<a
+	<!-- <a
 		href="https://github.com/puriihuaman"
 		target="_blank"
 		rel="noopener"
@@ -23,5 +44,13 @@ import IconSvg from "@components/IconSvg.astro";
 	>
 		<IconSvg iconID="github" iconSize="xs" />
 		<span>Github</span>
-	</a>
+	</a> -->
+
+	<LinkButton
+		href="https://github.com/puriihuaman"
+		tech="Github"
+		iconId="github"
+		iconSize="xs"
+		linkClass="github"
+	/>
 </div>

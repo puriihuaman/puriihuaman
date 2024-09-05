@@ -9,7 +9,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Manrope", ...defaultTheme.fontFamily.sans],
+				sans: ["Delius", ...defaultTheme.fontFamily.sans],
 				heading: [
 					"Inter",
 					"-apple-system",
