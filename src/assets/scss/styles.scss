@@ -1,9 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import "./config/vars.scss";
 @import "./config/colors.scss";
+@import "./config/reset.scss";
 @import "./config/fonts.scss";
 @import "./base/base.scss";
+@import "./base/icons.scss";
 @import "./utils/scroll.scss";

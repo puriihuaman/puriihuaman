@@ -24,8 +24,10 @@ export function Dropdown({ getTech }: { getTech: (tech: string) => void }) {
 					className={style["dropdown-button"]}
 					onClick={handleOpenDropdown}
 				>
-					<span>{technology}</span>
-					<span>{!isOpen ? "➕" : "➖"}</span>
+					<span className={style["dropdown-text"]}>{technology}</span>
+					<span className={style["dropdown-icon"]}>
+						{!isOpen ? "➕" : "➖"}
+					</span>
 				</button>
 
 				<ul

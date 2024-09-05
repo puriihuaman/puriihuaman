@@ -1,6 +1,46 @@
 html {
+	position: relative;
 	color: var(--gray-50);
 	// font-sans dark text-slate-50 bg-gradient-to-b from-slate-900 to-slate-950
+
+	position: relative;
+	overflow-x: hidden;
+	background-color: var(--gray-950);
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		border-radius: var(--radii-full);
+	}
+
+	&::before {
+		top: 0;
+		left: -50%;
+		background: radial-gradient(
+				41.13% 41.13% at 56.2% 51.69%,
+				rgba(168, 85, 247, 0.1) 0%,
+				rgba(168, 85, 247, 0) 100%
+			)
+			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	}
+
+	&::after {
+		top: -50%;
+		right: -50%;
+
+		background: radial-gradient(
+				41.13% 41.13% at 56.2% 51.69%,
+				rgba(20, 132, 255, 0.2) 0%,
+				rgba(20, 132, 255, 0) 100%
+			)
+			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	}
 }
 
 body {

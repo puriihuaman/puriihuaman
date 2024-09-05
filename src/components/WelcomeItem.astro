@@ -19,7 +19,6 @@ const { iconID } = Astro.props;
 			margin-top: 0;
 			padding: var(--space-2) 0;
 		}
-		/* relative flex gap-4 mt-8 lg:gap-8 lg:mt-0 lg:py-2 bg-red-500 */
 	}
 
 	.card-icon {
@@ -38,13 +37,10 @@ const { iconID } = Astro.props;
 			background-color: var(--gray-900);
 			border-radius: var(--radii-lg);
 		}
-
-		/* flex justify-center items-center w-full max-w-8 max-h-8 text-slate-400 lg:max-w-12 lg:max-h-12 lg:border lg:border-slate-800 lg:bg-slate-900 lg:rounded-lg */
 	}
 
 	.card-content {
 		flex: 1;
-		/* flex-1 */
 	}
 
 	.card-title {
@@ -52,12 +48,11 @@ const { iconID } = Astro.props;
 		font-size: var(--fontSizes-xl);
 		margin-bottom: var(--space-2);
 		color: var(--gray-50);
-		/* font-heading text-xl mb-2 text-slate-50 */
 	}
 
 	.card-description {
 		color: var(--gray-300);
-		/* text-slate-300 */
+		text-wrap: balance;
 	}
 </style>
 
