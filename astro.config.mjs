@@ -11,4 +11,8 @@ export default defineConfig({
 			destination: "/",
 		},
 	},
+	trailingSlash: "ignore",
+	markdown: {
+		syntaxHighlight: "prism",
+	},
 });

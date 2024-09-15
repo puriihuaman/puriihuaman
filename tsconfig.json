@@ -9,6 +9,7 @@
 			"@data/*": ["./src/data/*"],
 			"@interfaces/*": ["./src/interfaces/*"],
 			"@services/*": ["./src/services/*"],
+			"@markdown/*": ["./src/markdown/*"],
 			"@assets/*": ["./src/assets/*"]
 		},
 		"jsx": "react-jsx",

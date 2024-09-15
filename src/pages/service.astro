@@ -1,64 +1,16 @@
 ---
-import ServiceCard from "@components/ServiceCard.astro";
-import { services } from "@data/services-list";
-import type { IService } from "@interfaces/IService";
 import Layout from "@layouts/Layout.astro";
+
+const content = await import("@markdown/service.md");
+
+const { Content } = content;
 ---
 
-<style>
-	.services {
-		padding: var(--space-8) 0;
-	}
-
-	.header {
-		border-bottom: 1px solid var(--gray-800);
-		padding-bottom: var(--space-2);
-	}
-	.title {
-		font-family: var(--heading-font);
-		font-size: var(--fontSizes-2xl);
-
-		@media (width >= 768px) {
-			font-size: var(--fontSizes-3xl);
-		}
-
-		@media (width >= 1024px) {
-			font-size: var(--fontSizes-4xl);
-		}
-	}
-
-	.content {
-		--column: 1;
-		display: grid;
-		grid-template-columns: repeat(var(--column), repeat(0, 1fr));
-		gap: var(--space-8);
-		margin-top: var(--space-8);
-
-		@media (width >= 768px) {
-			--column: 2;
-		}
-		@media (width >= 1024px) {
-			--column: 1;
-		}
-	}
-</style>
-
+<!-- Layout -->
 <Layout title="Servicios - Puriihuaman">
 	<main>
 		<section class="services">
-			<div>
-				<div class="header">
-					<h2 class="title">Servicios</h2>
-				</div>
-
-				<div class="content">
-					{
-						services.map((service: IService): any => (
-							<ServiceCard service={service} />
-						))
-					}
-				</div>
-			</div>
+			<Content />
 		</section>
 	</main>
 </Layout>

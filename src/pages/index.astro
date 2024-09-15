@@ -1,68 +1,31 @@
 ---
-import Skill from '@components/Skill.astro';
-import WelcomeItem from '@components/WelcomeItem.astro';
-import Layout from '@layouts/Layout.astro';
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Layout from "@layouts/Layout.astro";
+
+export function getStaticPaths() {
+	return [
+		{ params: { page: "about-me" } },
+		{ params: { page: "education" } },
+		{ params: { page: "my-goal" } },
+	];
+}
+
+const { page } = Astro.params;
+const content = await import(`@markdown/about-me.md`);
+
+const { frontmatter, Content } = content;
+// const { title, description } = frontmatter;
+
+/* ---- */
+const title = "Puriihuaman";
+const description = "Puriihuaman - Portafolio personal";
 ---
 
+<!-- <BaseLayout title={title} description={description} /> -->
 <Layout title="Puriihuaman">
 	<main>
-		<WelcomeItem iconID="documentation">
-			<slot slot="heading">Sobre Mí</slot>
-			<slot slot="description">
-				¡Hola!, Soy
-				<a
-					href="https://vuejs.org/"
-					target="_blank"
-					rel="noopener"
-					class="link"
-				>
-					Pedro Purihuaman
-				</a>
-				un desarrollador Backend.
-			</slot>
-		</WelcomeItem>
-
-		<WelcomeItem iconID="graduation">
-			<slot slot="heading">Educación</slot>
-
-			<slot slot="description">
-				Me gradué como técnico en
-				<a
-					href="https://www.ibp.edu.pe/desarrollo_sistemas.html"
-					target="_blank"
-					rel="noopener"
-					class="link"
-				>
-					Desarrollo de Sistemas de Información</a
-				>,&nbsp; en el
-				<a
-					href="https://www.ibp.edu.pe/"
-					target="_blank"
-					rel="noopener"
-					class="link"
-				>
-					Instituto El Buen Pastor</a
-				>.
-			</slot>
-		</WelcomeItem>
-
-		<WelcomeItem iconID="lightbulb">
-			<slot slot="heading">Objetivo</slot>
-
-			<slot slot="description">
-				Mi objetivo principal es ofrecer soluciones de alta calidad, utilizando
-				las mejores prácticas de desarrollo y aprovechando al máximo las
-				tecnologías y herramientas disponibles, siempre en búsqueda de
-				aprendizaje y mejora de manera proactiva.
-			</slot>
-		</WelcomeItem>
-
-		<WelcomeItem iconID="cpu">
-			<slot slot="heading">Tecnologías</slot>
-
-			<slot slot="others">
-				<Skill />
-			</slot>
-		</WelcomeItem>
+		<section class="about">
+			<Content />
+		</section>
 	</main>
 </Layout>
