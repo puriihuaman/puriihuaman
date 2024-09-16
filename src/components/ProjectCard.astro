@@ -1,0 +1,97 @@
+---
+import type { IRepository } from "@interfaces/IRepository";
+import { Icon } from "astro-icon/components";
+import "./project-card.scss";
+
+interface Props {
+	repository: IRepository;
+}
+
+const path = "/assets/icons/svg-icons.svg#";
+
+// const IconSvg = ({
+// 	iconID,
+// 	otherClass = "xs",
+// }: {
+// 	iconID: string;
+// 	otherClass?: string;
+// }) => (
+// 	<span className="icon">
+// 		<svg className={otherClass}>
+// 			<use href={path + iconID}></use>
+// 		</svg>
+// 	</span>
+// );
+
+const getClassName = (): string => {
+	if (repository.topics.includes("reactjs")) return "react";
+	else if (repository.topics.includes("angular")) return "angular";
+	else if (repository.topics.includes("java")) return "java";
+	else return "default";
+};
+
+const formateDate = (date: string): string =>
+	String(new Date(date).toLocaleDateString());
+
+const { repository } = Astro.props;
+---
+
+<article class="" class:list={"card-project " + `${getClassName()}`}>
+	<div class="card-container">
+		<div class="card-content">
+			<header class="card-header">
+				<span class="card-demo">
+					<a
+						href={repository.homepage || ""}
+						title={"Ir a " + repository.name}
+						target="_blank"
+						rel="nofollow noopener noreferrer"
+						aria-label="Go to project demo"
+					>
+						👀
+					</a>
+				</span>
+
+				<h3 class="card-title">{repository.name}</h3>
+			</header>
+
+			<div class="card-links">
+				<a
+					class="link"
+					href={repository.homepage || ""}
+					title={repository.name}
+					aria-label="Go to project demo"
+					rel="nofollow noopener noreferrer"
+					target="_blank"
+				>
+					<Icon name="link" />
+				</a>
+
+				<a
+					class="github"
+					href={repository.html_url}
+					title={repository.name}
+					aria-label="Go to project demo"
+					rel="nofollow noopener noreferrer"
+					target="_blank"
+				>
+					<Icon name="github" />
+				</a>
+			</div>
+		</div>
+
+		<p>{repository.description}</p>
+
+		<footer class="card-footer">
+			<p class="card-date">
+				<span>📆</span>
+
+				<span>{formateDate(repository.updated_at)}</span>
+			</p>
+
+			<div class="card-icon">
+				{repository.topics.map((topic: string): any => <Icon name={topic} />)}
+			</div>
+		</footer>
+	</div>
+</article>

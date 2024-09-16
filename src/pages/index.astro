@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 
 export function getStaticPaths() {
 	return [
@@ -9,6 +10,52 @@ export function getStaticPaths() {
 		{ params: { page: "my-goal" } },
 	];
 }
+const isCurrentLink = (href: string) =>
+	Astro.url.pathname.includes(href) && "selected";
+
+const LINKS = [
+	{
+		href: "https://docs.oracle.com/javase/8/docs/api/",
+		icon: "java",
+		text: "Documentación Java",
+	},
+	{
+		href: "https://www.postgresql.org/",
+		icon: "postgresql",
+		text: "Documentación PostgreSQL",
+	},
+	{
+		href: "https://developer.mozilla.org/es/docs/Web/JavaScript",
+		icon: "javascript",
+		text: "Documentación Javascript",
+	},
+	{
+		href: "https://www.typescriptlang.org/",
+		icon: "typescript",
+		text: "Documentación Typescript",
+	},
+	{
+		href: "https://angular.io/",
+		icon: "angular",
+		text: "Documentación Angular",
+	},
+	{
+		href: "https://developer.mozilla.org/es/docs/Web/HTML",
+		icon: "html-5",
+		text: "Documentación HTML 5",
+	},
+	{
+		href: "https://developer.mozilla.org/es/docs/Web/CSS",
+		icon: "css3",
+		text: "Documentación CSS3",
+	},
+	{
+		href: "https://tailwindcss.com/",
+		icon: "tailwindcss",
+		text: "Documentación Tailwindcss",
+	},
+	{ href: "https://git-scm.com/", icon: "git", text: "Documentación Git" },
+];
 
 const { page } = Astro.params;
 const content = await import(`@markdown/about-me.md`);
@@ -25,7 +72,25 @@ const description = "Puriihuaman - Portafolio personal";
 <Layout title="Puriihuaman">
 	<main>
 		<section class="about">
-			<Content />
+			<Content title="ssss" />
+
+			<article class="card">
+				<div class="card-icon">⚙</div>
+
+				<h3>Tecnologías</h3>
+				<ul>
+					{
+						LINKS.map((link) => (
+							<li>
+								{/* class={isCurrentLink(link.href) } */}
+								<a href={"/mtmi" + link.href}>
+									<Icon name={link.icon} /> {link.text}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</article>
 		</section>
 	</main>
 </Layout>

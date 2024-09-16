@@ -1,70 +1,76 @@
-import type { IRepository } from '@interfaces/IRepository';
-import { CustomError } from './custom-error';
+import type { IRepository } from "@interfaces/IRepository";
+import { CustomError } from "./custom-error";
+import type { SearchAnswer } from "@interfaces/search-answer";
 
-const DEFAULT_BRANCH = 'start';
+const DEFAULT_BRANCH = "start";
 
 const API_URL_BASE =
 	import.meta.env.API_URL_BASE ??
-	'https://api.github.com/users/puriihuaman/repos';
+	"https://api.github.com/users/puriihuaman/repos";
 
 export const fetchRepositories = async (
-	selectedTechnology: string
-): Promise<{ data: IRepository[]; error: CustomError | null }> => {
+	selectedTechnology: string,
+): Promise<SearchAnswer> => {
 	try {
 		const response = await fetch(API_URL_BASE);
 
 		if (!response.ok) {
 			if (response.status === 404) {
 				throw new CustomError(
-					'Invalid URL',
+					"Invalid URL",
 					response.status,
-					'Could not access URL'
+					"Could not access URL",
 				);
 			}
 
 			if (response.status === 403) {
 				throw new CustomError(
-					'Request limit',
+					"Request limit",
 					response.status,
-					'Exceeded request limits'
+					"Exceeded request limits",
 				);
 			}
 
 			throw new CustomError(
-				'GitHub API error',
+				"GitHub API error",
 				response.status,
-				response.statusText
+				response.statusText,
 			);
 		}
 
 		const repositories: IRepository[] = await response.json();
 
-		const filteredRepositories = repositories.filter(
+		const filteredRepositories: IRepository[] = repositories.filter(
 			(repository: IRepository): boolean =>
-				repository.default_branch === DEFAULT_BRANCH
+				repository.default_branch === DEFAULT_BRANCH,
 		);
 
-		const leakedRepositories = filteredRepositories.filter(
+		const leakedRepositories: IRepository[] = filteredRepositories.filter(
 			(repository: IRepository): boolean =>
-				repository.topics.includes(selectedTechnology)
+				repository.topics.includes(selectedTechnology),
 		);
 
-		const listOfFilteredRepositories =
+		const listOfFilteredRepositories: IRepository[] =
 			leakedRepositories.length > 0 ? leakedRepositories : filteredRepositories;
 
 		return {
-			data: listOfFilteredRepositories || [],
+			repositories: listOfFilteredRepositories || [],
+			hasError: false,
+			isLoading: false,
 			error: null,
 		};
 	} catch (error) {
-		if (error instanceof CustomError) return { data: [], error };
+		if (error instanceof CustomError)
+			return { repositories: [], hasError: true, isLoading: false, error };
 		else
 			return {
-				data: [],
+				repositories: [],
+				hasError: true,
+				isLoading: false,
 				error: {
-					name: 'Server error',
+					name: "Server error",
 					statusCode: 500,
-					message: 'Internal server error',
+					message: "Internal server error",
 				},
 			};
 	}

@@ -1,5 +1,5 @@
 ---
-import IconSvg from "./IconSvg.astro";
+import { Icon } from "astro-icon/components";
 
 interface Props {
 	href: string;
@@ -9,14 +9,21 @@ interface Props {
 	linkClass: string;
 }
 
+const PATH_IMAGE = "/assets/icons";
+
 const { href, tech, iconId, iconSize, linkClass } = Astro.props;
 ---
 
-<style>
+<style lang="scss">
 	.link {
 		column-gap: var(--space-2);
 		color: var(--gray-50);
 		fill: currentColor;
+
+		& svg {
+			width: var(--sizes-5);
+			height: var(--sizes-5);
+		}
 	}
 	.linkedin {
 		background-color: var(--persian-blue-500);
@@ -43,6 +50,6 @@ const { href, tech, iconId, iconSize, linkClass } = Astro.props;
 	rel="noopener"
 	class:list={"button link " + linkClass}
 >
-	<IconSvg iconID={iconId} [iconSize]={iconSize} />
+	<Icon name={iconId} />
 	<span>{tech}</span>
 </a>

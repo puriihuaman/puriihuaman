@@ -1,0 +1,19 @@
+---
+import { CustomError } from "@services/custom-error";
+import "./alert-message.scss";
+
+interface Props {
+	error: CustomError;
+}
+
+const { error } = Astro.props;
+---
+
+<div class="alert">
+	<h4 class="alert-title">{error.name}</h4>
+
+	<p>
+		<strong class="alert-block">{error.statusCode}</strong> - &nbsp;
+		{error.message}
+	</p>
+</div>

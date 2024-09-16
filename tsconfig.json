@@ -11,8 +11,6 @@
 			"@services/*": ["./src/services/*"],
 			"@markdown/*": ["./src/markdown/*"],
 			"@assets/*": ["./src/assets/*"]
-		},
-		"jsx": "react-jsx",
-		"jsxImportSource": "react"
+		}
 	}
 }

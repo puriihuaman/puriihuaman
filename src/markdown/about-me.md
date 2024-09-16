@@ -41,7 +41,7 @@ Mi objetivo principal es ofrecer soluciones de alta calidad, utilizando las mejo
 - [![Typescript](/assets/icons/typescript.svg "Documentación Typescript")](https://www.typescriptlang.org/)
 - [![Angular](/assets/icons/angular.svg "Documentación Angular")](https://angular.io/)
 - [![Html5](/assets/icons/html-5.svg "Documentación HTML 5")](https://developer.mozilla.org/es/docs/Web/HTML)
-- [![Css3](/assets/icons/css-3.svg "Documentación CSS3")](https://developer.mozilla.org/es/docs/Web/CSS)
+- [![Css3](/assets/icons/css3.svg "Documentación CSS3")](https://developer.mozilla.org/es/docs/Web/CSS)
 - [![Tailwindcss](/assets/icons/tailwindcss.svg "Documentación Tailwindcss")](https://tailwindcss.com/)
 - [![Git](/assets/icons/git.svg "Documentación Git")](https://git-scm.com/)
 
