@@ -1,6 +1,6 @@
-import type { ILink } from "@interfaces/ILink";
+import type { Menu } from "@interfaces/menu";
 
-export const LINKS_LIST: ILink[] = [
+export const MENU_LIST: Menu[] = [
 	{ id: crypto.randomUUID(), name: "Inicio", href: "/", pathname: "/" },
 	{
 		id: crypto.randomUUID(),

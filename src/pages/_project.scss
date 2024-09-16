@@ -32,9 +32,10 @@
 	row-gap: var(--space-8);
 	padding-top: var(--space-8);
 	width: var(--sizes-full);
+	max-height: var(--sizes-2xl);
+	overflow: hidden auto;
 }
 
-/* --project gallery */
 .project-gallery {
 	--columns: 1;
 	display: grid;
@@ -48,97 +49,4 @@
 	@media (width >= 1024px) {
 		--columns: 1;
 	}
-}
-
-/* ----------------------------------------- */
-.dropdown {
-	position: relative;
-	border-radius: var(--radii-lg);
-	border: 1px solid var(--gray-800);
-	box-shadow: var(--shadow-xl);
-}
-
-.dropdown-button {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	column-gap: var(--space-4);
-	padding: var(--space-3) var(--space-4);
-	width: var(--sizes-full);
-	cursor: pointer;
-	text-transform: capitalize;
-}
-
-.dropdown-text,
-.dropdown-icon {
-	/* cursor: none; */
-	user-select: none;
-}
-
-.dropdown-option {
-	--height-size: 0;
-	--opacity: 0;
-	--visible: hidden;
-	position: absolute;
-	inset: 0px auto auto 0px;
-	z-index: var(--zIndices-dropdown);
-	font-size: var(--fontSizes-sm);
-	text-align: left;
-	height: var(--height-size);
-	color: var(--gray-50);
-	background-color: var(--gray-950);
-	// width: var(--sizes-full);
-	border: 1px solid var(--gray-800);
-	border-radius: var(--radii-lg);
-	opacity: var(--opacity);
-	visibility: var(--visible);
-	transform-origin: center;
-	transform: translateY(var(--sizes-14));
-	transition: var(--transition-property-common),
-		var(--transition-easing-ease-in-out), var(--transition-duration-300);
-
-	&.dropdown-open {
-		--height-size: 140px;
-		--opacity: 1;
-		--visible: visible;
-		overflow-y: auto;
-	}
-}
-
-.dropdown-item {
-	padding: var(--space-3) var(--space-4);
-	cursor: pointer;
-	&:hover {
-		background-color: var(--gray-900);
-	}
-}
-
-/* ---- */
-details .content {
-	opacity: 0;
-	max-height: 0;
-	overflow: hidden;
-	transition:
-		opacity 0.4s ease,
-		max-height 0.4s ease;
-}
-
-details[open] .content {
-	visibility: visible;
-	opacity: 1;
-	max-height: 100px; /* Ajusta según la altura del contenido */
-}
-
-.tall {
-	position: absolute;
-	inset: 0px auto auto 0px;
-	z-index: 200;
-	max-height: 120px;
-	height: 120px;
-	background-color: red;
-}
-.small {
-	transition-delay: 10ms !important;
-	max-height: 0px;
-	height: 0;
 }

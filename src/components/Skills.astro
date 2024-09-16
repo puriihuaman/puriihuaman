@@ -1,0 +1,24 @@
+---
+import { SKILLS } from "@data/skills";
+import type { Skill } from "@interfaces/skill";
+import { Icon } from "astro-icon/components";
+import "./skill.scss";
+---
+
+<ul class="skills">
+	{
+		SKILLS.map((link: Skill) => (
+			<li class="skill">
+				<a
+					href={link.href}
+					class="skill-link"
+					target="_blank"
+					title={link.text}
+				>
+					<Icon name={link.icon} class="skill-icon" />
+					<span class="skill-text">{link.text}</span>
+				</a>
+			</li>
+		))
+	}
+</ul>

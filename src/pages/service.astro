@@ -1,16 +1,18 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 const content = await import("@markdown/service.md");
+
+const title = "Puriihuaman";
+const description = "Servicio";
 
 const { Content } = content;
 ---
 
-<!-- Layout -->
-<Layout title="Servicios - Puriihuaman">
+<BaseLayout title={title} description={description}>
 	<main>
 		<section class="services">
 			<Content />
 		</section>
 	</main>
-</Layout>
+</BaseLayout>

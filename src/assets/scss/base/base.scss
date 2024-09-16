@@ -7,11 +7,12 @@ html {
 
 body {
 	display: grid;
+	gap: var(--space-4);
 	max-width: var(--sizes-7xl);
 	min-height: 100vh;
 	margin-left: auto;
 	margin-right: auto;
-	padding: var(--space-4);
+	padding: var(--space-6) var(--space-4);
 	background-color: transparent;
 	transition: var(--transition-property-common),
 		var(--transition-easing-ease-in-out), var(--transition-duration-300);

@@ -1,6 +1,6 @@
 ---
-import { LINKS_LIST } from "@data/links-list";
-import type { ILink } from "@interfaces/ILink";
+import { MENU_LIST } from "@data/menus";
+import type { Menu } from "@interfaces/menu";
 
 const { pathname } = Astro.url;
 ---
@@ -51,7 +51,7 @@ const { pathname } = Astro.url;
 
 <nav class="navegation">
 	{
-		LINKS_LIST.map((link: ILink): any => (
+		MENU_LIST.map((link: Menu): any => (
 			<a
 				href={link.href}
 				class={`navegation-item ${pathname === link.pathname ? "active" : ""}`}

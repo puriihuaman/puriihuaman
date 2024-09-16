@@ -1,0 +1,12 @@
+.about {
+	& p a {
+		color: var(--persian-blue-500);
+		&:hover {
+			color: var(--persian-blue-400);
+		}
+	}
+
+	& strong {
+		font-weight: bold;
+	}
+}
