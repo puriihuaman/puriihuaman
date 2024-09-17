@@ -1,23 +1,61 @@
-<article class="markdown-body entry-content container-lg f5" itemprop="text">
-<h1 id="user-content-hello-im-pedro-purihuaman--" dir="auto">Hola :wave:, soy Pedro Purihuaman</h1>
+<h1 id="user-content-hello-im-pedro-purihuaman--" dir="auto" align="center">Hola :wave:, soy Pedro Purihuaman</h1>
 
-<h2 id="user-content-frontend-developer-">:computer: Backend Developer :coffee:</h2>
+##  JAVA DEVELOPER :computer::coffee: ;
+### { SOBRE MÍ :technologist: }
 
-<article class='center'>
-<h3 id="user-content-about-me" dir="auto">
-<a class="heading-link" href="#about-me">Sobre mí :technologist:</a>
-</h3>
+🥇 Soy técnico en **Desarrollo de Sistemas de Información**, con solidos conocimientos en Java, en programación y sus fundamentos.
 
-:wave:¡Hola! Soy Pedro, un Desarrollador Backend Trainee que utiliza Java como mi lenguaje de programación principal. Me gradué como Técnico en Desarrollo de Sistemas de Información en el Instituto El Buen Pastor (IBP) en Perú, estoy en las primeras etapas de mi carrera.
+:brain: Cuento con experiencia práctica en Java, obtenida a través de proyectos académicos, y sólidos conocimientos en Programación Orientada a Objetos (POO), JDBC y Java Server Pages (JSP). Además, manejo tecnologías como PostgreSQL, Maven, Git, GitHub y Postman.
 
-:dart:Mi objetivo principal es ofrecer soluciones de alta calidad, utilizando las mejores prácticas de desarrollo y aprovechando al máximo las tecnologías y herramientas disponibles, siempre en búsqueda de aprendizaje y mejora de manera proactiva.
-
-:briefcase:Estoy abierto a oportunidades que me permitan continuar mi crecimiento, tanto personal como profesional, y expandir mis habilidades. ¡Estoy entusiasmado por las oportunidades que el futuro pueda traer!
+:dart: Estoy comprometido con la mejora continua y enfocado en implementar soluciones eficientes.
 
 :email:No dudes en conectar conmigo por [LinkedIn](https://www.linkedin.com/in/puriihuaman/) o enviarme un correo electrónico <pedropuriihuaman@gmail.com>.
 
-</article>
+### EXPERIENCIA ACADÉMICA
+---
+<details>
+<summary>Sistema de facturación</summary>
 
+> Junio 2024 - actualidad
+
+    Aplicación web para administrar las compras y ventas de un bodega.
+
+**Cargo o labor: _Fullstack_**
+
+*Tareas*:
+
+    Elaborar el modelado de la base de datos, también el diseño lógico y físico.
+
+*Logro*:
+
+*Tecnologías*:
+    
+    Java 17, JSP, JDBC, PostgreSQL, Tailwindcss
+
+</details>
+
+<details>
+<summary>Web para restaurante</summary>
+
+> Agosto 2024 - Setiembre 2024
+
+    Sitio web para restaurante, para administrar pedidos de clientes.
+**Cargo o labor: _Frontend_**
+
+*Tareas:*
+    
+    Crear una Landing Page
+    
+*Logro:*
+
+*Tecnologías*:
+
+     Angular 18, Scss
+
+</details>
+
+### ACTUALIDAD
+---
 > :seedling: Actualmente sigo aprendiendo **Java + SpringBoot**
 >
 > :globe_with_meridians: Todos mis proyectos están disponibles en [https://puriihuaman.netlify.app/](https://puriihuaman.netlify.app/)
@@ -26,7 +64,38 @@
 >
 > :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com**
 
-### [Tecnologías](#user-content-technologies) :link:
+### FORMACIÓN ACADÉMICA - CERTIFICACIONES
+---
+
+<details>
+
+<summary>Carrera | Profesión</summary>
+
+#### Desarrollo de Sistemas de Información
+Instituto El Buen Pastor - IBP - Julio 2022 Lima, Perú. 
+
+</details>
+
+<details>
+
+<summary>Ingles</summary>
+
+#### Ingles básico
+Instituto El Buen Pastor - IBP  - 2020 Lima, Perú
+
+</details>
+
+<details>
+
+<summary>Cursos</summary>
+
+#### Especialización en Java
+Instituto Cibertec - 2024 - actualidad
+
+</details>
+
+### [TECNOLOGÍAS](#user-content-technologies) :link:
+---
 
 <!-- technologies -->
 
@@ -44,6 +113,9 @@
 [![Static Badge](https://img.shields.io/badge/HTML5-html5?style=plastic&logo=html5&logoColor=white&color=orange)](https://developer.mozilla.org/es/docs/Web/HTML)<!-- Css -->
 [![Static Badge](https://img.shields.io/badge/CSS3-css3?style=plastic&logo=css3&color=%231398fe)](https://developer.mozilla.org/es/docs/Web/CSS)
 
+<!-- Git -->
+[![Static Badge](https://img.shields.io/badge/git-git?style=plastic&logo=git&color=%2318181b)](https://git-scm.com/)<!-- Bruno -->
+[![Static Badge](https://img.shields.io/badge/Bruno-bruno?style=plastic&logo=bruno&color=%2318181b)](https://docs.usebruno.com/)
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJS-nodejs?style=plastic&logo=node.js&labelColor=black&color=%23339933)](https://nodejs.org/docs/latest/api/) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-express?style=plastic&logo=express&labelColor=black&color=white)](https://expressjs.com/) -->
 
@@ -54,9 +126,10 @@
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJs-nodejs?style=plastic&logo=node.js&labelColor=white)](https://nodejs.org/en) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-expressjs?style=plastic&logo=express&labelColor=%23141414&color=white)](https://expressjs.com/) -->
 
-</p>
 
-### [Contacto](#contact-me) :link:
+### [CONTACTO](#contact-me) :link:
+---
+¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente intercambiar experiencias, no dudes en contactarme.
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)
 [![Static Badge](https://img.shields.io/badge/Twitter-Pedro%20Purihuaman?style=social&logo=twitter&label=Pedro%20Purihuaman)](https://twitter.com/puriihuaman)
@@ -70,8 +143,6 @@
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=puriihuaman&layout=donut-vertical&show_icons=true&theme=tokyonight&show_icons=true&hide_border&rank_icon=percentile)
 
 ![Pedro Purihuaman](https://komarev.com/ghpvc/?username=puriihuaman&style=square&color=blueviolet)
-
-</article>
 
 ¡Gracias por visitar mi perfil de GitHub!. 😊
 
