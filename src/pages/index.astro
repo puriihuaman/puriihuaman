@@ -1,7 +1,7 @@
 ---
 import Skills from "@components/Skills.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import "./_index.scss";
+import "./_index.css";
 
 const content = await import(`@markdown/about-me.md`);
 
@@ -14,7 +14,7 @@ const description = "Puriihuaman - Portafolio personal";
 <BaseLayout title={title} description={description}>
 	<main>
 		<section class="about">
-			<Content title="ssss" />
+			<Content title={title} />
 
 			<article class="card">
 				<div class="card-icon">⚙</div>

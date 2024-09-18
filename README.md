@@ -1,6 +1,7 @@
 <h1 id="user-content-hello-im-pedro-purihuaman--" dir="auto" align="center">Hola :wave:, soy Pedro Purihuaman</h1>
 
-##  JAVA DEVELOPER :computer::coffee: ;
+## JAVA DEVELOPER :computer::coffee: ;
+
 ### { SOBRE MÍ :technologist: }
 
 🥇 Soy técnico en **Desarrollo de Sistemas de Información**, con solidos conocimientos en Java, en programación y sus fundamentos.
@@ -12,7 +13,9 @@
 :email:No dudes en conectar conmigo por [LinkedIn](https://www.linkedin.com/in/puriihuaman/) o enviarme un correo electrónico <pedropuriihuaman@gmail.com>.
 
 ### EXPERIENCIA ACADÉMICA
+
 ---
+
 <details>
 <summary>Sistema de facturación</summary>
 
@@ -22,14 +25,14 @@
 
 **Cargo o labor: _Fullstack_**
 
-*Tareas*:
+_Tareas_:
 
     Elaborar el modelado de la base de datos, también el diseño lógico y físico.
 
-*Logro*:
+_Logro_:
 
-*Tecnologías*:
-    
+_Tecnologías_:
+
     Java 17, JSP, JDBC, PostgreSQL, Tailwindcss
 
 </details>
@@ -40,22 +43,28 @@
 > Agosto 2024 - Setiembre 2024
 
     Sitio web para restaurante, para administrar pedidos de clientes.
+
 **Cargo o labor: _Frontend_**
 
-*Tareas:*
-    
-    Crear una Landing Page
-    
-*Logro:*
+_Tareas:_
 
-*Tecnologías*:
+    Crear una Landing Page
+
+_Logro:_
+
+_Tecnologías_:
 
      Angular 18, Scss
+
+_Demo_:
+![Demo de restaurante](/public/assets/images/webp/restaurant.webp)
 
 </details>
 
 ### ACTUALIDAD
+
 ---
+
 > :seedling: Actualmente sigo aprendiendo **Java + SpringBoot**
 >
 > :globe_with_meridians: Todos mis proyectos están disponibles en [https://puriihuaman.netlify.app/](https://puriihuaman.netlify.app/)
@@ -65,6 +74,7 @@
 > :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com**
 
 ### FORMACIÓN ACADÉMICA - CERTIFICACIONES
+
 ---
 
 <details>
@@ -72,7 +82,8 @@
 <summary>Carrera | Profesión</summary>
 
 #### Desarrollo de Sistemas de Información
-Instituto El Buen Pastor - IBP - Julio 2022 Lima, Perú. 
+
+Instituto El Buen Pastor - IBP - Julio 2022 Lima, Perú.
 
 </details>
 
@@ -81,7 +92,8 @@ Instituto El Buen Pastor - IBP - Julio 2022 Lima, Perú.
 <summary>Ingles</summary>
 
 #### Ingles básico
-Instituto El Buen Pastor - IBP  - 2020 Lima, Perú
+
+Instituto El Buen Pastor - IBP - 2020 Lima, Perú
 
 </details>
 
@@ -90,11 +102,13 @@ Instituto El Buen Pastor - IBP  - 2020 Lima, Perú
 <summary>Cursos</summary>
 
 #### Especialización en Java
+
 Instituto Cibertec - 2024 - actualidad
 
 </details>
 
 ### [TECNOLOGÍAS](#user-content-technologies) :link:
+
 ---
 
 <!-- technologies -->
@@ -114,8 +128,10 @@ Instituto Cibertec - 2024 - actualidad
 [![Static Badge](https://img.shields.io/badge/CSS3-css3?style=plastic&logo=css3&color=%231398fe)](https://developer.mozilla.org/es/docs/Web/CSS)
 
 <!-- Git -->
+
 [![Static Badge](https://img.shields.io/badge/git-git?style=plastic&logo=git&color=%2318181b)](https://git-scm.com/)<!-- Bruno -->
 [![Static Badge](https://img.shields.io/badge/Bruno-bruno?style=plastic&logo=bruno&color=%2318181b)](https://docs.usebruno.com/)
+
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJS-nodejs?style=plastic&logo=node.js&labelColor=black&color=%23339933)](https://nodejs.org/docs/latest/api/) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-express?style=plastic&logo=express&labelColor=black&color=white)](https://expressjs.com/) -->
 
@@ -126,9 +142,10 @@ Instituto Cibertec - 2024 - actualidad
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJs-nodejs?style=plastic&logo=node.js&labelColor=white)](https://nodejs.org/en) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-expressjs?style=plastic&logo=express&labelColor=%23141414&color=white)](https://expressjs.com/) -->
 
-
 ### [CONTACTO](#contact-me) :link:
+
 ---
+
 ¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente intercambiar experiencias, no dudes en contactarme.
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)

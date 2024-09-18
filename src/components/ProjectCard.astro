@@ -1,27 +1,11 @@
 ---
 import type { IRepository } from "@interfaces/IRepository";
 import { Icon } from "astro-icon/components";
-import "./project-card.scss";
+import "./project-card.css";
 
 interface Props {
 	repository: IRepository;
 }
-
-const path = "/assets/icons/svg-icons.svg#";
-
-// const IconSvg = ({
-// 	iconID,
-// 	otherClass = "xs",
-// }: {
-// 	iconID: string;
-// 	otherClass?: string;
-// }) => (
-// 	<span className="icon">
-// 		<svg className={otherClass}>
-// 			<use href={path + iconID}></use>
-// 		</svg>
-// 	</span>
-// );
 
 const getClassName = (): string => {
 	if (repository.topics.includes("reactjs")) return "react";
