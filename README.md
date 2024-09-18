@@ -57,7 +57,7 @@ _Tecnologías_:
      Angular 18, Scss
 
 _Demo_:
-![Demo de restaurante](/public/assets/images/webp/restaurant.webp)
+[![Demo de restaurante](/public/assets/images/webp/restaurant.webp) Visualizar demo](https://restaurant-puriihuaman.netlify.app/)
 
 </details>
 
