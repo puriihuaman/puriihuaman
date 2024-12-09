@@ -1,35 +1,49 @@
 :root {
 	// + /* --------------- Font family --------------- */
 	$heading-font-path: "/assets/fonts/Inter-Bold";
-	$main-font-path: "/assets/fonts/Delius-Regular";
+	$main-font-path: "/assets/fonts/Manrope-Regular";
 
 	@font-face {
 		font-family: "Inter";
 		font-weight: bold;
 		font-display: swap;
-		src:
-			local("Inter"),
-			url("#{$heading-font-path}.woff2") format("woff2"),
-			url("#{$heading-font-path}.woff") format("woff"),
-			url("#{$heading-font-path}.ttf") format("truetype");
+		src: local("Inter"),
+		url("#{$heading-font-path}.woff2") format("woff2"),
+		url("#{$heading-font-path}.woff") format("woff"),
+		url("#{$heading-font-path}.ttf") format("truetype");
 	}
 
 	@font-face {
-		font-family: "Delius";
+		font-family: "Manrope";
 		font-weight: 400;
 		font-display: swap;
-		src:
-			local("Delius"),
-			url("#{$main-font-path}.woff2") format("woff2"),
-			url("#{$main-font-path}.woff") format("woff"),
-			url("#{$main-font-path}.ttf") format("truetype");
+		src: local("Manrope"),
+		url("#{$main-font-path}.woff2") format("woff2"),
+		url("#{$main-font-path}.woff") format("woff"),
+		url("#{$main-font-path}.ttf") format("truetype");
 	}
 
-	--heading-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol";
+	--heading-font: "Inter",
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	Helvetica,
+	Arial,
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol";
 
-	--main-font: "Delius", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol";
+	--main-font: "Manrope",
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	Helvetica,
+	Arial,
+	sans-serif,
+	"Apple Color Emoji",
+	"Segoe UI Emoji",
+	"Segoe UI Symbol";
 }

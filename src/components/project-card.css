@@ -17,27 +17,15 @@
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 	&.angular {
-		background: linear-gradient(
-			226.31deg,
-			rgba(195, 0, 47, 0.05) 7.43%,
-			rgba(195, 0, 47, 0.2) 87.88%
-		);
+		background: linear-gradient(45deg, var(--red-100) 7.43%, var(--red-50) 87.88%);
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	}
 	&.react {
-		background: linear-gradient(
-			226.31deg,
-			rgba(10, 34, 97, 0.1) 7.43%,
-			rgba(10, 34, 97, 0.3) 87.88%
-		);
+		background: linear-gradient(45deg, var(--persian-blue-100) 7.43%, var(--persian-blue-50) 87.88%);
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	}
 	&.default {
-		background: linear-gradient(
-			226.31deg,
-			rgba(24, 24, 27, 0.8) 7.43%,
-			rgba(24, 24, 27, 0.3) 87.88%
-		);
+		background: linear-gradient(45deg, var(--gray-100) 7.43%, var(--gray-50) 87.88%);
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	}
 	& .card-container {
@@ -82,8 +70,14 @@
 		text-align: center;
 		overflow: hidden;
 		box-shadow: var(--shadow-md);
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--gray-300);
 		border-radius: var(--radii-full);
+		animation: rotate 3s linear infinite alternate;
+		
+		&:hover,
+		&:active {
+			animation-play-state: paused;
+		}
 	}
 
 	& .card-title {
@@ -116,8 +110,8 @@
 	& .link,
 	& .github {
 		--scale: 1;
-		color: var(--gray-300);
-
+		color: var(--gray-800);
+		animation: move 2s linear infinite alternate;
 		transform: scale(var(--scale));
 		transition: var(--transition-property-common),
 			var(--transition-easing-ease-in-out), var(--transition-duration-300);
@@ -147,7 +141,7 @@
 	align-items: center;
 	column-gap: var(--space-2);
 	font-size: var(--fontSizes-sm);
-	color: var(--gray-400);
+	color: var(--gray-600);
 }
 
 .card-icon {
@@ -159,5 +153,20 @@
 	& svg {
 		width: var(--sizes-5);
 		height: var(--sizes-5);
+	}
+}
+
+@keyframes move {
+	from {
+		transform: rotate(-0.05turn);
+	}
+	to {
+		transform: rotate(0.05turn);
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate3d(0, 1, 0, 5.142rad);
 	}
 }

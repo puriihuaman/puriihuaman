@@ -20,7 +20,10 @@ const imagePng = "/assets/images/puriihuaman.png";
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 		object-position: center;
-		mask-image: linear-gradient(black 60%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			mask-image: linear-gradient(var(--gray-50) 60%, transparent);
+		}
 	}
 </style>
 

@@ -1,4 +1,4 @@
-.navegation {
+.navigation {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,16 +17,18 @@
 		padding: var(--space-4) 0;
 	}
 }
-.navegation-item {
+.navigation-item {
 	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: var(--space-2) var(--space-4);
+	text-transform: uppercase;
+	font-size: var(--fontSizes-sm);
 	transition: var(--transition-property-common),
 		var(--transition-easing-ease-in-out), var(--transition-duration-300);
 	&:not(:first-child) {
-		border-left: 1px solid var(--gray-800);
+		border-left: 1px solid var(--gray-300);
 	}
 	&:hover,
 	&:active {

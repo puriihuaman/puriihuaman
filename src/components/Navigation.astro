@@ -4,17 +4,18 @@ import type { Menu } from "@interfaces/menu";
 import "./navigation.css";
 
 const { pathname } = Astro.url;
+const getPathname = (pathname: string): string => pathname.substring(1);
 ---
 
-<nav class="navegation">
+<nav class="navigation">
 	{
-		MENU_LIST.map((link: Menu): any => (
+		MENU_LIST.map(({ href, pathname: path, name }: Menu): any => (
 			<a
-				href={link.href}
-				class={`navegation-item ${pathname === link.pathname ? "active" : ""}`}
+				href={href}
+				class={`navigation-item ${getPathname(pathname) === getPathname(path) ? "active" : ""}`}
 				transition:animate="fade"
 			>
-				{link.name}
+				{name}
 			</a>
 		))
 	}

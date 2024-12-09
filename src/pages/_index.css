@@ -1,8 +1,8 @@
 .about {
 	& p a {
-		color: var(--persian-blue-500);
+		color: var(--persian-blue-600);
 		&:hover {
-			color: var(--persian-blue-400);
+			color: var(--persian-blue-500);
 		}
 	}
 
