@@ -1,6 +1,6 @@
 import type { IRepository } from "@interfaces/IRepository";
-import { CustomError } from "./custom-error";
 import type { SearchAnswer } from "@interfaces/search-answer";
+import { CustomError } from "./custom-error";
 
 const DEFAULT_BRANCH = "start";
 

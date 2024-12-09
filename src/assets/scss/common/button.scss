@@ -1,4 +1,5 @@
 .button {
+	--color-ring: currentColor;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -9,8 +10,9 @@
 	cursor: pointer;
 	text-wrap: nowrap;
 	border: 1px solid currentColor;
+	box-shadow: inset 0 0 0 1px var(--color-ring), var(--shadow);
 	transition: var(--transition-property-common),
-		var(--transition-easing-ease-in-out), var(--transition-duration-300);
+		var(--transition-easing-ease-in-out), var(--transition-duration-500);
 
 	&::after {
 		content: "";
@@ -26,9 +28,14 @@
 		opacity: 0.2;
 		transform: translate(-50%, -50%);
 	}
+
 	&:active::after {
 		animation: button-scale 300ms linear;
 		transform-origin: center;
+	}
+
+	&:hover {
+		box-shadow: 0 0 0 1px var(--color-ring), var(--shadow);
 	}
 }
 
@@ -37,6 +44,7 @@
 		width: 0;
 		height: 0;
 	}
+
 	to {
 		width: 200px;
 		height: 200px;

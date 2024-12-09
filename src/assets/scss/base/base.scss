@@ -1,8 +1,8 @@
 html {
 	position: relative;
 	overflow-x: hidden;
-	color: var(--gray-50);
-	background-color: var(--gray-950);
+	color: var(--gray-950);
+	background-color: var(--gray-50);
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 	transition: var(--transition-property-common),
 		var(--transition-easing-ease-in-out), var(--transition-duration-300);
 
-	@media (width >= 1024px) {
+	@media (width >=1024px) {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		align-items: center;
 		padding-top: 0;
@@ -38,12 +38,11 @@ body {
 	&::before {
 		top: 0;
 		left: -50%;
-		background: radial-gradient(
-				41.13% 41.13% at 56.2% 51.69%,
+		background: radial-gradient(41.13% 41.13% at 56.2% 51.69%,
 				rgba(168, 85, 247, 0.1) 0%,
-				rgba(168, 85, 247, 0) 100%
-			)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+				rgba(168, 85, 247, 0) 100%)
+			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+		;
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	}
 
@@ -51,18 +50,17 @@ body {
 		top: -50%;
 		right: -50%;
 
-		background: radial-gradient(
-				41.13% 41.13% at 56.2% 51.69%,
+		background: radial-gradient(41.13% 41.13% at 56.2% 51.69%,
 				rgba(20, 132, 255, 0.2) 0%,
-				rgba(20, 132, 255, 0) 100%
-			)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+				rgba(20, 132, 255, 0) 100%)
+			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+		;
 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	}
 }
 
 hr {
 	height: var(--sizes-0-5);
-	background-color: var(--gray-800);
+	background-color: var(--gray-300);
 	border-radius: var(--radii-sm);
 }

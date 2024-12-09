@@ -26,19 +26,23 @@ const { href, tech, iconId, iconSize, linkClass } = Astro.props;
 		}
 	}
 	.linkedin {
+		--color-ring: var(--persian-blue-500);
+		color: var(--white);
 		background-color: var(--persian-blue-500);
-		color: var(--persian-blue-50);
 		border-color: var(--persian-blue-500);
 		&:hover {
+			--color-ring: var(--persian-blue-600);
+			color: var(--persian-blue-600);
 			background-color: transparent;
-			color: var(--persian-blue-500);
 		}
 	}
 	.github {
+		--color-ring: var(--gray-800);
 		background-color: var(--gray-800);
 		color: var(--gray-50);
 		border-color: var(--gray-800);
 		&:hover {
+			color: var(--gray-800);
 			background-color: transparent;
 		}
 	}
