@@ -4,7 +4,8 @@ import type { Menu } from "@interfaces/menu";
 import "./navigation.css";
 
 const { pathname } = Astro.url;
-const getPathname = (pathname: string): string => pathname.substring(1);
+const getPathname = (pathname: string): string =>
+	pathname.toLowerCase().trim().substring(1).replace("/", "");
 ---
 
 <nav class="navigation">
