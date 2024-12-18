@@ -7,11 +7,8 @@ interface Props {
 	repository: IRepository;
 }
 
-const getClassName = (): string => {
-	if (repository.topics.includes("reactjs")) return "react";
-	else if (repository.topics.includes("angular")) return "angular";
-	else if (repository.topics.includes("java")) return "java";
-	else return "default";
+const changeName = (projectName: string) => {
+	return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
 };
 
 const formateDate = (date: string): string =>
@@ -20,25 +17,19 @@ const formateDate = (date: string): string =>
 const { repository } = Astro.props;
 ---
 
-<article class="" class:list={"card-project " + `${getClassName()}`}>
+<article class="card-project">
 	<div class="card-container">
+		<p class="card-date">
+			<span>{formateDate(repository.updated_at)}</span>
+		</p>
+
 		<div class="card-content">
-			<header class="card-header">
-				<span class="card-demo">
-					<a
-						href={repository.homepage || ""}
-						title={"Ir a " + repository.name}
-						target="_blank"
-						rel="nofollow noopener noreferrer"
-						aria-label="Go to project demo"
-					>
-						👀
-					</a>
-				</span>
+			<h3 class="card-title">{changeName(repository.name)}</h3>
 
-				<h3 class="card-title">{repository.name}</h3>
-			</header>
+			<p>{repository.description}</p>
+		</div>
 
+		<footer class="card-footer">
 			<div class="card-links">
 				<a
 					class="link"
@@ -48,6 +39,7 @@ const { repository } = Astro.props;
 					rel="nofollow noopener noreferrer"
 					target="_blank"
 				>
+					Demo
 					<Icon name="link" />
 				</a>
 
@@ -59,19 +51,10 @@ const { repository } = Astro.props;
 					rel="nofollow noopener noreferrer"
 					target="_blank"
 				>
+					Código
 					<Icon name="github" />
 				</a>
 			</div>
-		</div>
-
-		<p>{repository.description}</p>
-
-		<footer class="card-footer">
-			<p class="card-date">
-				<span>📆</span>
-
-				<span>{formateDate(repository.updated_at)}</span>
-			</p>
 
 			<div class="card-icon">
 				{repository.topics.map((topic: string): any => <Icon name={topic} />)}

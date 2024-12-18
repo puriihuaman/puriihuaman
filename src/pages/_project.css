@@ -1,39 +1,45 @@
 .project {
 	padding-top: var(--space-8);
-
-	@media (width >= 1024px) {
-		min-height: 100vh;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		padding: 0;
-	}
+	min-height: 100vh;
 }
 
-.header {
-	padding-bottom: var(--space-2);
+.project-header {
+	& .title  {
+		margin-bottom: var(--space-1);
+	}
+
+	& hr {
+		background-color: var(--persian-blue-500);
+		animation: animation-rule 4s linear infinite alternate;
+	}
+}
+@keyframes animation-rule {
+	from {
+		width: 0;
+	}
+	to {
+		width: 200px;
+	}
 }
 
 .title {
+	--purple: #a855f7;
+	--blue: #06a2f1;
 	font-family: var(--heading-font);
-	font-size: var(--fontSizes-2xl);
+	font-size: var(--fontSizes-xl);
+	width: fit-content;
+	text-transform: uppercase;
 
 	@media (width >= 768px) {
-		font-size: var(--fontSizes-3xl);
+		font-size: var(--fontSizes-2xl);
 	}
 	@media (width >= 1024px) {
-		font-size: var(--fontSizes-4xl);
+		font-size: var(--fontSizes-3xl);
 	}
 }
 
 .projects {
-	display: flex;
-	flex-direction: column;
-	row-gap: var(--space-8);
 	padding-top: var(--space-8);
-	width: var(--sizes-full);
-	max-height: var(--sizes-2xl);
-	overflow: hidden auto;
 }
 
 .project-gallery {
@@ -42,11 +48,7 @@
 	grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 	gap: var(--space-8);
 
-	@media (width >= 768px) {
-		--columns: 2;
-	}
-
 	@media (width >= 1024px) {
-		--columns: 1;
+		--columns: 2;
 	}
 }

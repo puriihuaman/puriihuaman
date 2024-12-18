@@ -12,19 +12,16 @@ let technology: string = "todos";
 const { repositories, hasError, isLoading, error } =
 	await fetchRepositories(technology);
 
-// Encuentra nuestro componente en la página.
-
 const title = "Puriihuaman";
 const description = "Proyectos";
 ---
 
 <BaseLayout title={title} description={description}>
-	<main class="project">
-		<div class="header">
+	<section class="container project">
+		<div class="project-header">
 			<h2 class="title">Proyectos</h2>
+			<hr />
 		</div>
-
-		<hr />
 
 		<div class="projects">
 			{isLoading && <Loading />}
@@ -39,5 +36,5 @@ const description = "Proyectos";
 				}
 			</div>
 		</div>
-	</main>
+	</section>
 </BaseLayout>
