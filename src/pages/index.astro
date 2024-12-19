@@ -2,6 +2,7 @@
 import Skills from "@components/Skills.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import "./_index.css";
+import Hero from "@components/Hero.astro";
 
 const content = await import(`@markdown/about-me.md`);
 
@@ -11,17 +12,32 @@ const title = "Puriihuaman";
 const description = "Puriihuaman - Portafolio personal";
 ---
 
+<style>
+	.about {
+		--columns: 1;
+		display: grid;
+		grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+		gap: var(--space-4);
+		padding-bottom: var(--space-4);
+
+		@media (width >= 1024px) {
+			--columns: 2;
+		}
+	}
+</style>
+
 <BaseLayout title={title} description={description}>
-	<main>
-		<section class="about">
-			<Content title={title} />
+	<Hero />
 
-			<article class="card">
+	<section class="container about">
+		<Content title={title} />
+
+		<article class="card">
+			<header class="card-header">
 				<div class="card-icon">⚙</div>
-
 				<h3>Tecnologías</h3>
-				<Skills />
-			</article>
-		</section>
-	</main>
+			</header>
+			<Skills />
+		</article>
+	</section>
 </BaseLayout>
