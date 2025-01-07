@@ -1,81 +1,59 @@
 ---
 import type { IRepository } from "@interfaces/IRepository";
-import { Icon } from "astro-icon/components";
 import "./project-card.css";
 
 interface Props {
-	repository: IRepository;
+  repository: IRepository;
 }
 
-const getClassName = (): string => {
-	if (repository.topics.includes("reactjs")) return "react";
-	else if (repository.topics.includes("angular")) return "angular";
-	else if (repository.topics.includes("java")) return "java";
-	else return "default";
+const changeName = (projectName: string) => {
+  return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
 };
 
 const formateDate = (date: string): string =>
-	String(new Date(date).toLocaleDateString());
+  String(new Date(date).getFullYear().toString());
 
 const { repository } = Astro.props;
 ---
 
-<article class="" class:list={"card-project " + `${getClassName()}`}>
-	<div class="card-container">
-		<div class="card-content">
-			<header class="card-header">
-				<span class="card-demo">
-					<a
-						href={repository.homepage || ""}
-						title={"Ir a " + repository.name}
-						target="_blank"
-						rel="nofollow noopener noreferrer"
-						aria-label="Go to project demo"
-					>
-						👀
-					</a>
-				</span>
+<article class="project-card">
+  <div class="project-card-container">
+    <div class="project-card-header">
+      <h3 class="card-title">{changeName(repository.name)}</h3>
 
-				<h3 class="card-title">{repository.name}</h3>
-			</header>
+      <p>{formateDate(repository.updated_at)}</p>
+    </div>
 
-			<div class="card-links">
-				<a
-					class="link"
-					href={repository.homepage || ""}
-					title={repository.name}
-					aria-label="Go to project demo"
-					rel="nofollow noopener noreferrer"
-					target="_blank"
-				>
-					<Icon name="link" />
-				</a>
+    <p>{repository.description}</p>
 
-				<a
-					class="github"
-					href={repository.html_url}
-					title={repository.name}
-					aria-label="Go to project demo"
-					rel="nofollow noopener noreferrer"
-					target="_blank"
-				>
-					<Icon name="github" />
-				</a>
-			</div>
-		</div>
+    <ul>
+      <li>
+        {repository.topics.map((topic: string): any => topic + " - ")}
+      </li>
+    </ul>
 
-		<p>{repository.description}</p>
+    <footer class="project-card-footer">
+      <a
+        class="link"
+        href={repository.homepage || ""}
+        title={repository.name}
+        aria-label="Go to project demo"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        Demo
+      </a>
 
-		<footer class="card-footer">
-			<p class="card-date">
-				<span>📆</span>
-
-				<span>{formateDate(repository.updated_at)}</span>
-			</p>
-
-			<div class="card-icon">
-				{repository.topics.map((topic: string): any => <Icon name={topic} />)}
-			</div>
-		</footer>
-	</div>
+      <a
+        class="github"
+        href={repository.html_url}
+        title={repository.name}
+        aria-label="Go to project demo"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        Código
+      </a>
+    </footer>
+  </div>
 </article>

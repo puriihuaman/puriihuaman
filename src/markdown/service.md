@@ -3,10 +3,14 @@ title: Servicio
 description: Servicio
 ---
 
-## Servicios
+<div>
 
+## Servicios
 ---
 
+</div>
+
+<section class="service-gallery">
 <article class="card">
 <div class="card-icon">🎨</div>
 
@@ -33,3 +37,4 @@ Desarrollo sitios y aplicaciones web. Te ayudo a construir y hacer realidad tu p
 El diseño es el principal fuerte ya que me encargo que tu página web siga los estándares y tendencias internacionales.
 
 </article>
+</section>

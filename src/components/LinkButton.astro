@@ -2,58 +2,62 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-	href: string;
-	tech: string;
-	iconId: string;
-	iconSize: string;
-	linkClass: string;
+  href: string;
+  iconId: string;
+  linkClass: string;
 }
 
-const PATH_IMAGE = "/assets/icons";
-
-const { href, tech, iconId, iconSize, linkClass } = Astro.props;
+const { href, iconId, linkClass } = Astro.props;
 ---
 
 <style lang="scss">
-	.link {
-		column-gap: var(--space-2);
-		color: var(--gray-50);
-		fill: currentColor;
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+    border: 1px solid var(--gray-700);
+    color: var(--gray-700);
+    aspect-ratio: 1 / 1;
+    width: var(--sizes-8);
+    border-radius: var(--radii-md);
+    transition: var(--transition-property-common),
+      var(--transition-easing-ease-in-out), var(--transition-duration-500);
 
-		& svg {
-			width: var(--sizes-5);
-			height: var(--sizes-5);
-		}
-	}
-	.linkedin {
-		--color-ring: var(--persian-blue-500);
-		color: var(--white);
-		background-color: var(--persian-blue-500);
-		border-color: var(--persian-blue-500);
-		&:hover {
-			--color-ring: var(--persian-blue-600);
-			color: var(--persian-blue-600);
-			background-color: transparent;
-		}
-	}
-	.github {
-		--color-ring: var(--gray-800);
-		background-color: var(--gray-800);
-		color: var(--gray-50);
-		border-color: var(--gray-800);
-		&:hover {
-			color: var(--gray-800);
-			background-color: transparent;
-		}
-	}
+    &:hover {
+      border-color: var(--gray-200);
+      background-color: var(--gray-100);
+    }
+  }
+  .linkedin {
+    --color-ring: var(--persian-blue-500);
+    color: var(--white);
+    background-color: var(--persian-blue-500);
+    border-color: var(--persian-blue-500);
+    &:hover {
+      --color-ring: var(--persian-blue-600);
+      color: var(--persian-blue-600);
+      background-color: transparent;
+    }
+  }
+  .github {
+    --color-ring: var(--gray-800);
+    background-color: var(--gray-800);
+    color: var(--gray-50);
+    border-color: var(--gray-800);
+    &:hover {
+      color: var(--gray-800);
+      background-color: transparent;
+    }
+  }
 </style>
 
 <a
-	href={href}
-	target="_blank"
-	rel="noopener"
-	class:list={"button link " + linkClass}
+  href={href}
+  target="_blank"
+  rel="noopener"
+  class="link"
+  class:list={linkClass}
 >
-	<Icon name={iconId} />
-	<span>{tech}</span>
+  <Icon name={iconId} />
 </a>

@@ -1,30 +1,59 @@
 ---
-import Avatar from "./Avatar.astro";
 import Navigation from "./Navigation.astro";
-import TheWelcome from "./TheWelcome.astro";
 ---
 
 <style>
-	.header {
-		max-height: 100vh;
-	}
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: var(--zIndices-sticky);
+    background-color: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--shadow);
+  }
 
-	.header-content {
-		@media (width >= 1024px) {
-			display: flex;
-			align-items: flex-start;
-			justify-content: flex-start;
-			flex-wrap: wrap;
-		}
-	}
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: var(--sizes-16);
+    height: var(--sizes-full);
+  }
+
+  .nickname {
+    --purple: #a855f7;
+    --blue: #06a2f1;
+    position: relative;
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    background: linear-gradient(
+      to right,
+      var(--purple) 10%,
+      var(--blue) 40% 60%,
+      var(--purple) 90%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: shine 6s linear infinite;
+    background-image: linear-gradient(
+      to right,
+      var(--purple) 10%,
+      var(--blue) 40% 60%,
+      var(--purple) 90%
+    );
+    background-color: initial;
+  }
 </style>
 
 <header class="header">
-	<Avatar />
+  <div class="container header-content">
+    <div class="nickname">
+      <a href="/">Purihuaman</a>
+    </div>
 
-	<div class="header-content">
-		<TheWelcome />
-
-		<Navigation />
-	</div>
+    <Navigation />
+  </div>
 </header>

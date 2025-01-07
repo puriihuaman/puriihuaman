@@ -1,52 +1,15 @@
 .project {
-	padding-top: var(--space-8);
-
-	@media (width >= 1024px) {
-		min-height: 100vh;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		padding: 0;
-	}
-}
-
-.header {
-	padding-bottom: var(--space-2);
-}
-
-.title {
-	font-family: var(--heading-font);
-	font-size: var(--fontSizes-2xl);
-
-	@media (width >= 768px) {
-		font-size: var(--fontSizes-3xl);
-	}
-	@media (width >= 1024px) {
-		font-size: var(--fontSizes-4xl);
-	}
-}
-
-.projects {
-	display: flex;
-	flex-direction: column;
-	row-gap: var(--space-8);
-	padding-top: var(--space-8);
-	width: var(--sizes-full);
-	max-height: var(--sizes-2xl);
-	overflow: hidden auto;
+  width: var(--sizes-full);
+  padding: var(--space-8) var(--space-4) var(--space-10);
 }
 
 .project-gallery {
-	--columns: 1;
-	display: grid;
-	grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-	gap: var(--space-8);
+  --columns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: var(--space-8);
 
-	@media (width >= 768px) {
-		--columns: 2;
-	}
-
-	@media (width >= 1024px) {
-		--columns: 1;
-	}
+  @media (width >= 640px) {
+    --columns: 2;
+  }
 }

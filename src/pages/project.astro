@@ -9,35 +9,31 @@ import "./_project.css";
 
 let technology: string = "todos";
 
-const { repositories, hasError, isLoading, error } =
-	await fetchRepositories(technology);
+const { Content } = await import("@markdown/projects.md");
 
-// Encuentra nuestro componente en la página.
+const { repositories, hasError, isLoading, error } =
+  await fetchRepositories(technology);
 
 const title = "Puriihuaman";
 const description = "Proyectos";
 ---
 
 <BaseLayout title={title} description={description}>
-	<main class="project">
-		<div class="header">
-			<h2 class="title">Proyectos</h2>
-		</div>
+  <section class="container project">
+    <div class="projects">
+      {isLoading && <Loading />}
 
-		<hr />
+      {error && <AlertMessage error={error} />}
 
-		<div class="projects">
-			{isLoading && <Loading />}
+      <div class="project-gallery">
+        <Content title={title} />
 
-			{error && <AlertMessage error={error} />}
-
-			<div class="project-gallery">
-				{
-					repositories.map((repository: IRepository) => (
-						<ProjectCard repository={repository} />
-					))
-				}
-			</div>
-		</div>
-	</main>
+        {
+          repositories.map((repository: IRepository) => (
+            <ProjectCard repository={repository} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

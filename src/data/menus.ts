@@ -8,10 +8,10 @@ export const MENU_LIST: Menu[] = [
 		href: "/project",
 		pathname: "/project",
 	},
-	{
-		id: crypto.randomUUID(),
-		name: "Servicios",
-		href: "/service",
-		pathname: "/service",
-	},
+	// {
+	// 	id: crypto.randomUUID(),
+	// 	name: "Servicios",
+	// 	href: "/service",
+	// 	pathname: "/service",
+	// },
 ];
