@@ -4,9 +4,12 @@
 
 ### { SOBRE MÍ :technologist: }
 
-🥇 Soy técnico en **Desarrollo de Sistemas de Información**, con solidos conocimientos en Java, en programación y sus fundamentos.
+🥇 Desarrollador de software con formación técnica en **Desarrollo de Sistemas de Información**, me desempeño como desarrollador back-end con Java.
 
-:brain: Cuento con experiencia práctica en Java, obtenida a través de proyectos académicos, y sólidos conocimientos en Programación Orientada a Objetos (POO), JDBC y Java Server Pages (JSP). Además, manejo tecnologías como PostgreSQL, Maven, Git, GitHub y Postman.
+:brain: Experiencia práctica en desarrollo de sistemas web con Java y Node Js
+mediante proyectos académicos y hackáthones, con sólidos conocimientos en
+Programación Orientada a Objetos (POO), Spring Boot, Express y metodologías
+ágiles como Scrum.
 
 :dart: Estoy comprometido con la mejora continua y enfocado en implementar soluciones eficientes.
 
@@ -16,7 +19,7 @@
 
 ---
 
-<details>
+<details open>
 <summary>Sistema de facturación</summary>
 
 > Junio 2024 - actualidad
@@ -37,7 +40,7 @@ _Tecnologías_:
 
 </details>
 
-<details>
+<details open>
 <summary>Web para restaurante</summary>
 
 > Agosto 2024 - Setiembre 2024
@@ -67,45 +70,26 @@ _Demo_:
 
 > :seedling: Actualmente sigo aprendiendo **Java + SpringBoot**
 >
-> :globe_with_meridians: Todos mis proyectos están disponibles en [https://puriihuaman.netlify.app/](https://puriihuaman.netlify.app/)
+> :globe_with_meridians: Todos mis proyectos están disponibles en [Puriihuaman](https://puriihuaman.netlify.app/) o [GitHub](https://github.com/puriihuaman)
 >
 > :question: Pregúntame sobre **Java**
 >
-> :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com**
+> :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com** or **[Linkein](https://www.linkedin.com/in/puriihuaman/)**
 
 ### FORMACIÓN ACADÉMICA - CERTIFICACIONES
 
 ---
 
-<details>
+#### Instituto El Buen Pastor
 
-<summary>Carrera | Profesión</summary>
+Desarrollo de Sistemas de Información
 
-#### Desarrollo de Sistemas de Información
+**Cursos**
 
-Instituto El Buen Pastor - IBP - Julio 2022 Lima, Perú.
-
-</details>
-
-<details>
-
-<summary>Ingles</summary>
-
-#### Ingles básico
-
-Instituto El Buen Pastor - IBP - 2020 Lima, Perú
-
-</details>
-
-<details>
-
-<summary>Cursos</summary>
-
-#### Especialización en Java
-
-Instituto Cibertec - 2024 - actualidad
-
-</details>
+- [Cibertec - Java 17 Fundamentals Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-fundamentals-developer-online/)
+- [Cibertec - Java 17 Front-End Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-front-end-developer-online/)
+- [Cibertec - Java 17 Web Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-web-developer-online/)
+- [Cibertec - Java 17 Back-End Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-back-end-developer-online/)
 
 ### [TECNOLOGÍAS](#user-content-technologies) :link:
 
@@ -115,22 +99,22 @@ Instituto Cibertec - 2024 - actualidad
 
 <!-- Java -->
 
-[![Static Badge](https://img.shields.io/badge/Java-java?style=plastic&logo=java&color=red)](https://docs.oracle.com/javase/8/docs/api/)<!-- Postgres -->
-[![Static Badge](https://img.shields.io/badge/PostgreSQL-postgresql?style=plastic&logo=postgresql&logoColor=white&color=blue)](https://www.postgresql.org/)<!-- MySql -->
-[![Static Badge](https://img.shields.io/badge/MySQL-mysql?style=plastic&logo=mysql&logoColor=white&labelColor=blue&color=blue)](https://dev.mysql.com/doc/)
+[![Static Badge](https://img.shields.io/badge/Java-java?style=square&logo=java&color=red)](https://docs.oracle.com/javase/8/docs/api/)<!-- MySql -->
+[![Static Badge](https://img.shields.io/badge/MySQL-mysql?style=square&logo=mysql&logoColor=white&labelColor=blue&color=blue)](https://dev.mysql.com/doc/)<!-- Spring --> [![Static Badge](https://img.shields.io/badge/Spring-spring?style=square&logo=spring&logoColor=white&labelColor=green&color=green)](https://spring.io/)<!-- Spring boot --> [![Static Badge](https://img.shields.io/badge/Spring_Boot-springboot?style=square&logo=springboot&logoColor=white&labelColor=green&color=green)](https://spring.io/projects/spring-boot)
 
 <!-- Javascript -->
 
-[![Static Badge](https://img.shields.io/badge/JavaScript-javascript?style=plastic&logo=javascript&labelColor=black&color=yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<!-- Typescript -->
-[![Static Badge](https://img.shields.io/badge/TypeScript-typescript?style=plastic&logo=typescript&logoColor=white&color=%230988fe)](https://www.typescriptlang.org/)<!-- Angular -->
-[![Static Badge](https://img.shields.io/badge/Angular-angular?style=plastic&logo=angular&labelColor=%23e11d48&color=%23e11d48)](https://angular.io/)<!-- Html -->
-[![Static Badge](https://img.shields.io/badge/HTML5-html5?style=plastic&logo=html5&logoColor=white&color=orange)](https://developer.mozilla.org/es/docs/Web/HTML)<!-- Css -->
-[![Static Badge](https://img.shields.io/badge/CSS3-css3?style=plastic&logo=css3&color=%231398fe)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![Static Badge](https://img.shields.io/badge/JavaScript-javascript?style=square&logo=javascript&logoColor=white&labelColor=yellow&color=yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<!-- Typescript -->
+[![Static Badge](https://img.shields.io/badge/TypeScript-typescript?style=square&logo=typescript&logoColor=white&color=%230988fe)](https://www.typescriptlang.org/)<!-- React -->
+[![Static Badge](https://img.shields.io/badge/React-react?style=square&logo=react&labelColor=black&color=%230284c7)](https://react.dev/)<!-- Html -->
+[![Static Badge](https://img.shields.io/badge/HTML5-html5?style=square&logo=html5&logoColor=white&color=orange)](https://developer.mozilla.org/es/docs/Web/HTML)<!-- Css -->
+[![Static Badge](https://img.shields.io/badge/CSS3-css3?style=square&logo=css3&color=blue)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![Static Badge](https://img.shields.io/badge/tailwindCSS-tailwindcss?style=square&logo=tailwindcss&color=white)](https://tailwindcss.com/)
 
 <!-- Git -->
 
-[![Static Badge](https://img.shields.io/badge/git-git?style=plastic&logo=git&color=%2318181b)](https://git-scm.com/)<!-- Bruno -->
-[![Static Badge](https://img.shields.io/badge/Bruno-bruno?style=plastic&logo=bruno&color=%2318181b)](https://docs.usebruno.com/)
+[![Static Badge](https://img.shields.io/badge/Git-git?style=square&logo=git&logoColor=white&labelColor=orangered&color=orangered)](https://git-scm.com/)<!-- Bruno -->
+[![Static Badge](https://img.shields.io/badge/Bruno-bruno?style=square&logo=bruno&logoColor=white&labelColor=peru&color=peru)](https://docs.usebruno.com/)
 
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJS-nodejs?style=plastic&logo=node.js&labelColor=black&color=%23339933)](https://nodejs.org/docs/latest/api/) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-express?style=plastic&logo=express&labelColor=black&color=white)](https://expressjs.com/) -->
@@ -142,6 +126,11 @@ Instituto Cibertec - 2024 - actualidad
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJs-nodejs?style=plastic&logo=node.js&labelColor=white)](https://nodejs.org/en) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-expressjs?style=plastic&logo=express&labelColor=%23141414&color=white)](https://expressjs.com/) -->
 
+### [IDIOMAS](#language) :link:
+
+- Español - Nativo
+- Ingles - B1
+
 ### [CONTACTO](#contact-me) :link:
 
 ---
@@ -149,7 +138,7 @@ Instituto Cibertec - 2024 - actualidad
 ¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente intercambiar experiencias, no dudes en contactarme.
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)
-[![Static Badge](https://img.shields.io/badge/Twitter-Pedro%20Purihuaman?style=social&logo=twitter&label=Pedro%20Purihuaman)](https://twitter.com/puriihuaman)
+[![Static Badge](https://img.shields.io/badge/Twitter-Pedro%20Purihuaman?style=social&logo=x&label=Pedro%20Purihuaman)](https://twitter.com/puriihuaman)
 <br/>
 ![Static Badge](https://img.shields.io/badge/Gmail-pedropuriihuaman?style=social&logo=Gmail&label=pedropuriihuaman%40gmail.com)
 
