@@ -3,62 +3,65 @@ import Contact from "./Contact.astro";
 ---
 
 <style>
-	.hero {
-		font-family: var(--heading-font);
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		text-transform: uppercase;
-	}
+  .hero-info {
+    font-family: var(--heading-font);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--space-2);
+  }
 
-	.title {
-		--purple: #a855f7;
-		--blue: #06a2f1;
-		position: relative;
-		font-size: var(--fontSizes-4xl);
-		color: transparent;
-		margin-bottom: var(--space-4);
-		background: linear-gradient(
-			to right,
-			var(--purple) 10%,
-			var(--blue) 40% 60%,
-			var(--purple) 90%
-		);
-		background-size: 200% auto;
-		background-clip: text;
-		color: transparent;
-		-webkit-background-clip: text;
-		animation: shine 6s linear infinite;
-		background-image: linear-gradient(
-			to right,
-			var(--purple) 10%,
-			var(--blue) 40% 60%,
-			var(--purple) 90%
-		);
-		background-color: initial;
+  .title {
+    --purple: #a855f7;
+    --blue: #06a2f1;
+    position: relative;
+    font-size: var(--fontSizes-4xl);
+    color: transparent;
+    /* margin-bottom: var(--space-4); */
+    background: linear-gradient(
+      to right,
+      var(--purple) 10%,
+      var(--blue) 40% 60%,
+      var(--purple) 90%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: shine 6s linear infinite;
+    background-image: linear-gradient(
+      to right,
+      var(--purple) 10%,
+      var(--blue) 40% 60%,
+      var(--purple) 90%
+    );
+    background-color: initial;
 
-		@media (width >= 768px) {
-			font-size: var(--fontSizes-5xl);
-		}
-	}
+    @media (width >= 768px) {
+      font-size: var(--fontSizes-5xl);
+    }
+  }
 
-	.my-name {
-		font-size: var(--fontSizes-3xl);
+  .my-name {
+    font-size: var(--fontSizes-3xl);
 
-		@media (width >= 768px) {
-			font-size: var(--fontSizes-4xl);
-		}
-	}
-	@keyframes shine {
-		100% {
-			background-position: 200% center;
-		}
-	}
+    @media (width >= 768px) {
+      font-size: var(--fontSizes-4xl);
+    }
+  }
+  @keyframes shine {
+    100% {
+      background-position: 200% center;
+    }
+  }
 </style>
 
-<div class="hero">
-	<h1 class="title">Desarrollador Backend</h1>
-	<h2 class="my-name">Pedro Purihuaman</h2>
+<div class="hero-info">
+  <h1 class="title">Desarrollador Backend</h1>
+  <h2 class="my-name">Pedro Purihuaman</h2>
 
-	<Contact />
+  <Contact />
 </div>

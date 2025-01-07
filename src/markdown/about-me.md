@@ -3,39 +3,59 @@ title: Sobre mí
 description: Información sobre mí
 ---
 
-<article class="card">
+<section class="container summary">
+
+<div class="card">
 <header class="card-header">
-<div class="card-icon">📖</div>
+<span class="card-icon">📖</span>
 
 ### Sobre Mí
+
 </header>
 
-¡Hola! Me llamo Pedro, técnico en **Desarrollo de Sistemas de Información**, con un enfoque fuerte en el **desarrollo backend**.
+Desarrollador de Software con formación técnica en **Desarrollo de Sistemas de Información**, desempeño como **desarrollador back-end con Java**.  
+Experiencia práctica en desarrollo de sistemas web con Java y Node.js mediante proyectos académicos y hackáthones, con sólidos conocimientos en Programación Orientada a Objetos (POO), Spring Boot, Express.js y metodologías ágiles como Scrum.
 
-</article>
+</div>
+</section>
 
+<section class="container education">
 <article class="card">
 <header class="card-header">
 <div class="card-icon">🎓</div>
 
 ### Educación
+
 </header>
+<div class="education-content">
 
-- Me gradué como técnico en **Desarrollo de Sistemas de Información**, en el Instituto [El Buen Pastor](https://www.ibp.edu.pe/).
+#### [Instituto El Buen Pastor](https://www.ibp.edu.pe/)
 
-- Curse una especialización de Java en el Instituto [Cibertec](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiMmcvQvrKKAxX3REgAHfViPbsYABABGgJjZQ&ae=2&aspm=1&co=1&ase=5&gclid=CjwKCAiAgoq7BhBxEiwAVcW0LN8vf5j1boW1RWpSGEZzGw0sNzn0A0YEjKvbITlOlMm5Ps2l34UFHRoCOsgQAvD_BwE&ohost=www.google.com&cid=CAESVuD2pRx_ivinYWwJSDCpq_LcWTiuG3ooYG98QeKhix7_cjKl8cHJzJz0SVwiE36PxCGWx6hEyrVmLhswMNoRfgyE0B8Qq_m8uZ-O-vOGLlmGQ8jYSt20&sig=AOD64_2JHiyQnH7t1abLkj5eJFl4fcduOg&q&adurl&ved=2ahUKEwi3ocbQvrKKAxXmppUCHaSQEGsQ0Qx6BAgKEAE)
+Desarrollo de Sistemas de Información
 
+**Cursos**
+
+- [Cibertec - Java 17 Fundamentals Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-fundamentals-developer-online/)
+- [Cibertec - Java 17 Front-End Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-front-end-developer-online/)
+- [Cibertec - Java 17 Web Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-web-developer-online/)
+- [Cibertec - Java 17 Back-End Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-back-end-developer-online/)
+
+</div>
 </article>
+</section>
 
+<section class="container goals">
 <article class="card">
 <header class="card-header">
 <div class="card-icon">🧠</div>
 
 ### Objetivos
+
 </header>
 
-- Diseñar soluciones escalables y eficientes, implementando buenas prácticas de desarrollo.
-- Aprender nuevas metodologías de desarrollo como Agile, Scrum, DevOps, etc.
-- Contribuir en proyectos de código abierto para aprender de otros desarrolladores y dar algo a la comunidad.
+- Diseñar e implementar soluciones escalables, eficientes y sostenibles, siguiendo buenas prácticas de desarrollo y estándares de calidad.
+- articipar activamente en proyectos de código abierto, aprendiendo de otros desarrolladores, mejorando habilidades prácticas y contribuyendo al crecimiento de la comunidad tecnológica.
+- Ampliar conocimientos en arquitectura de software, patrones de diseño y principios SOLID para crear aplicaciones robustas y mantenibles.
 
 </article>
+</section>

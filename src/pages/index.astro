@@ -12,32 +12,20 @@ const title = "Puriihuaman";
 const description = "Puriihuaman - Portafolio personal";
 ---
 
-<style>
-	.about {
-		--columns: 1;
-		display: grid;
-		grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-		gap: var(--space-4);
-		padding-bottom: var(--space-4);
-
-		@media (width >= 1024px) {
-			--columns: 2;
-		}
-	}
-</style>
-
 <BaseLayout title={title} description={description}>
-	<Hero />
+  <section class="about">
+    <Hero />
 
-	<section class="container about">
-		<Content title={title} />
+    <Content title={title} />
 
-		<article class="card">
-			<header class="card-header">
-				<div class="card-icon">⚙</div>
-				<h3>Tecnologías</h3>
-			</header>
-			<Skills />
-		</article>
-	</section>
+    <section class="container skills">
+      <article class="card">
+        <header class="card-header">
+          <div class="card-icon">⚙</div>
+          <h3>Tecnologías</h3>
+        </header>
+        <Skills />
+      </article>
+    </section>
+  </section>
 </BaseLayout>

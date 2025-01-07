@@ -9,9 +9,15 @@ export const SKILLS: Skill[] = [
 	},
 	{
 		id: crypto.randomUUID(),
-		href: "https://www.postgresql.org/",
-		icon: "postgresql",
-		text: "PostgreSQL",
+		href: "https://spring.io/projects/spring-boot",
+		icon: "spring",
+		text: "Spring Boot",
+	},
+	{
+		id: crypto.randomUUID(),
+		href: "https://www.mysql.com/",
+		icon: "mysql",
+		text: "MySQL",
 	},
 	{
 		id: crypto.randomUUID(),
@@ -27,9 +33,9 @@ export const SKILLS: Skill[] = [
 	},
 	{
 		id: crypto.randomUUID(),
-		href: "https://angular.io/",
-		icon: "angular",
-		text: "Angular",
+		href: "https://es.react.dev/learn",
+		icon: "react",
+		text: "React",
 	},
 	{
 		id: crypto.randomUUID(),

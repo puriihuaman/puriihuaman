@@ -9,32 +9,31 @@ import "./_project.css";
 
 let technology: string = "todos";
 
+const { Content } = await import("@markdown/projects.md");
+
 const { repositories, hasError, isLoading, error } =
-	await fetchRepositories(technology);
+  await fetchRepositories(technology);
 
 const title = "Puriihuaman";
 const description = "Proyectos";
 ---
 
 <BaseLayout title={title} description={description}>
-	<section class="container project">
-		<div class="project-header">
-			<h2 class="title">Proyectos</h2>
-			<hr />
-		</div>
+  <section class="container project">
+    <div class="projects">
+      {isLoading && <Loading />}
 
-		<div class="projects">
-			{isLoading && <Loading />}
+      {error && <AlertMessage error={error} />}
 
-			{error && <AlertMessage error={error} />}
+      <div class="project-gallery">
+        <Content title={title} />
 
-			<div class="project-gallery">
-				{
-					repositories.map((repository: IRepository) => (
-						<ProjectCard repository={repository} />
-					))
-				}
-			</div>
-		</div>
-	</section>
+        {
+          repositories.map((repository: IRepository) => (
+            <ProjectCard repository={repository} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

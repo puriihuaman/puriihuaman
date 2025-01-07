@@ -1,64 +1,59 @@
 ---
 import type { IRepository } from "@interfaces/IRepository";
-import { Icon } from "astro-icon/components";
 import "./project-card.css";
 
 interface Props {
-	repository: IRepository;
+  repository: IRepository;
 }
 
 const changeName = (projectName: string) => {
-	return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
+  return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
 };
 
 const formateDate = (date: string): string =>
-	String(new Date(date).toLocaleDateString());
+  String(new Date(date).getFullYear().toString());
 
 const { repository } = Astro.props;
 ---
 
-<article class="card-project">
-	<div class="card-container">
-		<p class="card-date">
-			<span>{formateDate(repository.updated_at)}</span>
-		</p>
+<article class="project-card">
+  <div class="project-card-container">
+    <div class="project-card-header">
+      <h3 class="card-title">{changeName(repository.name)}</h3>
 
-		<div class="card-content">
-			<h3 class="card-title">{changeName(repository.name)}</h3>
+      <p>{formateDate(repository.updated_at)}</p>
+    </div>
 
-			<p>{repository.description}</p>
-		</div>
+    <p>{repository.description}</p>
 
-		<footer class="card-footer">
-			<div class="card-links">
-				<a
-					class="link"
-					href={repository.homepage || ""}
-					title={repository.name}
-					aria-label="Go to project demo"
-					rel="nofollow noopener noreferrer"
-					target="_blank"
-				>
-					Demo
-					<Icon name="link" />
-				</a>
+    <ul>
+      <li>
+        {repository.topics.map((topic: string): any => topic + " - ")}
+      </li>
+    </ul>
 
-				<a
-					class="github"
-					href={repository.html_url}
-					title={repository.name}
-					aria-label="Go to project demo"
-					rel="nofollow noopener noreferrer"
-					target="_blank"
-				>
-					Código
-					<Icon name="github" />
-				</a>
-			</div>
+    <footer class="project-card-footer">
+      <a
+        class="link"
+        href={repository.homepage || ""}
+        title={repository.name}
+        aria-label="Go to project demo"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        Demo
+      </a>
 
-			<div class="card-icon">
-				{repository.topics.map((topic: string): any => <Icon name={topic} />)}
-			</div>
-		</footer>
-	</div>
+      <a
+        class="github"
+        href={repository.html_url}
+        title={repository.name}
+        aria-label="Go to project demo"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        Código
+      </a>
+    </footer>
+  </div>
 </article>

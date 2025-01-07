@@ -6,57 +6,63 @@ html {
 }
 
 body {
-	display: grid;
-	gap: var(--space-4);
-	max-width: var(--sizes-7xl);
+	// display: grid;
+	// gap: var(--space-4);
+	// max-width: var(--sizes-7xl);
 	min-height: 100vh;
-	margin-left: auto;
-	margin-right: auto;
-	padding: var(--space-6) var(--space-4);
+	// margin-left: auto;
+	// margin-right: auto;
+	// padding: var(--space-6) var(--space-4);
 	background-color: transparent;
 	transition: var(--transition-property-common),
 		var(--transition-easing-ease-in-out), var(--transition-duration-300);
 
 	@media (width >=1024px) {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		align-items: center;
-		padding-top: 0;
-		padding-bottom: 0;
+		// grid-template-columns: repeat(2, minmax(0, 1fr));
+		// align-items: center;
+		// padding-top: 0;
+		// padding-bottom: 0;
 	}
 
-	&::after,
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		z-index: var(--zIndices-hide);
-		width: 100vw;
-		height: 100vh;
-		border-radius: var(--radii-full);
-	}
+	// &::after,
+	// &::before {
+	// 	content: "";
+	// 	display: block;
+	// 	position: absolute;
+	// 	z-index: var(--zIndices-hide);
+	// 	width: 100vw;
+	// 	height: 100vh;
+	// 	min-height: 50%;
+	// 	border-radius: var(--radii-full);
+	// }
 
-	&::before {
-		top: 0;
-		left: -50%;
-		background: radial-gradient(41.13% 41.13% at 56.2% 51.69%,
-				rgba(168, 85, 247, 0.1) 0%,
-				rgba(168, 85, 247, 0) 100%)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-		;
-		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	}
+	// &::before {
+	// 	top: 0;
+	// 	left: 0;
+	// 	background: radial-gradient(41.13% 41.13% at 56.2% 51.69%,
+	// 			rgba(168, 85, 247, 0.1) 0%,
+	// 			rgba(168, 85, 247, 0) 100%);
+	// 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	// }
 
-	&::after {
-		top: -50%;
-		right: -50%;
+	// &::after {
+	// 	top: 50%;
+	// 	right: 0;
 
-		background: radial-gradient(41.13% 41.13% at 56.2% 51.69%,
-				rgba(20, 132, 255, 0.2) 0%,
-				rgba(20, 132, 255, 0) 100%)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-		;
-		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	}
+	// 	background: radial-gradient(41.13% 41.13% at 56.2% 51.69%,
+	// 			rgba(20, 132, 255, 0.2) 0%,
+	// 			rgba(20, 132, 255, 0) 100%);
+	// 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	// }
+}
+
+.container {
+	width: var(--sizes-full);
+	max-width: var(--sizes-3xl);
+	padding: 0 var(--space-4);
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
 }
 
 hr {

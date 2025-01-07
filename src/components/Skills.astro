@@ -5,20 +5,20 @@ import { Icon } from "astro-icon/components";
 import "./skill.css";
 ---
 
-<ul class="skills">
-	{
-		SKILLS.map((link: Skill) => (
-			<li class="skill">
-				<a
-					href={link.href}
-					class="skill-link"
-					target="_blank"
-					title={link.text}
-				>
-					<Icon name={link.icon} class="skill-icon" />
-				</a>
-				<span class="skill-text">{link.text}</span>
-			</li>
-		))
-	}
+<ul class="technologies">
+  {
+    SKILLS.map((link: Skill) => (
+      <li class="technology">
+        <a
+          href={link.href}
+          class="technology-link"
+          target="_blank"
+          title={link.text}
+        >
+          <Icon name={link.icon} class="technology-icon" />
+        </a>
+        <span class="technology-text">{link.text}</span>
+      </li>
+    ))
+  }
 </ul>

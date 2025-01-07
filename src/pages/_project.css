@@ -1,54 +1,15 @@
 .project {
-	padding-top: var(--space-8);
-	min-height: 100vh;
-}
-
-.project-header {
-	& .title  {
-		margin-bottom: var(--space-1);
-	}
-
-	& hr {
-		background-color: var(--persian-blue-500);
-		animation: animation-rule 4s linear infinite alternate;
-	}
-}
-@keyframes animation-rule {
-	from {
-		width: 0;
-	}
-	to {
-		width: 200px;
-	}
-}
-
-.title {
-	--purple: #a855f7;
-	--blue: #06a2f1;
-	font-family: var(--heading-font);
-	font-size: var(--fontSizes-xl);
-	width: fit-content;
-	text-transform: uppercase;
-
-	@media (width >= 768px) {
-		font-size: var(--fontSizes-2xl);
-	}
-	@media (width >= 1024px) {
-		font-size: var(--fontSizes-3xl);
-	}
-}
-
-.projects {
-	padding-top: var(--space-8);
+  width: var(--sizes-full);
+  padding: var(--space-8) var(--space-4) var(--space-10);
 }
 
 .project-gallery {
-	--columns: 1;
-	display: grid;
-	grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-	gap: var(--space-8);
+  --columns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: var(--space-8);
 
-	@media (width >= 1024px) {
-		--columns: 2;
-	}
+  @media (width >= 640px) {
+    --columns: 2;
+  }
 }
