@@ -19,18 +19,20 @@ Programación Orientada a Objetos (POO), Spring Boot, Express y metodologías
 
 ---
 
-### [Santa’s Sight](https://santas-sight.vercel.app/dashboard) ([Devathon 🥈](https://programacion-es.dev/devathon-viii-edition/) -  [Programación En Español](https://programacion-es.dev/))
+### [Santa’s Sight](https://santas-sight.vercel.app/dashboard) ([Devathon](https://programacion-es.dev/devathon-viii-edition/) -  [Programación En Español](https://programacion-es.dev/))
 
 **Desarrollador Back-End**
 
 _Madrid, España. Nov. 2024 - Dic. 2024_
 
-- Diseñar el esquema de la base de datos en Prisma ORM.
-- Desarrollar funcionalidades de la REST API de la aplicación.
-- Completar los requerimientos en el tiempo estimado (6 semanas).
-- 🥈Segundo lugar en la devathon.
-- Tecnología(s) utilizadas:
+- [x] Diseñar el esquema de la base de datos en Prisma ORM.
+- [x] Desarrollar funcionalidades de la REST API de la aplicación.
+- [x] Completar los requerimientos en el tiempo estimado (6 semanas).
+- [x] Tecnología(s) utilizadas:
   - TypeScript, Node.js, Express.js, PostgreSQL, Prisma ORM, Postman.
+
+> [!IMPORTANT]
+> Segundo lugar en la devathon 🥈.
 
 Codigo: [Front-End](https://github.com/TEAM3-ED8/front-end) | [Back-End](https://github.com/TEAM3-ED8/back-end)
 
@@ -40,10 +42,10 @@ Codigo: [Front-End](https://github.com/TEAM3-ED8/front-end) | [Back-End](https:/
 
 _Lima, Perú. Dic. 2024 - Ene. 2025_
 
-- Diseñar la base de datos.
-- Desarrollar las funcionalidades de API Rest.
-- Implementar seguridad con JWT (Json Web Token).
-- Tecnología(s) utilizadas:
+- [x] Diseñar la base de datos.
+- [x] Desarrollar las funcionalidades de API Rest.
+- [x] Implementar seguridad con JWT (Json Web Token).
+- [x] Tecnología(s) utilizadas:
   - Spring Boot, Spring JPA, Spring Security, MySQL, Bruno (Postman).
 
 Código: [Back-End](https://github.com/puriihuaman/api-electro)
