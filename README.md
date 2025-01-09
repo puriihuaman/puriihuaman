@@ -19,50 +19,34 @@ Programación Orientada a Objetos (POO), Spring Boot, Express y metodologías
 
 ---
 
-<details open>
-<summary>Sistema de facturación</summary>
+### [Santa’s Sight](https://santas-sight.vercel.app/dashboard) ([Devathon 🥈](https://programacion-es.dev/devathon-viii-edition/) -  [Programación En Español](https://programacion-es.dev/))
 
-> Junio 2024 - actualidad
+**Desarrollador Back-End**
 
-    Aplicación web para administrar las compras y ventas de un bodega.
+_Madrid, España. Nov. 2024 - Dic. 2024_
 
-**Cargo o labor: _Fullstack_**
+- Diseñar el esquema de la base de datos en Prisma ORM.
+- Desarrollar funcionalidades de la REST API de la aplicación.
+- Completar los requerimientos en el tiempo estimado (6 semanas).
+- 🥈Segundo lugar en la devathon.
+- Tecnología(s) utilizadas:
+  - TypeScript, Node.js, Express.js, PostgreSQL, Prisma ORM, Postman.
 
-_Tareas_:
+Codigo: [Front-End](https://github.com/TEAM3-ED8/front-end) | [Back-End](https://github.com/TEAM3-ED8/back-end)
 
-    Elaborar el modelado de la base de datos, también el diseño lógico y físico.
+### [API Electro](https://github.com/puriihuaman/api-electro) (Cibertec)
 
-_Logro_:
+**Desarrollador Back-End**
 
-_Tecnologías_:
+_Lima, Perú. Dic. 2024 - Ene. 2025_
 
-    Java 17, JSP, JDBC, PostgreSQL, Tailwindcss
+- Diseñar la base de datos.
+- Desarrollar las funcionalidades de API Rest.
+- Implementar seguridad con JWT (Json Web Token).
+- Tecnología(s) utilizadas:
+  - Spring Boot, Spring JPA, Spring Security, MySQL, Bruno (Postman).
 
-</details>
-
-<details open>
-<summary>Web para restaurante</summary>
-
-> Agosto 2024 - Setiembre 2024
-
-    Sitio web para restaurante, para administrar pedidos de clientes.
-
-**Cargo o labor: _Frontend_**
-
-_Tareas:_
-
-    Crear una Landing Page
-
-_Logro:_
-
-_Tecnologías_:
-
-     Angular 18, Scss
-
-_Demo_:
-[![Demo de restaurante](/public/assets/images/webp/restaurant.webp) Visualizar demo](https://restaurant-puriihuaman.netlify.app/)
-
-</details>
+Código: [Back-End](https://github.com/puriihuaman/api-electro)
 
 ### ACTUALIDAD
 
