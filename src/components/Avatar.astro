@@ -3,56 +3,45 @@ const imageWebp = "/assets/images/webp/puriihuaman.webp";
 const imagePng = "/assets/images/puriihuaman.png";
 ---
 
-<style>
-  .picture {
-    flex-shrink: 0;
-    display: block;
-    width: auto;
-    height: auto;
-    /* max-width: var(--sizes-full); */
-    border-radius: var(--radii-md);
-  }
-
-  .image {
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* margin-bottom: var(--space-6); */
-    border-radius: var(--radii-full);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center;
-    width: var(--sizes-20);
-    height: var(--sizes-20);
-
-    @media screen and (min-width: 640px) {
-      width: var(--sizes-28);
-      height: var(--sizes-28);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      mask-image: linear-gradient(var(--gray-50) 60%, transparent);
-    }
-  }
-</style>
-
 <picture class="picture">
-  <source srcset={imageWebp} type="image/webp" class="image" />
-  <!-- <img
-        src="/_astro/photo.rIaDEGkm_13BBec.webp"
-        alt="John Doe"
-        width="512"
-        height="512"
-        loading="lazy"
-        decoding="async"
-        class="sm:w-28 sm:h-28 w-20 h-20 aspect-square rounded-md flex-shrink-0"
-      /> -->
-  <img
-    class="image"
-    alt="Foto Pedro Purihuaman"
-    src={imagePng}
-    width="125"
-    height="125"
-    decoding="async"
-    loading="lazy"
-  />
+	<source srcset={imageWebp} type="image/webp" class="image" />
+
+	<img
+		class="image"
+		alt="Foto Pedro Purihuaman"
+		src={imagePng}
+		width="125"
+		height="125"
+		decoding="async"
+		loading="lazy"
+	/>
 </picture>
+
+<style>
+	.picture {
+		flex-shrink: 0;
+		width: auto;
+		height: auto;
+		border-radius: var(--radii-md);
+		display: none;
+
+		@media (min-width: 768px) {
+			display: block;
+		}
+	}
+
+	.image {
+		width: var(--sizes-20);
+		height: var(--sizes-20);
+		border-radius: var(--radii-full);
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: center;
+		mask-image: linear-gradient(var(--dark-50) 60%, transparent);
+
+		@media screen and (min-width: 768px) {
+			width: var(--sizes-60);
+			height: auto;
+		}
+	}
+</style>

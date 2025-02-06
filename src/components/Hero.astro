@@ -4,80 +4,114 @@ import Contact from "./Contact.astro";
 ---
 
 <style>
-  .hero-container {
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-1);
-  }
+	.hero,
+	.hero-container,
+	.hero-content {
+		display: flex;
+	}
 
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: var(--space-3);
-  }
-  .hero-title {
-    font-size: var(--fontSizes-2xl);
-    font-weight: bold;
-    font-family: var(--heading-font);
-    text-transform: uppercase;
-  }
-  .hero-text {
-    font-size: var(--fontSizes-md);
-    color: var(--gray-700);
-  }
+	.hero {
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - var(--sizes-16));
+		overflow: hidden;
+		transition: var(--transition-property-colors),
+			var(--transition-easing-ease-in-out), var(--transition-duration-300);
 
-  .hero-country {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    color: var(--gray-700);
-    font-size: var(--fontSizes-sm);
-    text-wrap: nowrap;
-    &:hover {
-      text-decoration: underline;
-    }
-    & svg {
-      width: var(--sizes-4);
-      height: var(--sizes-4);
-    }
-  }
+		background-image: url("/assets/images/webp/hero.webp");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-origin: border-box;
+		background-clip: border-box;
+		background-blend-mode: darken;
+		background-attachment: fixed;
+		background-color: #00000090;
+	}
+
+	.hero-container {
+		flex-direction: row;
+		gap: var(--space-2);
+	}
+
+	.hero-content {
+		flex-direction: column;
+		flex-grow: 1;
+		gap: var(--space-5);
+	}
+	.hero-title {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: clamp(var(--fontSizes-5xl), 6vw, var(--fontSizes-6xl));
+		line-height: var(--lineHeights-10, 0.9);
+		font-weight: var(--font-weight-bold);
+		background: linear-gradient(
+			to bottom right,
+			#40abff,
+			#40abff,
+			#c58fff,
+			#c58fff
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@media (min-width: 768px) {
+			line-height: var(--lineHeights-none, 0.9);
+			text-align: start;
+		}
+	}
+
+	.hero-text {
+		--font-size: var(--fontSizes-md);
+
+		text-align: center;
+		font-size: var(--font-size);
+		font-style: italic;
+		color: light-dark(var(--dark-100), var(--dark-900));
+
+		@media (min-width: 640px) {
+			--font-size: var(--fontSizes-lg);
+		}
+
+		@media (min-width: 768px) {
+			text-align: start;
+		}
+
+		@media (min-width: 1024px) {
+			--font-size: var(--fontSizes-xl);
+		}
+	}
+
+	.hero-phrase {
+		text-align: center;
+		margin-top: var(--space-5);
+		color: light-dark(var(--dark-300), var(--dark-700));
+
+		@media (min-width: 768px) {
+			text-align: start;
+		}
+	}
 </style>
 
 <section class="hero">
-  <div class="container">
-    <section class="hero-container">
-      <div class="hero-content">
-        <div>
-          <h1 class="hero-title">Pedro Purihuaman</h1>
-          <p class="hero-text">Desarrollador Backend</p>
-        </div>
+	<div class="container">
+		<section class="hero-container">
+			<div class="hero-content">
+				<div>
+					<h1 class="hero-title">Pedro Purihuaman</h1>
+					<p class="hero-text">
+						Desarrollador Backend / Desarrollo de Sistemas
+					</p>
 
-        <Contact />
+					<p class="hero-phrase">
+						Desarrollando el núcleo robusto y escalable de tu aplicación con
+						tecnología moderna y alto rendimiento.
+					</p>
+				</div>
 
-        <a
-          href="https://google.com/maps/place/Lima,+PE"
-          target="_blank"
-          class="hero-country"
-        >
-          <svg
-            width="1em"
-            height="1em"
-            aria-label="globe-icon"
-            data-icon="mdi:globe"
-          >
-            <symbol id="ai:mdi:globe" viewBox="0 0 24 24"
-              ><path
-                fill="currentColor"
-                d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93c0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"
-                data-darkreader-inline-fill=""
-                style="--darkreader-inline-fill: currentColor;"></path></symbol
-            ><use href="#ai:mdi:globe"></use>
-          </svg> Lima, Perú
-        </a>
-      </div>
+				<Contact />
+			</div>
 
-      <Avatar />
-    </section>
-  </div>
+			<Avatar />
+		</section>
+	</div>
 </section>

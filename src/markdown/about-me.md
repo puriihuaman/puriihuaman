@@ -5,57 +5,132 @@ description: Información sobre mí
 
 <section class="container summary">
 
-<div class="card">
-<header class="card-header">
-<span class="card-icon">📖</span>
+<div class="summary-biography">
 
-### Sobre Mí
+## Sobre Mí
 
-</header>
+![Code](/assets/images/webp/banner.webp)
 
 Desarrollador de Software con formación técnica en **Desarrollo de Sistemas de Información**, desempeño como **desarrollador back-end con Java**.  
 Experiencia práctica en desarrollo de sistemas web con Java y Node.js mediante proyectos académicos y hackáthones, con sólidos conocimientos en Programación Orientada a Objetos (POO), Spring Boot, Express.js y metodologías ágiles como Scrum.
 
 </div>
-</section>
 
-<section class="container education">
-<article class="card">
-<header class="card-header">
-<div class="card-icon">🎓</div>
+<section class="summary-info">
+<article class="summary-card">
+<div class="summary-header">
+<div class="summary-icon">🎓</div>
 
-### Educación
+### Formación
 
-</header>
-<div class="education-content">
-
-#### [Instituto El Buen Pastor](https://www.ibp.edu.pe/)
+</div>
 
 Desarrollo de Sistemas de Información
 
-**Cursos**
+</article>
 
-- [Cibertec - Java 17 Fundamentals Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-fundamentals-developer-online/)
-- [Cibertec - Java 17 Front-End Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-front-end-developer-online/)
-- [Cibertec - Java 17 Web Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-web-developer-online/)
-- [Cibertec - Java 17 Back-End Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-back-end-developer-online/)
+<article class="summary-card">
+<div class="summary-header">
+<div class="summary-icon">💼</div>
+
+### Experiencia
 
 </div>
+
+6 meses en desarrollo web (Back-end).
+
+</article>
+
+<article class="summary-card">
+<div class="summary-header">
+<div class="summary-icon">💡</div>
+
+### Especialidad
+
+</div>
+
+Desarrollo Web (Back-End)
+
 </article>
 </section>
+</section>
 
-<section class="container goals">
-<article class="card">
-<header class="card-header">
-<div class="card-icon">🧠</div>
+<section class="container education">
 
-### Objetivos
+## Educación
 
+<article class="education-card">
+<picture class="education-card-picture">
+	<source srcset="/assets/images/webp/logo_ibp.webp" type="image/webp" class="image" />
+	<img
+		class="education-card-image"
+		alt="Foto Pedro Purihuaman"
+		src="/assets/images/webp/logo_ibp.webp"
+		width="125"
+		height="125"
+		decoding="async"
+		loading="lazy"
+	/>
+</picture>
+
+<div>
+<header class="education-card-header">
+<div class="">
+<h3 class="education-card-title">Desarrollo De Sistemas</h3>
+<p class="education-card-date">2017 - 2022</p>
+</div>
+
+<h3 class="education-card-subtitle">Instituto El Buen Pastor (IBP)</h3>
 </header>
 
-- Diseñar e implementar soluciones escalables, eficientes y sostenibles, siguiendo buenas prácticas de desarrollo y estándares de calidad.
-- articipar activamente en proyectos de código abierto, aprendiendo de otros desarrolladores, mejorando habilidades prácticas y contribuyendo al crecimiento de la comunidad tecnológica.
-- Ampliar conocimientos en arquitectura de software, patrones de diseño y principios SOLID para crear aplicaciones robustas y mantenibles.
+<p class="education-card-description">Carrera enfocada en formar profesionales en tecnologías de la información. El egresado en Desarrollo de Sistemas de Información crea y prueba software según estándares TI, gestiona su implantación y optimiza sistemas según requisitos del cliente. Propone soluciones innovadoras, elige tecnología eficiente y mejora procesos empresariales. Su formación en TIC, liderazgo, comunicación, ética y bilingüismo le permite aportar valor y asegurar el cuidado del medio ambiente.</p>
 
+<footer class="education-card-footer">
+<h4 class="education-card-text">Habilidades principales:</h4>
+
+- Lógica programación.
+- Trabajo en equipo.
+- Scrum.
+- SQL, Java, JavaScript.
+</footer>
+</div>
 </article>
+
+<article class="education-card">
+<picture class="education-card-picture">
+	<source srcset="/assets/images/webp/oracle.webp" type="image/webp" class="image" />
+	<img
+		class="education-card-image"
+		alt="Foto Pedro Purihuaman"
+		src="/assets/images/webp/oracle.webp"
+		width="125"
+		height="125"
+		decoding="async"
+		loading="lazy"
+	/>
+</picture>
+
+<div>
+<header class="education-card-header">
+<div class="">
+<h3 class="education-card-title">Oracle Next Education</h3>
+<p class="education-card-date">Ene. - Actualidad</p>
+</div>
+
+<h3 class="education-card-subtitle">Alura Latam - Oracle</h3>
+</header>
+
+<p class="education-card-description">Programa educativo de Oracle en colaboración con Alura Latam que forma desarrolladores web full stack, integrando tecnologías clave como JavaScript, React, HTML y CSS. El programa fortalece habilidades blandas, como comunicación efectiva y trabajo en equipo.</p>
+
+<footer class="education-card-footer">
+<h4 class="education-card-text">Habilidades principales:</h4>
+
+- Habilidades blandas.
+- Lógica de programación.
+- Scrum.
+- SQL, Java,JavaScript, HTML, CSS.
+</footer>
+</div>
+</article>
+
 </section>

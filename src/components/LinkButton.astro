@@ -2,62 +2,74 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-  href: string;
-  iconId: string;
-  linkClass: string;
+	href: string;
+	iconId: string;
+	linkClass: string;
+	title: string;
 }
 
-const { href, iconId, linkClass } = Astro.props;
+const { href, iconId, linkClass, title } = Astro.props;
 ---
 
 <style lang="scss">
-  .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-1);
-    border: 1px solid var(--gray-700);
-    color: var(--gray-700);
-    aspect-ratio: 1 / 1;
-    width: var(--sizes-8);
-    border-radius: var(--radii-md);
-    transition: var(--transition-property-common),
-      var(--transition-easing-ease-in-out), var(--transition-duration-500);
+	.link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--dark-200);
+		color: var(--dark-200);
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radii-md);
+		transition: var(--transition-property-common),
+			var(--transition-easing-ease-in-out), var(--transition-duration-500);
 
-    &:hover {
-      border-color: var(--gray-200);
-      background-color: var(--gray-100);
-    }
-  }
-  .linkedin {
-    --color-ring: var(--persian-blue-500);
-    color: var(--white);
-    background-color: var(--persian-blue-500);
-    border-color: var(--persian-blue-500);
-    &:hover {
-      --color-ring: var(--persian-blue-600);
-      color: var(--persian-blue-600);
-      background-color: transparent;
-    }
-  }
-  .github {
-    --color-ring: var(--gray-800);
-    background-color: var(--gray-800);
-    color: var(--gray-50);
-    border-color: var(--gray-800);
-    &:hover {
-      color: var(--gray-800);
-      background-color: transparent;
-    }
-  }
+		&:hover {
+			border-color: var(--dark-200);
+			background-color: var(--dark-100);
+		}
+
+		& svg {
+			width: auto;
+		}
+	}
+
+	.linkedin,
+	.github {
+		overflow: hidden;
+		overflow: hidden;
+		min-width: 100px;
+		max-width: 160px;
+		width: 100%;
+
+		&:hover {
+			background-color: transparent;
+		}
+	}
+
+	.linkedin {
+		color: light-dark(var(--dark-50), var(--dark-950));
+		background-color: var(--blue-500);
+		border-color: var(--blue-500);
+
+		&:hover {
+			color: var(--blue-600);
+			border-color: currentColor;
+		}
+	}
+	.github {
+		background-color: var(--dark-100);
+		color: var(--dark-950);
+	}
 </style>
 
 <a
-  href={href}
-  target="_blank"
-  rel="noopener"
-  class="link"
-  class:list={linkClass}
+	href={href}
+	target="_blank"
+	rel="noopener"
+	class="link"
+	class:list={linkClass}
 >
-  <Icon name={iconId} />
+	<span class="link-title">{title}</span>
+	<Icon name={iconId} />
 </a>

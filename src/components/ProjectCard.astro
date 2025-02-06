@@ -3,57 +3,59 @@ import type { IRepository } from "@interfaces/IRepository";
 import "./project-card.css";
 
 interface Props {
-  repository: IRepository;
+	repository: IRepository;
 }
 
 const changeName = (projectName: string) => {
-  return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
+	return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
 };
 
 const formateDate = (date: string): string =>
-  String(new Date(date).getFullYear().toString());
+	String(new Date(date).getFullYear().toString());
 
 const { repository } = Astro.props;
 ---
 
 <article class="project-card">
-  <div class="project-card-container">
-    <div class="project-card-header">
-      <h3 class="card-title">{changeName(repository.name)}</h3>
+	<div class="project-card-container">
+		<h3 class="project-card-title">{changeName(repository.name)}</h3>
 
-      <p>{formateDate(repository.updated_at)}</p>
-    </div>
+		<p>
+			<span class="project-card-date">
+				{formateDate(repository.updated_at)}
+			</span>
+		</p>
 
-    <p>{repository.description}</p>
+		<p class="project-card-description">{repository.description}</p>
 
-    <ul>
-      <li>
-        {repository.topics.map((topic: string): any => topic + " - ")}
-      </li>
-    </ul>
+		<ul>
+			<li>
+				{repository.topics.map((topic: string): any => topic + " - ")}
+			</li>
+		</ul>
 
-    <footer class="project-card-footer">
-      <a
-        class="link"
-        href={repository.homepage || ""}
-        title={repository.name}
-        aria-label="Go to project demo"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        Demo
-      </a>
+		<footer class="project-card-footer">
+			<a
+				class="link"
+				href={repository.homepage || ""}
+				title={repository.name}
+				aria-label="Go to project demo"
+				rel="nofollow noopener noreferrer"
+				target="_blank"
+			>
+				Demo
+			</a>
 
-      <a
-        class="github"
-        href={repository.html_url}
-        title={repository.name}
-        aria-label="Go to project demo"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        Código
-      </a>
-    </footer>
-  </div>
+			<a
+				class="github"
+				href={repository.html_url}
+				title={repository.name}
+				aria-label="Go to project demo"
+				rel="nofollow noopener noreferrer"
+				target="_blank"
+			>
+				Código
+			</a>
+		</footer>
+	</div>
 </article>
