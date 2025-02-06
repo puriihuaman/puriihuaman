@@ -1,6 +1,6 @@
 <article class="project-card">
 
-[![Santa's Sight](/public/assets/images/webp/1.webp)](https://santas-sight.vercel.app/dashboard)
+[![Santa's Sight](/assets/images/webp/1.webp)](https://santas-sight.vercel.app/dashboard)
 
 <div class="project-card-container">
 
