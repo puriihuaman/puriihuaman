@@ -3,4 +3,6 @@ export interface Skill {
 	href: string;
 	icon: string;
 	text: string;
+	description: string | null;
+	tasks: string[];
 }
