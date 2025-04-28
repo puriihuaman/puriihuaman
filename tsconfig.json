@@ -6,9 +6,9 @@
 			"@components/*": ["./src/components/*"],
 			"@layouts/*": ["./src/layouts/*"],
 			"@pages/*": ["./src/pages/*"],
-			"@data/*": ["./src/data/*"],
-			"@interfaces/*": ["./src/interfaces/*"],
-			"@services/*": ["./src/services/*"],
+			"@data/*": ["./src/shared/data/*"],
+			"@models/*": ["./src/shared/models/*"],
+			"@services/*": ["./src/shared/services/*"],
 			"@markdown/*": ["./src/markdown/*"],
 			"@assets/*": ["./src/assets/*"]
 		}

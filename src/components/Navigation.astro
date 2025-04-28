@@ -1,23 +1,23 @@
 ---
-import { MENU_LIST } from "@data/menus";
-import type { Menu } from "@interfaces/menu";
+import {MENU_LIST} from "@data/menus";
+import type {Menu} from "@models/menu";
 import "./navigation.css";
 
-const { pathname } = Astro.url;
+const {pathname} = Astro.url;
 const getPathname = (pathname: string): string =>
-	pathname.toLowerCase().trim().substring(1).replace("/", "");
+  pathname.toLowerCase().trim().substring(1).replace("/", "");
 ---
 
 <nav class="navigation">
-	{
-		MENU_LIST.map(({ href, pathname: path, name }: Menu): any => (
-			<a
-				href={href}
-				class={`navigation-item ${getPathname(pathname) === getPathname(path) ? "active" : ""}`}
-				transition:animate="fade"
-			>
-				{name}
-			</a>
-		))
-	}
+  {
+    MENU_LIST.map(({href, pathname: path, name}: Menu): any => (
+      <a
+        href={href}
+        class={`navigation-item ${getPathname(pathname) === getPathname(path) ? "active" : ""}`}
+        transition:animate="fade"
+      >
+        {name}
+      </a>
+    ))
+  }
 </nav>

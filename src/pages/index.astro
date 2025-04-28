@@ -3,33 +3,35 @@ import Skills from "@components/Skills.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import "./_index.css";
 import Hero from "@components/Hero.astro";
-import { technologies } from "@data/technologies";
-import type { Technology } from "@interfaces/ITechnology";
+import {skillsList} from "@data/skills-list";
+import type {Technology} from "@models/technology";
+
+
 
 const content = await import(`@markdown/about-me.md`);
 
-const { Content } = content;
+const {Content} = content;
 
 const title = "Puriihuaman";
 const description = "Puriihuaman - Portafolio personal";
 ---
 
 <BaseLayout title={title} description={description}>
-	<section class="about">
-		<Hero />
+  <section class="about">
+    <Hero/>
 
-		<Content title={title} />
+    <Content title={title}/>
 
-		<section class="container skills">
-			<h2>Tecnologías</h2>
+    <section class="container skills">
+      <h2>Tecnologías</h2>
 
-			<sections class="skills-content">
-				{
-					technologies.map(({ type, skills }: Technology) => (
-						<Skills technologyType={type} skills={skills} />
-					))
-				}
-			</sections>
-		</section>
-	</section>
+      <section class="skills-content">
+        {
+          skillsList.map(({type, skills}: Technology) => (
+            <Skills technologyType={type} skills={skills}/>
+          ))
+        }
+      </section>
+    </section>
+  </section>
 </BaseLayout>

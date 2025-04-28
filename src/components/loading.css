@@ -1,7 +1,7 @@
 .loading {
 	padding: var(--space-4);
-	color: var(--persian-blue-400);
-	background-color: var(--persian-blue-950);
+	color: var(--primary-400);
+	background-color: var(--primary-950);
 	text-align: center;
 	border: 1px solid currentColor;
 	border-radius: var(--radii-md);

@@ -2,16 +2,16 @@
 import AlertMessage from "@components/AlertMessage.astro";
 import Loading from "@components/Loading.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import type { IRepository } from "@interfaces/IRepository";
+import type {Repository} from "@models/repository";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { fetchRepositories } from "@services/fetch-repositories";
+import {fetchRepositories} from "@services/fetch-repositories";
 import "./_project.css";
 
 let technology: string = "todos";
 
-const { Content } = await import("@markdown/projects.md");
+const {Content} = await import("@markdown/projects.md");
 
-const { repositories, hasError, isLoading, error } =
+const {repositories, hasError, isLoading, error} =
   await fetchRepositories(technology);
 
 const title = "Puriihuaman";
@@ -21,16 +21,18 @@ const description = "Proyectos";
 <BaseLayout title={title} description={description}>
   <section class="container project">
     <div class="projects">
-      {isLoading && <Loading />}
+      {isLoading &&
+        <Loading/>}
 
-      {error && <AlertMessage error={error} />}
+      {error &&
+        <AlertMessage error={error}/>}
 
       <div class="project-gallery">
-        <Content title={title} />
+        <Content title={title}/>
 
         {
-          repositories.map((repository: IRepository) => (
-            <ProjectCard repository={repository} />
+          repositories.map((repository: Repository) => (
+            <ProjectCard repository={repository}/>
           ))
         }
       </div>

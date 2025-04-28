@@ -1,46 +1,35 @@
 ---
-import type { Skill } from "@interfaces/skill";
-import type { TechnologyType } from "@interfaces/technology-type";
 import "./skill.css";
-import { Icon } from "astro-icon/components";
+import {Icon} from "astro-icon/components";
+import type {Skill} from "@models/skill";
+import type {TechnologyTag} from "@models/technology-tag";
 
 interface Props {
-	technologyType: TechnologyType;
-	skills: Skill[];
+  technologyType: TechnologyTag;
+  skills: Skill[];
 }
 
-const { technologyType, skills } = Astro.props;
+const {technologyType, skills} = Astro.props;
 ---
 
 <div>
-	<h3 class="title">
-		{technologyType === "tool" ? "Herramientas" : technologyType}
-	</h3>
+  <h3 class="title">
+    {technologyType === "tool" ? "Herramientas" : technologyType}
+  </h3>
 
-	<ul class="technologies">
-		{
-			skills.map((link: Skill) => (
-				<li class="technology">
-					<details class="technology-details">
-						<summary class="technology-summary">
-							<Icon name={link.icon} class="technology-icon" />
-							<span>{link.text}</span>
-						</summary>
+  <ul class="technologies">
+    {
+      skills.map((link: Skill) => (
+        <li class="technology">
+          <div class="technology-details">
+            <a href={link.href} target="_blank" rel="noopener noreferrer" title="Documentación">
+              <Icon name={link.icon} class="technology-icon"/>
+            </a>
 
-						<div class="technology-details-content">
-							<h3>{link.text}</h3>
-
-							<p>{link.description}</p>
-
-							<ul class="technology-details-list">
-								{link.tasks.map((task: string) => (
-									<li>{task}</li>
-								))}
-							</ul>
-						</div>
-					</details>
-				</li>
-			))
-		}
-	</ul>
+            <span>{link.title}</span>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </div>
