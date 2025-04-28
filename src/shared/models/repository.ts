@@ -72,7 +72,7 @@ export interface Repository {
   allow_forking: boolean;
   is_template: boolean;
   web_commit_signoff_required: boolean;
-  topics: Topic[];
+  topics: string[];
   visibility: string;
   forks: number;
   open_issues: number;
@@ -107,10 +107,6 @@ interface License {
   spdx_id: string;
   url: string;
   node_id: string;
-}
-
-interface Topic {
-  topic: string;
 }
 
 
