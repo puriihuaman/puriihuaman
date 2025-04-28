@@ -1,6 +1,6 @@
-import type { IRepository } from "@interfaces/IRepository";
-import type { SearchAnswer } from "@interfaces/search-answer";
-import { CustomError } from "./custom-error";
+import type { Repository } from "../models/repository.ts";
+import type { SearchAnswer } from "../models/search-answer.ts";
+import { CustomError } from "./custom-error.ts";
 
 const DEFAULT_BRANCH = "start";
 
@@ -38,19 +38,19 @@ export const fetchRepositories = async (
 			);
 		}
 
-		const repositories: IRepository[] = await response.json();
+		const repositories: Repository[] = await response.json();
 
-		const filteredRepositories: IRepository[] = repositories.filter(
-			(repository: IRepository): boolean =>
+		const filteredRepositories: Repository[] = repositories.filter(
+			(repository: Repository): boolean =>
 				repository.default_branch === DEFAULT_BRANCH,
 		);
 
-		const leakedRepositories: IRepository[] = filteredRepositories.filter(
-			(repository: IRepository): boolean =>
+		const leakedRepositories: Repository[] = filteredRepositories.filter(
+			(repository: Repository): boolean =>
 				repository.topics.includes(selectedTechnology),
 		);
 
-		const listOfFilteredRepositories: IRepository[] =
+		const listOfFilteredRepositories: Repository[] =
 			leakedRepositories.length > 0 ? leakedRepositories : filteredRepositories;
 
 		return {

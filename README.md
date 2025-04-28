@@ -70,6 +70,10 @@ Código: [Back-End](https://github.com/puriihuaman/api-electro)
 
 Desarrollo de Sistemas de Información
 
+### Alura Latam - Oracle
+
+Oracle Next Education
+
 **Cursos**
 
 - [Cibertec - Java 17 Fundamentals Developer](https://www.cibertec.edu.pe/cursos-cortos/java-17-fundamentals-developer-online/)
@@ -81,7 +85,7 @@ Desarrollo de Sistemas de Información
 
 ---
 
-<!-- technologies -->
+<!-- skills -->
 
 <!-- Java -->
 
@@ -90,12 +94,15 @@ Desarrollo de Sistemas de Información
 
 <!-- Javascript -->
 
-[![Static Badge](https://img.shields.io/badge/JavaScript-javascript?style=square&logo=javascript&logoColor=white&labelColor=yellow&color=yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<!-- Typescript -->
-[![Static Badge](https://img.shields.io/badge/TypeScript-typescript?style=square&logo=typescript&logoColor=white&color=%230988fe)](https://www.typescriptlang.org/)<!-- React -->
-[![Static Badge](https://img.shields.io/badge/React-react?style=square&logo=react&labelColor=black&color=%230284c7)](https://react.dev/)<!-- Html -->
+[![Static Badge](https://img.shields.io/badge/JavaScript-javascript?style=square&logo=javascript&logoColor=gold&labelColor=black&color=gold)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<!-- Typescript -->
+[![Static Badge](https://img.shields.io/badge/TypeScript-typescript?style=square&logo=typescript&logoColor=white&color=%230988fe)](https://www.typescriptlang.org/)<!-- Angular -->
+[![Static Badge](https://img.shields.io/badge/Angular-angular?style=square&logo=angular&labelColor=crimson&color=crimson)](https://react.dev/)<!-- Html -->
 [![Static Badge](https://img.shields.io/badge/HTML5-html5?style=square&logo=html5&logoColor=white&color=orange)](https://developer.mozilla.org/es/docs/Web/HTML)<!-- Css -->
 [![Static Badge](https://img.shields.io/badge/CSS3-css3?style=square&logo=css3&color=blue)](https://developer.mozilla.org/es/docs/Web/CSS)
 [![Static Badge](https://img.shields.io/badge/tailwindCSS-tailwindcss?style=square&logo=tailwindcss&color=white)](https://tailwindcss.com/)
+
+<!-- React -->
+<!-- [![Static Badge](https://img.shields.io/badge/React-react?style=square&logo=react&labelColor=black&color=%230284c7)](https://react.dev/) -->
 
 <!-- Git -->
 
