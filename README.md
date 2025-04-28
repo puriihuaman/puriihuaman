@@ -4,16 +4,19 @@
 
 ### { SOBRE MÍ :technologist: }
 
-🥇 Desarrollador de software con formación técnica en **Desarrollo de Sistemas de Información**, me desempeño como desarrollador back-end con Java.
+🥇 Desarrollador de software con formación técnica en *
+*[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
+_desarrollador back-end_.
 
-:brain: Experiencia práctica en desarrollo de sistemas web con Java y Node Js
-mediante proyectos académicos y hackáthones, con sólidos conocimientos en
-Programación Orientada a Objetos (POO), Spring Boot, Express y metodologías
-ágiles como Scrum.
+:brain: Cuento con experiencia práctica en desarrollo de sistemas web, desarrollo de API's Rest con
+Java, mediante proyectos académicos y hackáthones. Me destaco por mis conocimientos sólidos en
+Programación Orientada a Objetos (POO), Spring Boot. También aplico metodologías
+ágiles como Scrum para trabajar de forma colaborativa y eficiente.
 
 :dart: Estoy comprometido con la mejora continua y enfocado en implementar soluciones eficientes.
 
-:email:No dudes en conectar conmigo por [LinkedIn](https://www.linkedin.com/in/puriihuaman/) o enviarme un correo electrónico <pedropuriihuaman@gmail.com>.
+:email:No dudes en conectar conmigo por [LinkedIn](https://www.linkedin.com/in/puriihuaman/) o
+enviarme un correo a <pedropuriihuaman@gmail.com>.
 
 ### EXPERIENCIA ACADÉMICA
 
@@ -25,11 +28,12 @@ Programación Orientada a Objetos (POO), Spring Boot, Express y metodologías
 
 _Madrid, España. Nov. 2024 - Dic. 2024_
 
-- [x] Diseñar el esquema de la base de datos en Prisma ORM.
-- [x] Desarrollar funcionalidades de la REST API de la aplicación.
-- [x] Completar los requerimientos en el tiempo estimado (6 semanas).
-- [x] Tecnología(s) utilizadas:
-  - TypeScript, Node.js, Express.js, PostgreSQL, Prisma ORM, Postman.
+- [x] Contribuí en el diseño de una base de datos escalable.
+- [x] Participé en el desarrollo de funcionalidades de la API Rest.
+- [x] **Logro clave**: Entregamos el MVP (Producto Mínimo Viable) en 6 semanas, superando a 4+
+  equipos y
+  logrando el 2.º puesto.
+- [x] **Tecnologías**: TypeScript + Express.js, PostgreSQL, Prisma ORM, Postman. .
 
 > [!IMPORTANT]
 > Segundo lugar en la devathon 🥈.
@@ -42,25 +46,50 @@ Codigo: [Front-End](https://github.com/TEAM3-ED8/front-end) | [Back-End](https:/
 
 _Lima, Perú. Dic. 2024 - Ene. 2025_
 
-- [x] Diseñar la base de datos.
-- [x] Desarrollar las funcionalidades de API Rest.
-- [x] Implementar seguridad con JWT (Json Web Token).
-- [x] Tecnología(s) utilizadas:
-  - Spring Boot, Spring JPA, Spring Security, MySQL, Bruno (Postman).
+- [x] Diseñé la base de datos.
+- [x] Desarrollé las funcionalidades de API Rest y documentación.
+- [x] Implementé un sistema de autenticación JWT (Json Web Token) que redujo vulnerabilidades de
+  seguridad.
+- [x] Realizé testing de API con Postman.
+- [x] **Tecnologías**: Java + Spring Boot + Spring Security, MySQL, Swagger.
 
 Código: [Back-End](https://github.com/puriihuaman/api-electro)
+
+### [Coworking Space API](https://github.com/karlosvas/coworking-space) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos))
+
+**Desarrollador Back-End**
+
+_España. Feb. 2025 - Mar. 2025_
+
+- [x] Participé en el desarrollo de funcionalidades de la API Rest.
+- [x] Colaboré en un equipo multinacional.
+- [x] Tecnologías: Java + Spring Boot + Spring Security + JWT, PostgreSQL, Bruno.
+
+### [Fast Order](https://github.com/puriihuaman/fast-order) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos))
+
+**Desarrollador Back-End**
+
+_España. Mar. 2025 - Abr. 2025_
+
+- [x] Desarrollé las funcionalidades de la API Rest y documentación.
+- [x] Implemente un sistema de autenticación.
+- [x] Desarrollé un sistema de notificación con Kafka.
+- [x] Documente con Swagger toda la API Rest.
+- [x] **Tecnologías**: Java + Spring Boot + Spring Security, Kafka, PostgreSQL + Swagger.
 
 ### ACTUALIDAD
 
 ---
 
-> :seedling: Actualmente sigo aprendiendo **Java + SpringBoot**
+> :seedling: Actualmente sigo aprendiendo **Java + SpringBoot + Docker + Angular**
 >
-> :globe_with_meridians: Todos mis proyectos están disponibles en [Puriihuaman](https://puriihuaman.netlify.app/) o [GitHub](https://github.com/puriihuaman)
+> :globe_with_meridians: Todos mis proyectos están disponibles
+> en [Puriihuaman](https://puriihuaman.netlify.app/) o [GitHub](https://github.com/puriihuaman)
 >
 > :question: Pregúntame sobre **Java**
 >
-> :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com** or **[Linkein](https://www.linkedin.com/in/puriihuaman/)**
+> :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com** or *
+*[LinkedIn](https://www.linkedin.com/in/puriihuaman/)**
 
 ### FORMACIÓN ACADÉMICA - CERTIFICACIONES
 
@@ -68,7 +97,7 @@ Código: [Back-End](https://github.com/puriihuaman/api-electro)
 
 #### Instituto El Buen Pastor
 
-Desarrollo de Sistemas de Información
+[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)
 
 ### Alura Latam - Oracle
 
@@ -90,7 +119,7 @@ Oracle Next Education
 <!-- Java -->
 
 [![Static Badge](https://img.shields.io/badge/Java-java?style=square&logo=java&color=red)](https://docs.oracle.com/javase/8/docs/api/)<!-- MySql -->
-[![Static Badge](https://img.shields.io/badge/MySQL-mysql?style=square&logo=mysql&logoColor=white&labelColor=blue&color=blue)](https://dev.mysql.com/doc/)<!-- Spring --> [![Static Badge](https://img.shields.io/badge/Spring-spring?style=square&logo=spring&logoColor=white&labelColor=green&color=green)](https://spring.io/)<!-- Spring boot --> [![Static Badge](https://img.shields.io/badge/Spring_Boot-springboot?style=square&logo=springboot&logoColor=white&labelColor=green&color=green)](https://spring.io/projects/spring-boot)
+[![Static Badge](https://img.shields.io/badge/PostgreSQL-postgresql?style=square&logo=postgresql&logoColor=white&labelColor=blue&color=blue)](https://dev.mysql.com/doc/)<!-- Spring --> [![Static Badge](https://img.shields.io/badge/Spring-spring?style=square&logo=spring&logoColor=white&labelColor=green&color=green)](https://spring.io/)<!-- Spring boot --> [![Static Badge](https://img.shields.io/badge/Spring_Boot-springboot?style=square&logo=springboot&logoColor=white&labelColor=green&color=green)](https://spring.io/projects/spring-boot)
 
 <!-- Javascript -->
 
@@ -128,7 +157,8 @@ Oracle Next Education
 
 ---
 
-¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente intercambiar experiencias, no dudes en contactarme.
+¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente
+intercambiar experiencias, no dudes en contactarme.
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)
 [![Static Badge](https://img.shields.io/badge/Twitter-Pedro%20Purihuaman?style=social&logo=x&label=Pedro%20Purihuaman)](https://twitter.com/puriihuaman)
@@ -139,39 +169,8 @@ Oracle Next Education
 
 ![Puriihuaman's GitHub stats](https://github-readme-stats.vercel.app/api?username=puriihuaman&show_icons=true&&theme=tokyonight#gh-dark-mode-only)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=puriihuaman&layout=donut-vertical&show_icons=true&theme=tokyonight&show_icons=true&hide_border&rank_icon=percentile)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=puriihuaman&layout=compact&show_icons=true&theme=tokyonight&show_icons=true&hide_border&rank_icon=percentile)
 
 ![Pedro Purihuaman](https://komarev.com/ghpvc/?username=puriihuaman&style=square&color=blueviolet)
 
 ¡Gracias por visitar mi perfil de GitHub!. 😊
-
-<!--
-
-¡Por supuesto! Aquí tienes una versión adaptada para tu perfil de GitHub:
-
----
-
-### Acerca de Mí
-
-¡Hola! Soy Pedro, un Desarrollador Java trainee con un enfoque apasionado en la creación de aplicaciones mediante el uso de Java como mi lenguaje principal de programación. Actualmente, estoy en las primeras etapas de mi carrera, graduado en Desarrollo de Sistemas e Información por el Instituto El Buen Pastor (IBP) en Perú.
-
-### Proyectos Destacados
-
-- **[Nombre del Proyecto](Enlace al Proyecto):** Breve descripción del proyecto y tecnologías utilizadas.
-
-- **[Nombre del Proyecto](Enlace al Proyecto):** Breve descripción del proyecto y tecnologías utilizadas.
-
-### Habilidades
-
-- Java
-- [Lista de otras habilidades técnicas]
-
-### Objetivos
-
-Como desarrollador en formación, mi enfoque actual es aprender, mejorar y contribuir de manera significativa en proyectos desafiantes. Busco oportunidades para aplicar mis conocimientos, continuar mi desarrollo y adquirir experiencia en el campo del Desarrollo de Software.
-
-### Conexiones
-
-¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente intercambiar experiencias, no dudes en contactarme a través de [LinkedIn](Enlace a tu perfil de LinkedIn) o por correo electrónico.
-
-¡Gracias por visitar mi perfil de GitHub! Estoy emocionado por las oportunidades que se presenten y por el continuo crecimiento en mi viaje en el desarrollo de software. 😊 -->
