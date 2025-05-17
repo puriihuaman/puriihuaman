@@ -1,61 +1,91 @@
 ---
-import type {Repository} from "@models/repository";
+import type { Image } from "@models/image";
+import type { SimpleRepository } from "@models/repository";
 import "./project-card.css";
 
 interface Props {
-  repository: Repository;
+	repository: SimpleRepository;
 }
 
-const changeName = (projectName: string) => {
-  return projectName.trim().toLowerCase().replaceAll(/[-_]/g, " ");
-};
-
-const formateDate = (date: string): string =>
-  String(new Date(date).getFullYear().toString());
-
-const {repository} = Astro.props;
+const {
+	repository: {
+		images,
+		name,
+		updatedAt,
+		homepage,
+		description,
+		topics,
+		htmlUrl,
+	},
+} = Astro.props;
 ---
 
 <article class="project-card">
-  <div class="project-card-container">
-    <h3 class="project-card-title">{changeName(repository.name)}</h3>
+	<div class="project-card-image">
+		{
+			images.length > 0 ? (
+				images.map((image: Image): any => {
+					const path: string = image.downloadUrl || image.htmlUrl;
+					return (
+						<a
+							href={htmlUrl}
+							title={name}
+							rel="nofollow noopener noreferrer"
+							target="_blank"
+						>
+							<img
+								src={path}
+								alt={name}
+								loading="lazy"
+								width="100%"
+								height="100%"
+							/>
+						</a>
+					);
+				})
+			) : (
+				<img src="/assets/icons/skeleton.svg" alt="Sin imagen" />
+			)
+		}
+	</div>
 
-    <p>
+	<div class="project-card-container">
+		<h3 class="project-card-title">{name}</h3>
+
+		<p>
 			<span class="project-card-date">
-				{formateDate(repository.updated_at)}
+				{updatedAt}
 			</span>
-    </p>
+		</p>
 
-    <p class="project-card-description">{repository.description}</p>
+		<p class="project-card-description">{description}</p>
 
-    <ul>
-      <li>
-        {repository.topics.map((topic) => topic + " - ")}
-      </li>
-    </ul>
+		<ul>
+			<li>{topics}</li>
+		</ul>
 
-    <footer class="project-card-footer">
-      <a
-        class="link"
-        href={repository.homepage || ""}
-        title={repository.name}
-        aria-label="Go to project demo"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        Demo
-      </a>
+		<footer class="project-card-footer">
+			<a
+				class="link"
+				href={homepage || ""}
+				title={name}
+				aria-label="Go to project demo"
+				rel="nofollow noopener noreferrer"
+				target="_blank"
+			>
+				Demo
+			</a>
 
-      <a
-        class="github"
-        href={repository.html_url}
-        title={repository.name}
-        aria-label="Go to project demo"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-      >
-        Código
-      </a>
-    </footer>
-  </div>
+			<a
+				class="github"
+				href={htmlUrl}
+				title={name}
+				aria-label="Go to project demo"
+				rel="nofollow noopener noreferrer"
+				target="_blank"
+			>
+				Código
+			</a>
+		</footer>
+	</div>
 </article>

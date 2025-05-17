@@ -6,7 +6,7 @@
 	border: 1px solid currentColor;
 	border-radius: var(--radii-md);
 	text-wrap: balance;
-	background-color: var(--red-900);
+	background-color: var(--red-50);
 }
 
 .alert-title {
@@ -14,6 +14,5 @@
 }
 
 .alert-block {
-	display: block;
 	font-size: var(--fontSizes-xl);
 }

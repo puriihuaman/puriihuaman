@@ -4,8 +4,7 @@
 
 ### { SOBRE MÍ :technologist: }
 
-🥇 Desarrollador de software con formación técnica en *
-*[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
+🥇 Desarrollador de software con formación técnica en **[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
 _desarrollador back-end_.
 
 :brain: Cuento con experiencia práctica en desarrollo de sistemas web, desarrollo de API's Rest con
@@ -22,23 +21,30 @@ enviarme un correo a <pedropuriihuaman@gmail.com>.
 
 ---
 
-### [Santa’s Sight](https://santas-sight.vercel.app/dashboard) ([Devathon](https://programacion-es.dev/devathon-viii-edition/) -  [Programación En Español](https://programacion-es.dev/))
+### [Fast Order](https://github.com/puriihuaman/fast-order) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos))
 
 **Desarrollador Back-End**
 
-_Madrid, España. Nov. 2024 - Dic. 2024_
+_España. Mar. 2025 - Abr. 2025_
 
-- [x] Contribuí en el diseño de una base de datos escalable.
-- [x] Participé en el desarrollo de funcionalidades de la API Rest.
-- [x] **Logro clave**: Entregamos el MVP (Producto Mínimo Viable) en 6 semanas, superando a 4+
-  equipos y
-  logrando el 2.º puesto.
-- [x] **Tecnologías**: TypeScript + Express.js, PostgreSQL, Prisma ORM, Postman. .
+- [x] Diseñé y desarrollé una API REST completa para gestión de pedidos.
+- [x] Implementé autenticación basada en Json Web Token JWT y sistema de mensajería asíncrona
+      con Kafka.
+- [x] Documenté la API con Swagger y coordiné el flujo de trabajo con Postman.
+- [x] Segundo lugar en la Hackathon de Bytes Colaborativos entre más de 5 equipos.
+- [x] **Tecnologías utilizadas**: Java + Spring Boot + Spring Security, Kafka, PostgreSQL, Swagger, Trello.
 
-> [!IMPORTANT]
-> Segundo lugar en la devathon 🥈.
+### [Coworking Space API](https://github.com/karlosvas/coworking-space) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos))
 
-Codigo: [Front-End](https://github.com/TEAM3-ED8/front-end) | [Back-End](https://github.com/TEAM3-ED8/back-end)
+**Desarrollador Back-End**
+
+_España. Feb. 2025 - Mar. 2025_
+
+- [x] Participé en un 40% en el desarrollo de funcionalidades clave de la API Rest.
+- [x] Contribuí significativamente al diseño y la implementación de una base de datos escalable.
+- [x] Colaboré en un equipo multinacional de 4 personas.
+- [x] Primer lugar en la Hackathon de Bytes Colaborativos.
+- [x] **Tecnologías utilizadas**: Java + Spring Boot + Spring Security + JWT, PostgreSQL, Bruno, Trello.
 
 ### [API Electro](https://github.com/puriihuaman/api-electro) (Cibertec)
 
@@ -49,47 +55,44 @@ _Lima, Perú. Dic. 2024 - Ene. 2025_
 - [x] Diseñé la base de datos.
 - [x] Desarrollé las funcionalidades de API Rest y documentación.
 - [x] Implementé un sistema de autenticación JWT (Json Web Token) que redujo vulnerabilidades de
-  seguridad.
-- [x] Realizé testing de API con Postman.
-- [x] **Tecnologías**: Java + Spring Boot + Spring Security, MySQL, Swagger.
+      seguridad.
+- [x] Realicé testing de API con Postman.
+- [x] **Tecnologías utilizadas**: Java + Spring Boot + Spring Security, MySQL, Swagger, Trello.
 
 Código: [Back-End](https://github.com/puriihuaman/api-electro)
 
-### [Coworking Space API](https://github.com/karlosvas/coworking-space) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos))
+### [Santa’s Sight](https://santas-sight.vercel.app/dashboard) ([Devathon](https://programacion-es.dev/devathon-viii-edition/) -  [Programación En Español](https://programacion-es.dev/))
 
 **Desarrollador Back-End**
 
-_España. Feb. 2025 - Mar. 2025_
+_Madrid, España. Nov. 2024 - Dic. 2024_
 
-- [x] Participé en el desarrollo de funcionalidades de la API Rest.
-- [x] Colaboré en un equipo multinacional.
-- [x] Tecnologías: Java + Spring Boot + Spring Security + JWT, PostgreSQL, Bruno.
+- [x] Contribuí significativamente al diseño y la implementación de una base de datos escalable, sentando las
+      bases para un rendimiento robusto del sistema.
+- [x] Participé en el desarrollo de funcionalidades clave de la API Rest utilizando TypeScript y Express.js,
+      asegurando una comunicación eficiente y segura entre el front-end y back-end
+- [x] Colaboré estrechamente con el equipo de (6 personas entre front-end y back-end) para la entrega
+      exitosa del Producto Mínimo Viable (MVP) en un plazo de 6 semanas, lo que resultó en la obtención del
+      2do puesto entre más de 4 equipos.
+- [x] **Tecnologías utilizadas**: TypeScript + Express.js, PostgreSQL, Prisma ORM, Postman, Trello.
 
-### [Fast Order](https://github.com/puriihuaman/fast-order) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos))
+> [!IMPORTANT]
+> Segundo lugar en la devathon 🥈.
 
-**Desarrollador Back-End**
-
-_España. Mar. 2025 - Abr. 2025_
-
-- [x] Desarrollé las funcionalidades de la API Rest y documentación.
-- [x] Implemente un sistema de autenticación.
-- [x] Desarrollé un sistema de notificación con Kafka.
-- [x] Documente con Swagger toda la API Rest.
-- [x] **Tecnologías**: Java + Spring Boot + Spring Security, Kafka, PostgreSQL + Swagger.
+Código: [Front-End](https://github.com/TEAM3-ED8/front-end) | [Back-End](https://github.com/TEAM3-ED8/back-end)
 
 ### ACTUALIDAD
 
 ---
 
-> :seedling: Actualmente sigo aprendiendo **Java + SpringBoot + Docker + Angular**
+> :seedling: Actualmente sigo aprendiendo **Java + SpringBoot + Docker + Angular**.
 >
 > :globe_with_meridians: Todos mis proyectos están disponibles
 > en [Puriihuaman](https://puriihuaman.netlify.app/) o [GitHub](https://github.com/puriihuaman)
 >
 > :question: Pregúntame sobre **Java**
 >
-> :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com** or *
-*[LinkedIn](https://www.linkedin.com/in/puriihuaman/)**
+> :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com** or \* \*[LinkedIn](https://www.linkedin.com/in/pedropurihuaman/)\*\*
 
 ### FORMACIÓN ACADÉMICA - CERTIFICACIONES
 
@@ -136,7 +139,8 @@ Oracle Next Education
 <!-- Git -->
 
 [![Static Badge](https://img.shields.io/badge/Git-git?style=square&logo=git&logoColor=white&labelColor=orangered&color=orangered)](https://git-scm.com/)<!-- Bruno -->
-[![Static Badge](https://img.shields.io/badge/Bruno-bruno?style=square&logo=bruno&logoColor=white&labelColor=peru&color=peru)](https://docs.usebruno.com/)
+[![Static Badge](https://img.shields.io/badge/Bruno-bruno?style=square&logo=bruno&logoColor=white&labelColor=peru&color=peru)](https://docs.usebruno.com/)<!-- Postman -->
+[![Static Badge](https://img.shields.io/badge/Postman-postman?style=square&logo=postman&logoColor=white&labelColor=orange&color=orange)](https://www.postman.com/)
 
 <!-- [![Static Badge](https://img.shields.io/badge/NodeJS-nodejs?style=plastic&logo=node.js&labelColor=black&color=%23339933)](https://nodejs.org/docs/latest/api/) -->
 <!-- [![Static Badge](https://img.shields.io/badge/Express-express?style=plastic&logo=express&labelColor=black&color=white)](https://expressjs.com/) -->
