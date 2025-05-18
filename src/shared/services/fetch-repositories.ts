@@ -1,77 +1,110 @@
-import type {Repository} from "../models/repository.ts";
-import type {SearchAnswer} from "../models/search-answer.ts";
-import {CustomError} from "./custom-error.ts";
+import type { Image } from "@models/image.ts";
+import type { Repository, SimpleRepository } from "@models/repository.ts";
+import type { SearchAnswer } from "@models/search-answer.ts";
+import { formatDate } from "../utils/format-date.ts";
+import { formatRepositoryName } from "../utils/format-repository-name.ts";
+import { CustomError } from "./custom-error.ts";
+import { fetchImagesFromRepo } from "./fetching-image.ts";
 
-const DEFAULT_BRANCH = "start";
+const DEFAULT_BRANCH: string = "start";
 
-const API_URL_BASE =
-  import.meta.env.API_URL_BASE ??
-  "https://api.github.com/users/puriihuaman/repos";
+const API_URL_BASE: string =
+	import.meta.env.API_URL_BASE ??
+	"https://api.github.com/users/puriihuaman/repos";
 
-export const fetchRepositories = async (
-  selectedTechnology: string,
-): Promise<SearchAnswer> => {
-  try {
-    const response = await fetch(API_URL_BASE);
+export const fetchRepositories = async (): Promise<SearchAnswer> => {
+	try {
+		const response = await fetch(API_URL_BASE);
 
-    if (!response.ok) {
-      if (response.status === 404) {
-        throw new CustomError(
-          "Invalid URL",
-          response.status,
-          "Could not access URL",
-        );
-      }
+		validateResponse(response);
 
-      if (response.status === 403) {
-        throw new CustomError(
-          "Request limit",
-          response.status,
-          "Exceeded request limits",
-        );
-      }
+		const repositories: Repository[] = await response.json();
 
-      throw new CustomError(
-        "GitHub API error",
-        response.status,
-        response.statusText,
-      );
-    }
+		const filteredRepositories: Repository[] = repositories.filter(
+			(repo: Repository): boolean => repo.default_branch === DEFAULT_BRANCH
+		);
 
-    const repositories: Repository[] = await response.json();
+		const simpleRepositories: SimpleRepository[] = [];
 
-    const filteredRepositories: Repository[] = repositories.filter(
-      (repository: Repository): boolean =>
-        repository.default_branch === DEFAULT_BRANCH,
-    );
+		for (const repo of filteredRepositories) {
+			const images: Image[] = await fetchImagesFromRepo(repo.contents_url);
+			simpleRepositories.push(mapToSimpleRepository(repo, images));
+		}
 
-    const leakedRepositories: Repository[] = filteredRepositories.filter(
-      ({topics}: Repository): boolean =>
-        topics.includes(selectedTechnology),
-    );
-
-    const listOfFilteredRepositories: Repository[] =
-      leakedRepositories.length > 0 ? leakedRepositories : filteredRepositories;
-
-    return {
-      repositories: listOfFilteredRepositories || [],
-      hasError: false,
-      isLoading: false,
-      error: null,
-    };
-  } catch (error) {
-    if (error instanceof CustomError)
-      return {repositories: [], hasError: true, isLoading: false, error};
-    else
-      return {
-        repositories: [],
-        hasError: true,
-        isLoading: false,
-        error: {
-          name: "Server error",
-          statusCode: 500,
-          message: "Internal server error",
-        },
-      };
-  }
+		return {
+			repositories: simpleRepositories || [],
+			hasError: false,
+			isLoading: false,
+			error: null,
+		};
+	} catch (error) {
+		return handleError(error);
+	}
 };
+
+function validateResponse(response: Response): void {
+	if (!response.ok) {
+		switch (response.status) {
+			case 404:
+				throw new CustomError(
+					"URL no válida",
+					response.status,
+					"No se pudo encontrar la URL solicitada."
+				);
+			case 403:
+				throw new CustomError(
+					"No se pudieron cargar los proyectos.",
+					response.status,
+					"Se ha alcanzado el límite de peticiones a la API de GitHub."
+				);
+			default:
+				throw new CustomError(
+					"Error de la API de GitHub",
+					response.status,
+					response.statusText
+				);
+		}
+	}
+}
+
+function mapToSimpleRepository(
+	repo: Repository,
+	images: Image[]
+): SimpleRepository {
+	return {
+		id: repo.id,
+		name: formatRepositoryName(repo.name),
+		description: repo.description,
+		htmlUrl: repo.html_url,
+		homepage: repo.homepage,
+		contentsUrl: repo.contents_url,
+		createdAt: formatDate(repo.created_at),
+		updatedAt: formatDate(repo.updated_at),
+		topics: repo.topics.join(" - "),
+		fullName: repo.full_name,
+		pushed_at: formatDate(repo.pushed_at),
+		images,
+	};
+}
+
+function handleError(error: unknown): SearchAnswer {
+	if (error instanceof CustomError) {
+		return {
+			repositories: [],
+			hasError: true,
+			isLoading: false,
+			error,
+		};
+	}
+
+	return {
+		repositories: [],
+		hasError: true,
+		isLoading: false,
+		error: {
+			name: "Server error",
+			statusCode: 500,
+			message: "Internal server error",
+		},
+	};
+}

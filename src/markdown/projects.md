@@ -1,38 +1,5 @@
 <article class="project-card">
 
-[![Fast Order](/assets/images/webp/fast-order.webp)](https://github.com/puriihuaman/fast-order)
-
-<div class="project-card-container">
-
-### Fast Order API
-
-<span class="project-card-date">2025</span>
-
-**Fast Order API** una API Rest robusta y segura diseñada para la gestión integral de pedidos,
-productos y usuarios. Permite a los desarrolladores optimizar el flujo de compra, desde el registro
-de nuevos usuarios y la administración detallada del catálogo de productos (creación, consulta,
-actualización) hasta la realización y seguimiento de pedidos en tiempo real. Su arquitectura
-asíncrona, impulsada por notificaciones a través de Kafka, informa instantáneamente sobre la
-creación y cancelación de pedidos, facilitando la integración con sistemas de back-end y la
-construcción de experiencias de usuario dinámicas y reactivas.  
-_Este proyecto fue desarrollado en una hackathon organizada por programadores de
-España, [Bytes Colaborativos](https://www.twitch.tv/bytescolaborativos)_.
-
-- Java + Spring Boot + Spring Security - Kafka - PostgreSQL.
-
-</div>
-
-<footer class="project-card-footer">
-
-[Código](https://github.com/puriihuaman/fast-order)
-
-</footer>
-</article>
-
----
-
-<article class="project-card">
-
 [![Coworking Space](/assets/images/webp/coworking-space.webp)](https://github.com/karlosvas/coworking-space)
 
 <div class="project-card-container">

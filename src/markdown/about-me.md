@@ -11,12 +11,9 @@ description: Información sobre mí
 
 ![Code](/assets/images/webp/banner.webp)
 
-Desarrollador de Software con formación técnica en **Desarrollo de Sistemas de Información**, me
-desempeño como **desarrollador back-end**.  
-Cuento con experiencia práctica en desarrollo de sistemas web, desarrollo de API Rest con Java,
-mediante proyectos académicos y hackáthones. Me destaco por mis conocimientos sólidos en
-Programación Orientada a Objetos (POO), Spring Boot. También aplico metodologías ágiles como Scrum
-para trabajar de forma colaborativa y eficiente.
+Desarrollador Backend con formación técnica en **Desarrollo de Sistemas de Información**.  
+Experiencia en diseño y construcción de APIs REST seguras, robustas y escalables utilizando Java + Spring Boot en proyectos colaborativos, integrando herramientas modernas como Docker, Kafka.
+Participación destacada en Hackathones multinacionales, fortaleciendo habilidades en trabajo en equipo, metodologías ágiles (Scrum) y dominio de tecnologías.
 
 </div>
 
@@ -29,7 +26,7 @@ para trabajar de forma colaborativa y eficiente.
 
 </div>
 
-Desarrollo de Sistemas de Información
+Desarrollo de Sistemas de Información.
 
 </article>
 
@@ -133,7 +130,7 @@ Desarrollo Back-End
 - Habilidades blandas.
 - Lógica de programación.
 - Scrum.
-- SQL, Java,JavaScript, HTML, CSS.
+- SQL, Java, Spring Boot, JavaScript, HTML, CSS.
 
 </footer>
 </div>

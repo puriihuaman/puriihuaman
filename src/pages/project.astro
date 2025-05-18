@@ -2,40 +2,40 @@
 import AlertMessage from "@components/AlertMessage.astro";
 import Loading from "@components/Loading.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import type {Repository} from "@models/repository";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import {fetchRepositories} from "@services/fetch-repositories";
+import type { SimpleRepository } from "@models/repository";
+import { fetchRepositories } from "@services/fetch-repositories";
 import "./_project.css";
 
 let technology: string = "todos";
 
-const {Content} = await import("@markdown/projects.md");
+const { Content } = await import("@markdown/projects.md");
 
-const {repositories, hasError, isLoading, error} =
-  await fetchRepositories(technology);
+const { repositories, hasError, isLoading, error } = await fetchRepositories();
+
+// console.log("Size: ", repositories.length);
 
 const title = "Puriihuaman";
 const description = "Proyectos";
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="container project">
-    <div class="projects">
-      {isLoading &&
-        <Loading/>}
+	<section class="container project">
+		<div class="projects">
+			{isLoading && <Loading />}
 
-      {error &&
-        <AlertMessage error={error}/>}
+			{error && <AlertMessage error={error} />}
+			{
+				!hasError && (
+					<div class="project-gallery">
+						<Content title={title} />
 
-      <div class="project-gallery">
-        <Content title={title}/>
-
-        {
-          repositories.map((repository: Repository) => (
-            <ProjectCard repository={repository}/>
-          ))
-        }
-      </div>
-    </div>
-  </section>
+						{repositories.map((repository: SimpleRepository) => (
+							<ProjectCard repository={repository} />
+						))}
+					</div>
+				)
+			}
+		</div>
+	</section>
 </BaseLayout>
