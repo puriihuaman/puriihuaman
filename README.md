@@ -158,7 +158,7 @@ Oracle Next Education
 ¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente
 intercambiar experiencias, no dudes en contactarme.
 
-[Mi Curriculum](https://drive.google.com/file/d/1tWEvwI_DwndsaO8sf9c-ED6hGLyFr_bQ/view?usp=drive_link)
+[Mi Curriculum](https://drive.google.com/file/d/1tWEvwI_DwndsaO8sf9c-ED6hGLyFr_bQ/view?usp=sharing)
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)
 ![Static Badge](https://img.shields.io/badge/Gmail-pedropuriihuaman?style=social&logo=Gmail&label=pedropuriihuaman%40gmail.com)
