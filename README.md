@@ -4,8 +4,7 @@
 
 ### { SOBRE MÍ :technologist: }
 
-🥇 Desarrollador de software con formación técnica en *
-*[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
+🥇 Desarrollador de software con formación técnica en **[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
 _desarrollador back end_.
 
 :brain: Experiencia en diseño y construcción de API's Rest seguras y escalables con Java y Spring
@@ -80,7 +79,7 @@ Código: [Back-End](https://github.com/puriihuaman/api-electro)
 > en [Puriihuaman](https://puriihuaman.netlify.app/) o [GitHub](https://github.com/puriihuaman)
 >
 > :mailbox_with_mail: Cómo contactarme **pedropuriihuaman@gmail.com**
-> or \* \*[LinkedIn](https://www.linkedin.com/in/pedropurihuaman/)\*\*
+> or **[LinkedIn](https://www.linkedin.com/in/pedropurihuaman/)**
 
 ### FORMACIÓN ACADÉMICA - CERTIFICACIONES
 
@@ -158,6 +157,8 @@ Oracle Next Education
 
 ¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente
 intercambiar experiencias, no dudes en contactarme.
+
+[Mi Curriculum](https://drive.google.com/file/d/1tWEvwI_DwndsaO8sf9c-ED6hGLyFr_bQ/view?usp=drive_link)
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)
 ![Static Badge](https://img.shields.io/badge/Gmail-pedropuriihuaman?style=social&logo=Gmail&label=pedropuriihuaman%40gmail.com)
