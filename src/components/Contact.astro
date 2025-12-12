@@ -1,36 +1,30 @@
 ---
 interface Props {
-	otherClass?: boolean;
+  otherClass?: boolean;
 }
 
 import LinkButton from "./LinkButton.astro";
 ---
 
-<style>
-	.contact {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		flex-direction: row;
-		gap: var(--space-2);
-		text-transform: capitalize;
-		font-family: var(--main-font);
-	}
-</style>
+<div class="flex justify-center items-center gap-4 mt-3">
+  <LinkButton
+    href="https://drive.google.com/file/d/1dIUZSRRXzl_TCSAeoRfMKT_SvydItgUd/view?usp=sharing"
+    iconId="cv"
+    linkClass="cv"
+    title="Curriculum"
+  />
 
-<div class="contact contact-header">
-	<LinkButton
-		href="https://www.linkedin.com/in/puriihuaman/"
-		iconId="linkedin"
-		linkClass="linkedin"
-		title="LinkedIn"
-	/>
+  <LinkButton
+    href="https://www.linkedin.com/in/puriihuaman/"
+    iconId="linkedin"
+    linkClass="linkedin"
+    title="LinkedIn"
+  />
 
-	<LinkButton
-		href="https://github.com/puriihuaman"
-		iconId="github"
-		linkClass="github"
-		title="GitHub"
-	/>
+  <LinkButton
+    href="https://github.com/puriihuaman"
+    iconId="github"
+    linkClass="github"
+    title="GitHub"
+  />
 </div>

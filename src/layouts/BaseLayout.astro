@@ -1,5 +1,5 @@
 ---
-import "@assets/scss/styles.scss";
+import "@assets/styles/styles.css";
 import Header from "@components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
 
@@ -20,12 +20,12 @@ const { title, description } = Astro.props;
 		<meta name="color-scheme" content="light dark" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href="assets/icons/puriihuaman.png" />
+		<link rel="icon" type="image/svg+xml" href="/assets/icons/puriihuaman.png" />
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
 
-	<body>
+	<body class="grid grid-cols-1 grid-rows-[auto_1fr] text-slate-50 bg-zinc-950">
 		<Header />
 
 		<main>

@@ -21,8 +21,20 @@ export const backendSkills: Skill[] = [
   },
   {
     id: crypto.randomUUID(),
-    href: "https://www.postgresql.org/",
-    icon: "postgresql",
-    title: "PostgreSQL",
+    href: "https://www.mysql.com/",
+    icon: "mysql",
+    title: "MySQL",
   },
+  {
+    id: crypto.randomUUID(),
+    href: "https://www.php.net/docs.php",
+    icon: "php",
+    title: "PHP",
+  },
+  {
+    id: crypto.randomUUID(),
+    href: "https://laravel.com/",
+    icon: "laravel",
+    title: "Laravel",
+  }
 ];

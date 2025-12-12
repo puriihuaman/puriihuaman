@@ -1,5 +1,5 @@
-import type { Image } from "@models/image.ts";
-import type { Repository, SimpleRepository } from "@models/repository.ts";
+import type { IImage } from "@models/IImage.ts";
+import type { IRepository, ICustomRepository } from "@models/IRepository.ts";
 import type { SearchAnswer } from "@models/search-answer.ts";
 import { formatDate } from "../utils/format-date.ts";
 import { formatRepositoryName } from "../utils/format-repository-name.ts";
@@ -18,16 +18,16 @@ export const fetchRepositories = async (): Promise<SearchAnswer> => {
 
 		validateResponse(response);
 
-		const repositories: Repository[] = await response.json();
+		const repositories: IRepository[] = await response.json();
 
-		const filteredRepositories: Repository[] = repositories.filter(
-			(repo: Repository): boolean => repo.default_branch === DEFAULT_BRANCH
+		const filteredRepositories: IRepository[] = repositories.filter(
+			(repo: IRepository): boolean => repo.default_branch === DEFAULT_BRANCH
 		);
 
-		const simpleRepositories: SimpleRepository[] = [];
+		const simpleRepositories: ICustomRepository[] = [];
 
 		for (const repo of filteredRepositories) {
-			const images: Image[] = await fetchImagesFromRepo(repo.contents_url);
+			const images: IImage[] = await fetchImagesFromRepo(repo.contents_url);
 			simpleRepositories.push(mapToSimpleRepository(repo, images));
 		}
 
@@ -42,7 +42,7 @@ export const fetchRepositories = async (): Promise<SearchAnswer> => {
 	}
 };
 
-function validateResponse(response: Response): void {
+export function validateResponse(response: Response): void {
 	if (!response.ok) {
 		switch (response.status) {
 			case 404:
@@ -67,10 +67,10 @@ function validateResponse(response: Response): void {
 	}
 }
 
-function mapToSimpleRepository(
-	repo: Repository,
-	images: Image[]
-): SimpleRepository {
+export function mapToSimpleRepository(
+	repo: IRepository,
+	images: IImage[]
+): ICustomRepository {
 	return {
 		id: repo.id,
 		name: formatRepositoryName(repo.name),
@@ -87,7 +87,7 @@ function mapToSimpleRepository(
 	};
 }
 
-function handleError(error: unknown): SearchAnswer {
+export function handleError(error: unknown): SearchAnswer {
 	if (error instanceof CustomError) {
 		return {
 			repositories: [],

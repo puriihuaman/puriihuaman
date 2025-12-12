@@ -15,9 +15,9 @@ export const frontendSkills: Skill[] = [
   },
   {
     id: crypto.randomUUID(),
-    href: "https://angular.dev/",
-    icon: "angular",
-    title: "Angular",
+    href: "https://vuejs.org/",
+    icon: "vuejs",
+    title: "Vue JS",
   },
   {
     id: crypto.randomUUID(),

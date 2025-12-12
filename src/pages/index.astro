@@ -1,31 +1,139 @@
 ---
+import Avatar from "@components/Avatar.astro";
 import Skills from "@components/Skills.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import "./_index.css";
 import Hero from "@components/Hero.astro";
 import {skillsList} from "@data/skills-list";
 import type {Technology} from "@models/technology";
-
-
-
-const content = await import(`@markdown/about-me.md`);
-
-const {Content} = content;
 
 const title = "Puriihuaman";
 const description = "Puriihuaman - Portafolio personal";
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="about">
-    <Hero/>
+  <Hero/>
 
-    <Content title={title}/>
+  <section class="min-h-screen max-w-5xl mx-auto px-4 space-y-6">
+    <section class="py-4 space-y-8">
+      <div class="flex flex-col-reverse items-stretch gap-6 py-4 md:flex-row">
+        <Avatar/>
 
-    <section class="container skills">
-      <h2>Tecnologías</h2>
+        <div class="space-y-8 flex-1">
+          <h2 class="text-center font-bold text-3xl md:text-5xl">Sobre Mí</h2>
 
-      <section class="skills-content">
+          <p>
+            Desarrollador Back End con formación técnica en Desarrollo de Sistemas de Información.
+            Experiencia en diseño y construcción de API's REST seguras, robustas y escalables con
+            Java y Spring Boot, integrando herramientas modernas como Kafka. He desarrollado
+            soluciones freelance, incluido un sistema web de reservas para gestión de stands.
+            También he participado en hackathons multinacionales, fortaleciendo habilidades en
+            trabajo en equipo, metodologías ágiles (SCRUM) y dominio de tecnologías.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <article class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow">
+          <div class="space-y-2">
+            <div class="text-4xl">🎓</div>
+            <strong>Formación</strong>
+          </div>
+
+          <p class="text-zinc-300">Desarrollo de Sistemas de Información</p>
+        </article>
+
+        <article class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow">
+          <div class="space-y-2">
+            <div class="text-4xl">💼</div>
+            <strong>Experiencia</strong>
+          </div>
+
+          <p class="text-zinc-300">Freelance, Desarrollador Back-end (desarrollo de API's)</p>
+        </article>
+
+        <article class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow">
+          <div class="space-y-2">
+            <div class="text-4xl">💡</div>
+
+            <strong>Especialidad</strong>
+          </div>
+
+          <p class="text-zinc-300">Desarrollo Back-End</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="py-4 space-y-8">
+      <h3 class="text-center font-bold text-3xl md:text-5xl">Educación</h3>
+
+      <div class="flex flex-col gap-6">
+        <article class="space-y-3 p-4 shadow rounded-md border border-zinc-800">
+          <header class="space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold">Desarrollo De Sistemas</h3>
+              <span class="text-sm text-zinc-400">2017 - 2022</span>
+            </div>
+
+            <strong class="text-sm md:text-base">Instituto El Buen Pastor (IBP)</strong>
+          </header>
+
+          <p class="text-pretty">
+            Carrera enfocada en formar profesionales en tecnologías de la información. El egresado
+            en Desarrollo de Sistemas de Información crea y prueba software según estándares TI,
+            gestiona su implantación y optimiza sistemas según requisitos del cliente. Propone
+            soluciones innovadoras, elige tecnología eficiente y mejora procesos empresariales. Su
+            formación en TIC, liderazgo, comunicación, ética y bilingüismo le permite aportar valor
+            y asegurar el cuidado del medio ambiente.
+          </p>
+
+          <footer class="space-y-2">
+            <p class="text-sm font-semibold text-zinc-300 md:text-base">
+              Habilidades principales:
+            </p>
+
+            <ul class="list-disc ml-8 text-sm text-zinc-300">
+              <li>Lógica programación</li>
+              <li>Trabajo en equipo</li>
+              <li>Java, Scrum, SQL, JavaScript</li>
+            </ul>
+          </footer>
+        </article>
+
+        <article class="space-y-3 p-4 shadow rounded-md border border-zinc-800">
+          <header class="space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-xl font-semibold">Oracle Next Education</h3>
+              <span class="text-sm text-zinc-400">Ene. - Actualidad</span>
+            </div>
+
+            <strong class="text-sm md:text-base">Alura Latam - Oracle</strong>
+          </header>
+
+          <p class="text-pretty">
+            Programa educativo de Oracle en colaboración con Alura Latam que forma desarrolladores
+            web full stack, integrando tecnologías clave como JavaScript, React, HTML y CSS. El
+            programa fortalece habilidades blandas, como comunicación efectiva y trabajo en equipo.
+          </p>
+
+          <footer class="space-y-2">
+            <p class="text-sm font-semibold text-zinc-300 md:text-base">
+              Habilidades principales:
+            </p>
+
+            <ul class="list-disc ml-8 text-sm text-zinc-300">
+              <li>Habilidades blandas</li>
+              <li>Lógica de programación</li>
+              <li>Scrum. - SQL, Java, Spring Boot, JavaScript, HTML, CSS</li>
+            </ul>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="py-4 pb-8 space-y-8">
+      <h2 class="text-center font-bold text-3xl md:text-5xl">Tecnologías</h2>
+
+      <section class="skills-content_ space-y-6">
         {
           skillsList.map(({type, skills}: Technology) => (
             <Skills technologyType={type} skills={skills}/>

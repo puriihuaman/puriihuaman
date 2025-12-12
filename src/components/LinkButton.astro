@@ -1,75 +1,34 @@
 ---
-import { Icon } from "astro-icon/components";
+import {Icon} from "astro-icon/components";
 
 interface Props {
-	href: string;
-	iconId: string;
-	linkClass: string;
-	title: string;
+  href: string;
+  iconId: string;
+  linkClass: SocialNetwork;
+  title: string;
 }
 
-const { href, iconId, linkClass, title } = Astro.props;
+type SocialNetwork = "linkedin" | "github" | "cv" | "default";
+
+const classes = {
+  "linkedin": "text-zinc-50 bg-zinc-700 hover:bg-zinc-800 active:bg-zinc-800 focus-visible:ring-zinc-400",
+  "github": "text-zinc-50 bg-zinc-700 hover:bg-zinc-800 active:bg-zinc-800 focus-visible:ring-zinc-400",
+  "cv": "text-zinc-50 bg-purple-500 hover:bg-purple-600 active:bg-purple-600 focus-visible:ring-purple-400",
+  "default": "text-zinc-50 bg-zinc-700 hover:bg-zinc-800 active:bg-zinc-800 focus-visible:ring-zinc-400"
+};
+
+const classStyle = classes[Astro.props.linkClass];
+
+const {href, iconId, title} = Astro.props;
 ---
 
-<style lang="scss">
-	.link {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 1px solid var(--dark-200);
-		color: var(--dark-200);
-		gap: var(--space-2);
-		padding: var(--space-2) var(--space-3);
-		border-radius: var(--radii-md);
-		transition: var(--transition-property-common),
-			var(--transition-easing-ease-in-out), var(--transition-duration-500);
-
-		&:hover {
-			border-color: var(--dark-200);
-			background-color: var(--dark-100);
-		}
-
-		& svg {
-			width: auto;
-		}
-	}
-
-	.linkedin,
-	.github {
-		overflow: hidden;
-		overflow: hidden;
-		min-width: 100px;
-		max-width: 160px;
-		width: 100%;
-
-		&:hover {
-			background-color: transparent;
-		}
-	}
-
-	.linkedin {
-		color: light-dark(var(--dark-50), var(--dark-950));
-		background-color: var(--blue-500);
-		border-color: var(--blue-500);
-
-		&:hover {
-			color: var(--blue-600);
-			border-color: currentColor;
-		}
-	}
-	.github {
-		background-color: var(--dark-100);
-		color: var(--dark-950);
-	}
-</style>
-
 <a
-	href={href}
-	target="_blank"
-	rel="noopener"
-	class="link"
-	class:list={linkClass}
+  href={href}
+  target="_blank"
+  rel="noopener"
+  class="link_ inline-flex justify-center items-center gap-2 h-10 text-sm py-2 px-4 whitespace-nowrap rounded focus-visible:ring transition-all duration-300"
+  class:list={classStyle}
 >
-	<span class="link-title">{title}</span>
-	<Icon name={iconId} />
+  <span class="link-title">{title}</span>
+  <Icon name={iconId} class="w-5 h-5"/>
 </a>

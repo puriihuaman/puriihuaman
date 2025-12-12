@@ -1,5 +1,4 @@
 ---
-import "./skill.css";
 import {Icon} from "astro-icon/components";
 import type {Skill} from "@models/skill";
 import type {TechnologyTag} from "@models/technology-tag";
@@ -12,22 +11,20 @@ interface Props {
 const {technologyType, skills} = Astro.props;
 ---
 
-<div>
-  <h3 class="title">
+<div class="space-y-4">
+  <h3 class="title_ font-semibold capitalize text-xl text-zinc-200">
     {technologyType === "tool" ? "Herramientas" : technologyType}
   </h3>
 
-  <ul class="technologies">
+  <ul class="technologies_ grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     {
       skills.map((link: Skill) => (
         <li class="technology">
-          <div class="technology-details">
-            <a href={link.href} target="_blank" rel="noopener noreferrer" title="Documentación">
-              <Icon name={link.icon} class="technology-icon"/>
-            </a>
-
+          <a href={link.href} target="_blank" rel="noopener noreferrer" title="Documentación"
+             class="flex justify-between items-center py-3 px-4 bg-zinc-900 shadow rounded border border-zinc-800">
+            <Icon name={link.icon} class="w-8 h-8"/>
             <span>{link.title}</span>
-          </div>
+          </a>
         </li>
       ))
     }

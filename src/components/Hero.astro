@@ -1,117 +1,25 @@
 ---
-import Avatar from "./Avatar.astro";
 import Contact from "./Contact.astro";
 ---
 
-<style>
-	.hero,
-	.hero-container,
-	.hero-content {
-		display: flex;
-	}
+<section class="bg-[url(/assets/images/webp/hero.webp)] bg-center bg-no-repeat bg-origin-border bg-clip-border bg-blend-multiply bg-fixed bg-zinc-900/60">
+  <div class="max-w-5xl mx-auto px-4">
+    <section
+      class="min-h-screen relative z-10 flex flex-col items-center justify-center gap-4 h-full text-center px-4">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold text-zinc-50 text-shadow mt-10">Pedro
+          Purihuaman</h1>
+        <p class="notranslate mt-5 text-xl font-bold">
+          Desarrollador Back End / Desarrollo de Software
+        </p>
 
-	.hero {
-		justify-content: center;
-		align-items: center;
-		min-height: calc(100vh - var(--sizes-16));
-		overflow: hidden;
-		transition: var(--transition-property-colors),
-			var(--transition-easing-ease-in-out), var(--transition-duration-300);
+        <p class="text-sm md:text-xl text-zinc-400 mx-auto max-w-sm md:max-w-xl mt-4">
+          Desarrollando el núcleo robusto y escalable de tu aplicación con
+          tecnología moderna y alto rendimiento.
+        </p>
+      </div>
 
-		background-image: url("/assets/images/webp/hero.webp");
-		background-position: center;
-		background-repeat: no-repeat;
-		background-origin: border-box;
-		background-clip: border-box;
-		background-blend-mode: darken;
-		background-attachment: fixed;
-		background-color: #00000090;
-	}
-
-	.hero-container {
-		flex-direction: row;
-		gap: var(--space-2);
-	}
-
-	.hero-content {
-		flex-direction: column;
-		flex-grow: 1;
-		gap: var(--space-5);
-	}
-	.hero-title {
-		text-transform: uppercase;
-		text-align: center;
-		font-size: clamp(var(--fontSizes-5xl), 6vw, var(--fontSizes-6xl));
-		line-height: var(--lineHeights-10, 0.9);
-		font-weight: var(--font-weight-bold);
-		background: linear-gradient(
-			to bottom right,
-			#40abff,
-			#40abff,
-			#c58fff,
-			#c58fff
-		);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-
-		@media (min-width: 768px) {
-			line-height: var(--lineHeights-none, 0.9);
-			text-align: start;
-		}
-	}
-
-	.hero-text {
-		--font-size: var(--fontSizes-md);
-
-		text-align: center;
-		font-size: var(--font-size);
-		font-style: italic;
-		color: light-dark(var(--dark-100), var(--dark-900));
-
-		@media (min-width: 640px) {
-			--font-size: var(--fontSizes-lg);
-		}
-
-		@media (min-width: 768px) {
-			text-align: start;
-		}
-
-		@media (min-width: 1024px) {
-			--font-size: var(--fontSizes-xl);
-		}
-	}
-
-	.hero-phrase {
-		text-align: center;
-		margin-top: var(--space-5);
-		color: light-dark(var(--dark-300), var(--dark-700));
-
-		@media (min-width: 768px) {
-			text-align: start;
-		}
-	}
-</style>
-
-<section class="hero">
-	<div class="container">
-		<section class="hero-container">
-			<div class="hero-content">
-				<div>
-					<h1 class="hero-title">Pedro Purihuaman</h1>
-					<p class="hero-text">
-						Desarrollador Backend / Desarrollo de Sistemas
-					</p>
-
-					<p class="hero-phrase">
-						Desarrollando el núcleo robusto y escalable de tu aplicación con
-						tecnología moderna y alto rendimiento.
-					</p>
-				</div>
-
-				<Contact />
-			</div>
-
-			<Avatar />
-		</section>
-	</div>
+      <Contact/>
+    </section>
+  </div>
 </section>

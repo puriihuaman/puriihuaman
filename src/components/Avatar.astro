@@ -3,11 +3,11 @@ const imageWebp = "/assets/images/webp/puriihuaman.webp";
 const imagePng = "/assets/images/puriihuaman.png";
 ---
 
-<picture class="picture">
-	<source srcset={imageWebp} type="image/webp" class="image" />
+<picture class="w-full overflow-hidden rounded-2xl md:w-1/5">
+	<source srcset={imageWebp} type="image/webp" class="h-full w-full object-cover" />
 
 	<img
-		class="image"
+		class="h-full w-full object-cover mask-b-from-20%"
 		alt="Foto Pedro Purihuaman"
 		src={imagePng}
 		width="125"
@@ -16,32 +16,3 @@ const imagePng = "/assets/images/puriihuaman.png";
 		loading="lazy"
 	/>
 </picture>
-
-<style>
-	.picture {
-		flex-shrink: 0;
-		width: auto;
-		height: auto;
-		border-radius: var(--radii-md);
-		display: none;
-
-		@media (min-width: 768px) {
-			display: block;
-		}
-	}
-
-	.image {
-		width: var(--sizes-20);
-		height: var(--sizes-20);
-		border-radius: var(--radii-full);
-		aspect-ratio: 1 / 1;
-		object-fit: cover;
-		object-position: center;
-		mask-image: linear-gradient(var(--dark-50) 60%, transparent);
-
-		@media screen and (min-width: 768px) {
-			width: var(--sizes-60);
-			height: auto;
-		}
-	}
-</style>
