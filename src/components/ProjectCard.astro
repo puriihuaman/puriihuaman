@@ -1,91 +1,88 @@
 ---
-import type { Image } from "@models/image";
-import type { SimpleRepository } from "@models/repository";
-import "./project-card.css";
+import type {IProject} from "@data/projects.ts";
+import type {IImage} from "@models/IImage.ts";
+import type {ICustomRepository} from "@models/IRepository.ts";
 
 interface Props {
-	repository: SimpleRepository;
+  project: IProject | null,
+  repository: ICustomRepository | null
 }
 
-const {
-	repository: {
-		images,
-		name,
-		updatedAt,
-		homepage,
-		description,
-		topics,
-		htmlUrl,
-	},
-} = Astro.props;
+const {project, repository} = Astro.props;
 ---
 
-<article class="project-card">
-	<div class="project-card-image">
-		{
-			images.length > 0 ? (
-				images.map((image: Image): any => {
-					const path: string = image.downloadUrl || image.htmlUrl;
-					return (
-						<a
-							href={htmlUrl}
-							title={name}
-							rel="nofollow noopener noreferrer"
-							target="_blank"
-						>
-							<img
-								src={path}
-								alt={name}
-								loading="lazy"
-								width="100%"
-								height="100%"
-							/>
-						</a>
-					);
-				})
-			) : (
-				<img src="/assets/icons/skeleton.svg" alt="Sin imagen" />
-			)
-		}
-	</div>
+<article
+  class="w-full mx-auto flex flex-col items-center p-6 border space-y-4 bg-zinc-900 border-zinc-800 rounded shadow-xs md:flex-row md:max-w-4/5">
+  {
+    project
+      ? (
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          width="100"
+          height="100"
+          class="w-full h-64 object-cover md:w-48 md:h-auto"
+        />
+      ) : repository
+        ? (
+          repository.images.map((image: IImage): any => {
+            const path: string = image.downloadUrl || image.htmlUrl;
+            return (
+              <img
+                src={path}
+                alt={repository?.name}
+                loading="lazy"
+                width="100"
+                height="100"
+                class="w-full h-64 object-cover md:w-48 md:h-auto"
+              />
+            );
+          })
+        ) : (
+          <img src="/assets/icons/skeleton.svg" alt="Sin imagen"
+               class="w-full h-64 object-cover md:w-48 md:h-auto"/>
+        )
+  }
 
-	<div class="project-card-container">
-		<h3 class="project-card-title">{name}</h3>
-
-		<p>
-			<span class="project-card-date">
-				{updatedAt}
+  <div class="w-full flex flex-col justify-between md:pl-4 leading-normal">
+    <strong class="mb-2 text-2xl font-bold tracking-tight capitalize">
+      {project?.title || repository?.name}
+      <span class="text-sm text-zinc1-400">
+				{project?.date || repository?.updatedAt}
 			</span>
-		</p>
+    </strong>
+    <p class="mb-6 text-base text-balance">
+      {project?.description || repository?.description}
+    </p>
 
-		<p class="project-card-description">{description}</p>
+    <ul class="mb-6">
+      <li class="capitalize">{project?.skills && project.skills.join(", ")}</li>
+      <li class="capitalize">{repository?.topics && repository.topics}</li>
+    </ul>
 
-		<ul>
-			<li>{topics}</li>
-		</ul>
+    <footer class="flex justify-between items-center gap-4">
+      <a
+        href={project?.demo || repository?.homepage}
+        title={project?.title || repository?.name}
+        aria-label="Go to project demo"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        class="inline-flex items-center justify-center gap-2 text-sm whitespace-nowrap rounded-sm font-medium outline-none cursor-pointer aria-invalid:border-destructive h-9 px-4 py-2 focus-visible:ring bg-purple-700 text-zinc-50  hover:bg-purple-800 focus-visible:ring-purple-600  transition-colors duration-300"
+      >
+        Demo
+      </a>
 
-		<footer class="project-card-footer">
-			<a
-				class="link"
-				href={homepage || ""}
-				title={name}
-				aria-label="Go to project demo"
-				rel="nofollow noopener noreferrer"
-				target="_blank"
-			>
-				Demo
-			</a>
-
-			<a
-				class="github"
-				href={htmlUrl}
-				title={name}
-				aria-label="Go to project demo"
-				rel="nofollow noopener noreferrer"
-				target="_blank"
-			>
-				Código
-			</a>
-		</footer>
-	</div>
+      <a
+        href={project?.code || repository?.htmlUrl}
+        title={project?.title || repository?.name}
+        aria-label="Go to project demo"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        class="inline-flex items-center justify-center gap-2 text-sm whitespace-nowrap rounded-sm font-medium outline-none cursor-pointer aria-invalid:border-destructive h-9 px-4 py-2 focus-visible:ring bg-zinc-700 text-zinc-50 hover:bg-zinc-800 focus-visible:ring-zinc-600  transition-colors duration-300"
+      >
+        Código
+      </a>
+    </footer>
+  </div>
 </article>

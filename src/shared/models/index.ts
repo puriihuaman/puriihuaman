@@ -1,4 +1,4 @@
-import "./repository.ts";
+import "./IRepository.ts";
 import "./service.ts";
 import "./menu.ts";
 import "./search-answer.ts";

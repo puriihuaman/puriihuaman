@@ -1,10 +1,10 @@
-interface Link {
+interface ILink {
 	self: string;
 	git: string;
 	html: string;
 }
 
-export interface ImageDemo {
+export interface IImageDemo {
 	name: string;
 	path: string;
 	sha: string;
@@ -14,10 +14,10 @@ export interface ImageDemo {
 	git_url: string;
 	download_url: string;
 	type: string;
-	_links: Link;
+	_links: ILink;
 }
 
-export interface Image {
+export interface IImage {
 	htmlUrl: string;
 	downloadUrl: string;
 }

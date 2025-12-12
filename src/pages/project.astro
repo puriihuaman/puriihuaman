@@ -1,41 +1,45 @@
 ---
 import AlertMessage from "@components/AlertMessage.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import Loading from "@components/Loading.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import type { SimpleRepository } from "@models/repository";
-import { fetchRepositories } from "@services/fetch-repositories";
-import "./_project.css";
+import type {ICustomRepository} from "@models/IRepository.ts";
+import {fetchRepositories} from "@services/fetch-repositories.ts";
+import {projects, type IProject} from "@data/projects";
 
-let technology: string = "todos";
-
-const { Content } = await import("@markdown/projects.md");
-
-const { repositories, hasError, isLoading, error } = await fetchRepositories();
-
-// console.log("Size: ", repositories.length);
-
+const {repositories, hasError, isLoading, error} = await fetchRepositories();
 const title = "Puriihuaman";
 const description = "Proyectos";
 ---
 
 <BaseLayout title={title} description={description}>
-	<section class="container project">
-		<div class="projects">
-			{isLoading && <Loading />}
+  <section class="max-w-5xl min-h-screen mx-auto px-4">
+    <div class="space-y-8 py-8">
+      <h1 class="text-center font-bold text-3xl md:text-5xl">Proyectos</h1>
 
-			{error && <AlertMessage error={error} />}
-			{
-				!hasError && (
-					<div class="project-gallery">
-						<Content title={title} />
+      {isLoading &&
+        <Loading/>}
 
-						{repositories.map((repository: SimpleRepository) => (
-							<ProjectCard repository={repository} />
-						))}
-					</div>
-				)
-			}
-		</div>
-	</section>
+      {error &&
+        <AlertMessage error={error}/>}
+
+      {
+        !hasError && (
+          <div class="grid grid-cols-1 gap-8">
+            {
+              projects.map((project: IProject) => (
+                <ProjectCard project={project} repository={null}/>
+              ))
+            }
+
+            {
+              repositories.map((repository: ICustomRepository) => (
+                <ProjectCard project={null} repository={repository}/>
+              ))
+            }
+          </div>
+        )
+      }
+    </div>
+  </section>
 </BaseLayout>
