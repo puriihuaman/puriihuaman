@@ -1,7 +1,11 @@
-export interface IProject {
+import type {ImageMetadata} from "astro";
+import coworkingImage from "@assets/images/webp/coworking-space.webp";
+import santaImage from "@assets/images/webp/1.webp";
+
+export interface Project {
   id: string;
   link: string;
-  image: string;
+  image: ImageMetadata;
   title: string;
   description: string;
   date: string;
@@ -10,11 +14,11 @@ export interface IProject {
   code: string;
 }
 
-export const projects: IProject[] = [
+export const projects: Project[] = [
   {
     id: crypto.randomUUID(),
     link: "https://github.com/karlosvas/coworking-space",
-    image: "/assets/images/webp/coworking-space.webp",
+    image: coworkingImage,
     title: "Coworking Space",
     date: "2025",
     description:
@@ -26,7 +30,7 @@ export const projects: IProject[] = [
   {
     id: crypto.randomUUID(),
     link: "https://santas-sight.vercel.app/dashboard",
-    image: "/assets/images/webp/1.webp",
+    image: santaImage,
     title: "Santa's Sight",
     date: "2024",
     description:

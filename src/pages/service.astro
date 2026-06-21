@@ -1,12 +1,12 @@
 ---
+import {getCollection} from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const content = await import("@markdown/service.md");
+const [serviceEntry] = await getCollection("service");
+const {Content} = await serviceEntry.render();
 
-const title = "Puriihuaman";
-const description = "Servicio";
-
-const { Content } = content;
+const title = "Servicios | Puriihuaman";
+const description = "Servicios de desarrollo back-end ofrecidos por Puriihuaman — API REST, Java, Spring Boot y asesoría técnica.";
 ---
 
 <BaseLayout title={title} description={description}>

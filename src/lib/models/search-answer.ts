@@ -1,8 +1,8 @@
 import type { CustomError } from "@services/custom-error.ts";
-import type { ICustomRepository } from "./IRepository.ts";
+import type {Repository} from "./repository.ts";
 
-export interface SearchAnswer {
-	repositories: ICustomRepository[];
+export interface RepositorySearchResult {
+	repositories: Repository[];
 	isLoading: boolean;
 	hasError: boolean;
 	error: CustomError | null;

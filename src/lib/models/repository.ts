@@ -1,6 +1,6 @@
-import type {IImage} from "./IImage.ts";
+import type {Image} from "./image.ts";
 
-export interface IRepository {
+export interface GitHubRepoApi {
   id: number;
   allow_forking: boolean;
   archive_url: string;
@@ -48,7 +48,7 @@ export interface IRepository {
   labels_url: string;
   language: string;
   languages_url: string;
-  license?: ILicense | null;
+  license?: GitHubLicense | null;
   merges_url: string;
   milestones_url: string;
   mirror_url?: string | null;
@@ -57,7 +57,7 @@ export interface IRepository {
   notifications_url: string;
   open_issues: number;
   open_issues_count: number;
-  owner: IOwner;
+  owner: GitHubOwner;
   private: boolean;
   pulls_url: string;
   pushed_at: string;
@@ -82,7 +82,7 @@ export interface IRepository {
   web_commit_signoff_required: boolean;
 }
 
-interface IOwner {
+interface GitHubOwner {
   id: number;
   avatar_url: string;
   events_url: string;
@@ -103,7 +103,7 @@ interface IOwner {
   url: string;
 }
 
-interface ILicense {
+interface GitHubLicense {
   key: string;
   name: string;
   node_id: string;
@@ -111,7 +111,7 @@ interface ILicense {
   url: string;
 }
 
-export interface ICustomRepository {
+export interface Repository {
   id: number;
   contentsUrl: string;
   createdAt: string;
@@ -119,9 +119,9 @@ export interface ICustomRepository {
   fullName: string;
   homepage?: string | null;
   htmlUrl: string;
-  images: IImage[];
+  images: Image[];
   name: string;
-  pushed_at: string;
+  pushedAt: string;
   topics: string;
   updatedAt: string;
 }
