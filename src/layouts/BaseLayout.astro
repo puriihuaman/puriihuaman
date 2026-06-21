@@ -4,32 +4,98 @@ import Header from "@components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, noindex } = Astro.props;
+const siteUrl = Astro.site ?? new URL("https://puriihuaman.dev");
+const canonical = new URL(Astro.url.pathname, siteUrl);
+const ogImage = image ?? new URL("assets/icons/puriihuaman.png", siteUrl).href;
+const verifiedOn = [
+  "Java",
+  "Spring Boot",
+  "Kafka",
+  "API REST",
+  "SQL",
+  "Git",
+  "Scrum",
+];
 ---
 
 <!doctype html>
 <html lang="es" transition:animate="initial">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="color-scheme" content="light dark" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href="/assets/icons/puriihuaman.png" />
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/icons/puriihuaman.png"
+    />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
 
-	<body class="grid grid-cols-1 grid-rows-[auto_1fr] text-slate-50 bg-zinc-950">
-		<Header />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_PE" />
 
-		<main>
-			<slot />
-		</main>
-	</body>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured Data: Person -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Puriihuaman",
+        url: siteUrl.href,
+        jobTitle: "Desarrollador Back End",
+        knowsAbout: verifiedOn,
+        alumniOf: "Instituto El Buen Pastor (IBP)",
+      })}
+    />
+
+    <!-- Structured Data: WebSite -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Puriihuaman",
+        url: siteUrl.href,
+        description:
+          "Portafolio personal de Puriihuaman - Desarrollador Back End",
+      })}
+    />
+
+    <ViewTransitions />
+  </head>
+
+  <body class="grid grid-cols-1 grid-rows-[auto_1fr] text-slate-50 bg-zinc-950">
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>

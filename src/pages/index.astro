@@ -3,37 +3,42 @@ import Avatar from "@components/Avatar.astro";
 import Skills from "@components/Skills.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Hero from "@components/Hero.astro";
-import {skillsList} from "@data/skills-list";
-import type {Technology} from "@models/technology";
+import { skillsList } from "@data/skills-list";
+import type { Technology } from "@models/technology";
 
-const title = "Puriihuaman";
-const description = "Puriihuaman - Portafolio personal";
+const title = "Puriihuaman — Desarrollador Back End Java & Spring Boot";
+const description =
+  "Portafolio personal de Puriihuaman, desarrollador back-end especializado en Java, Spring Boot, API REST y Kafka.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <Hero/>
+  <Hero />
 
   <section class="min-h-screen max-w-5xl mx-auto px-4 space-y-6">
     <section class="py-4 space-y-8">
       <div class="flex flex-col-reverse items-stretch gap-6 py-4 md:flex-row">
-        <Avatar/>
+        <Avatar />
 
         <div class="space-y-8 flex-1">
           <h2 class="text-center font-bold text-3xl md:text-5xl">Sobre Mí</h2>
 
           <p>
-            Desarrollador Back End con formación técnica en Desarrollo de Sistemas de Información.
-            Experiencia en diseño y construcción de API's REST seguras, robustas y escalables con
-            Java y Spring Boot, integrando herramientas modernas como Kafka. He desarrollado
-            soluciones freelance, incluido un sistema web de reservas para gestión de stands.
-            También he participado en hackathons multinacionales, fortaleciendo habilidades en
-            trabajo en equipo, metodologías ágiles (SCRUM) y dominio de tecnologías.
+            Desarrollador Back End con formación técnica en Desarrollo de
+            Sistemas de Información. Experiencia en diseño y construcción de
+            API's REST seguras, robustas y escalables con Java y Spring Boot,
+            integrando herramientas modernas como Kafka. He desarrollado
+            soluciones freelance, incluido un sistema web de reservas para
+            gestión de stands. También he participado en hackathons
+            multinacionales, fortaleciendo habilidades en trabajo en equipo,
+            metodologías ágiles (SCRUM) y dominio de tecnologías.
           </p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <article class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow">
+        <article
+          class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow"
+        >
           <div class="space-y-2">
             <div class="text-4xl">🎓</div>
             <strong>Formación</strong>
@@ -42,16 +47,22 @@ const description = "Puriihuaman - Portafolio personal";
           <p class="text-zinc-300">Desarrollo de Sistemas de Información</p>
         </article>
 
-        <article class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow">
+        <article
+          class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow"
+        >
           <div class="space-y-2">
             <div class="text-4xl">💼</div>
             <strong>Experiencia</strong>
           </div>
 
-          <p class="text-zinc-300">Freelance, Desarrollador Back-end (desarrollo de API's)</p>
+          <p class="text-zinc-300">
+            Freelance, Desarrollador Back-end (desarrollo de API's)
+          </p>
         </article>
 
-        <article class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow">
+        <article
+          class="flex-1 text-center space-y-3 px-2 py-4 border border-zinc-900 shadow"
+        >
           <div class="space-y-2">
             <div class="text-4xl">💡</div>
 
@@ -74,16 +85,20 @@ const description = "Puriihuaman - Portafolio personal";
               <span class="text-sm text-zinc-400">2017 - 2022</span>
             </div>
 
-            <strong class="text-sm md:text-base">Instituto El Buen Pastor (IBP)</strong>
+            <strong class="text-sm md:text-base"
+              >Instituto El Buen Pastor (IBP)</strong
+            >
           </header>
 
           <p class="text-pretty">
-            Carrera enfocada en formar profesionales en tecnologías de la información. El egresado
-            en Desarrollo de Sistemas de Información crea y prueba software según estándares TI,
-            gestiona su implantación y optimiza sistemas según requisitos del cliente. Propone
-            soluciones innovadoras, elige tecnología eficiente y mejora procesos empresariales. Su
-            formación en TIC, liderazgo, comunicación, ética y bilingüismo le permite aportar valor
-            y asegurar el cuidado del medio ambiente.
+            Carrera enfocada en formar profesionales en tecnologías de la
+            información. El egresado en Desarrollo de Sistemas de Información
+            crea y prueba software según estándares TI, gestiona su implantación
+            y optimiza sistemas según requisitos del cliente. Propone soluciones
+            innovadoras, elige tecnología eficiente y mejora procesos
+            empresariales. Su formación en TIC, liderazgo, comunicación, ética y
+            bilingüismo le permite aportar valor y asegurar el cuidado del medio
+            ambiente.
           </p>
 
           <footer class="space-y-2">
@@ -103,16 +118,17 @@ const description = "Puriihuaman - Portafolio personal";
           <header class="space-y-2">
             <div class="flex justify-between items-center">
               <h3 class="text-xl font-semibold">Oracle Next Education</h3>
-              <span class="text-sm text-zinc-400">Ene. - Actualidad</span>
+              <span class="text-sm text-zinc-400">Ene. - Jun. 2025</span>
             </div>
 
             <strong class="text-sm md:text-base">Alura Latam - Oracle</strong>
           </header>
 
           <p class="text-pretty">
-            Programa educativo de Oracle en colaboración con Alura Latam que forma desarrolladores
-            web full stack, integrando tecnologías clave como JavaScript, React, HTML y CSS. El
-            programa fortalece habilidades blandas, como comunicación efectiva y trabajo en equipo.
+            Programa educativo de Oracle en colaboración con Alura Latam que
+            forma desarrolladores web full stack, integrando tecnologías clave
+            como JavaScript, React, HTML y CSS. El programa fortalece
+            habilidades blandas, como comunicación efectiva y trabajo en equipo.
           </p>
 
           <footer class="space-y-2">
@@ -123,7 +139,8 @@ const description = "Puriihuaman - Portafolio personal";
             <ul class="list-disc ml-8 text-sm text-zinc-300">
               <li>Habilidades blandas</li>
               <li>Lógica de programación</li>
-              <li>Scrum. - SQL, Java, Spring Boot, JavaScript, HTML, CSS</li>
+              <li>Scrum</li>
+              <li>SQL, Java, Spring Boot, JavaScript, HTML, CSS</li>
             </ul>
           </footer>
         </article>
@@ -135,8 +152,8 @@ const description = "Puriihuaman - Portafolio personal";
 
       <section class="skills-content_ space-y-6">
         {
-          skillsList.map(({type, skills}: Technology) => (
-            <Skills technologyType={type} skills={skills}/>
+          skillsList.map(({ type, skills }: Technology) => (
+            <Skills technologyType={type} skills={skills} />
           ))
         }
       </section>

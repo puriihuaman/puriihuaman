@@ -10,16 +10,16 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.5.4",
+		"@astrojs/check": "^0.9.6",
+		"@astrojs/sitemap": "^3.7.3",
 		"@tailwindcss/vite": "4.1.18",
-		"astro": "4.4.0",
+		"astro": "^5.16.5",
 		"tailwindcss": "4.1.18",
-		"typescript": "5.3.3"
+		"typescript": "5.9.3"
 	},
 	"devDependencies": {
-		"astro-icon": "1.1.1",
+		"astro-icon": "1.1.5",
 		"prettier": "3.2.5",
-		"prettier-plugin-astro": "0.13.0",
-		"sass": "1.71.0"
+		"prettier-plugin-astro": "0.13.0"
 	}
 }

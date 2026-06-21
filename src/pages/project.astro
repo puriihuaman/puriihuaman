@@ -1,15 +1,17 @@
 ---
-import AlertMessage from "@components/AlertMessage.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import Loading from "@components/Loading.astro";
-import ProjectCard from "@components/ProjectCard.astro";
-import type {ICustomRepository} from "@models/IRepository.ts";
-import {fetchRepositories} from "@services/fetch-repositories.ts";
-import {projects, type IProject} from "@data/projects";
+import { fetchRepositories } from "@services/fetch-repositories.ts";
+import { projects, type Project } from "@data/projects";
 
-const {repositories, hasError, isLoading, error} = await fetchRepositories();
-const title = "Puriihuaman";
-const description = "Proyectos";
+import AlertMessage from "@components/AlertMessage.astro";
+import Loading from "@components/Loading.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import type { Repository } from "@models/repository.ts";
+
+const { repositories, hasError, isLoading, error } = await fetchRepositories();
+const title = "Proyectos | Puriihuaman";
+const description =
+  "Proyectos y repositorios de Puriihuaman — desarrollo back-end con Java, Spring Boot y más.";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,26 +19,20 @@ const description = "Proyectos";
     <div class="space-y-8 py-8">
       <h1 class="text-center font-bold text-3xl md:text-5xl">Proyectos</h1>
 
-      {isLoading &&
-        <Loading/>}
+      {isLoading && <Loading />}
 
-      {error &&
-        <AlertMessage error={error}/>}
+      {error && <AlertMessage error={error} />}
 
       {
         !hasError && (
           <div class="grid grid-cols-1 gap-8">
-            {
-              projects.map((project: IProject) => (
-                <ProjectCard project={project} repository={null}/>
-              ))
-            }
+            {              projects.map((project: Project) => (
+              <ProjectCard project={project} repository={null} />
+            ))}
 
-            {
-              repositories.map((repository: ICustomRepository) => (
-                <ProjectCard project={null} repository={repository}/>
-              ))
-            }
+            {repositories.map((repository: Repository) => (
+              <ProjectCard project={null} repository={repository} />
+            ))}
           </div>
         )
       }

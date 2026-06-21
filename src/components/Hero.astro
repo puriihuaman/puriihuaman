@@ -1,8 +1,9 @@
 ---
 import Contact from "./Contact.astro";
+import heroBg from "@assets/images/webp/hero.webp";
 ---
 
-<section class="bg-[url(/assets/images/webp/hero.webp)] bg-center bg-no-repeat bg-origin-border bg-clip-border bg-blend-multiply bg-fixed bg-zinc-900/60">
+<section class="bg-center bg-no-repeat bg-origin-border bg-clip-border bg-blend-multiply bg-fixed bg-zinc-900/60" style={{backgroundImage: `url(${heroBg.src})`}}>
   <div class="max-w-5xl mx-auto px-4">
     <section
       class="min-h-screen relative z-10 flex flex-col items-center justify-center gap-4 h-full text-center px-4">

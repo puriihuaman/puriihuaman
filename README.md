@@ -4,11 +4,12 @@
 
 ### { SOBRE MÍ :technologist: }
 
-🥇 Desarrollador de software con formación técnica en **[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
+🥇 Desarrollador de software con formación técnica en
+**[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)**, me desempeño como
 _desarrollador back end_.
 
 :brain: Experiencia en diseño y construcción de API's Rest seguras y escalables con Java y Spring
-Boot, integrando herramientas modernas como Kafka. He desarrollado soluciones freelance, incluido un
+Boot. He desarrollado soluciones freelance, incluido un
 sistema web de reservas para gestión de stands. También he participado en hackathons
 multinacionales, fortaleciendo habilidades en trabajo en equipo, metodologías
 ágiles (SCRUM) y dominio de tecnologías.
@@ -26,26 +27,30 @@ enviarme un correo a <pedropuriihuaman@gmail.com>.
 
 _Perú. Oct. 2025 - Ene. 2026_
 
-* [x] Desarrollé un sistema web para la Feria Lunar que automatiza la reserva y gestión de stands
-  comerciales, reemplazando procesos manuales propensos a errores.
-* [x] Implementé un sistema de reservas en línea, panel administrativo con autenticación y
-  notificaciones automáticas por correo, logrando una gestión centralizada y supervisión en tiempo
-  real de recintos, stands y reservas.
-* [x] Utilicé Laravel 12, PHP 8.2, MySQL, Eloquent, Blade/Tailwind, Alpine.js, Axios y Vite.
+- [x] Desarrollé un sistema web para la Feria Lunar que automatiza la reserva y gestión de stands
+      comerciales, reemplazando procesos manuales propensos a errores.
+- [x] Implementé un sistema de reservas en línea, panel administrativo con autenticación y
+      notificaciones automáticas por correo, logrando una gestión centralizada y supervisión en tiempo
+      real de recintos, stands y reservas.
+- [x] Utilicé Laravel 12, PHP 8.2, MySQL, Eloquent, Blade/Tailwind, Alpine.js, Axios y Vite.
 
-#### [Fast Order](https://github.com/puriihuaman/fast-order) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos)) | _Desarrollador Back-End_
+#### [Fast Order](https://github.com/puriihuaman/fast-order) (Hackathon - [ByteColaborativos](https://www.twitch.tv/bytescolaborativos)) |
+
+_Desarrollador Back-End_
 
 _España. Mar. 2025 - Abr. 2025_
 
 - [x] Diseñé y desarrollé una API REST completa para gestión de pedidos.
 - [x] Implementé autenticación basada en JSON Web Token JWT y sistema de mensajería asíncrona
-  con Kafka.
+      con Kafka.
 - [x] Documenté la API con Swagger y coordiné el flujo de trabajo con Postman.
 - [x] Segundo lugar en la Hackathon de Bytes Colaborativos entre más de 5 equipos.
 - [x] **Tecnologías utilizadas**: Java + Spring Boot + Spring Security, Kafka, PostgreSQL, Swagger,
-  Trello.
+      Trello.
 
-#### [Coworking Space API](https://github.com/karlosvas/coworking-space) ([ByteColaborativos](https://www.twitch.tv/bytescolaborativos)) | _Desarrollador Back-End_
+#### [Coworking Space API](https://github.com/karlosvas/coworking-space) ([ByteColaborativos](https://www.twitch.tv/bytescolaborativos)) |
+
+_Desarrollador Back-End_
 
 _España. Feb. 2025 - Mar. 2025_
 
@@ -54,7 +59,7 @@ _España. Feb. 2025 - Mar. 2025_
 - [x] Colaboré en un equipo multinacional de 4 personas.
 - [x] Primer lugar en la Hackathon de Bytes Colaborativos.
 - [x] **Tecnologías utilizadas**: Java + Spring Boot + Spring Security + JWT, PostgreSQL, Bruno,
-  Trello.
+      Trello.
 
 ### [API Electro](https://github.com/puriihuaman/api-electro) (Cibertec) | _Desarrollador Back-End_
 
@@ -63,7 +68,7 @@ _Perú. Dic. 2024 - Ene. 2025_
 - [x] Diseñé la base de datos.
 - [x] Desarrollé las funcionalidades de API Rest y documentación.
 - [x] Implementé un sistema de autenticación JWT (JSON Web Token) que redujo vulnerabilidades de
-  seguridad.
+      seguridad.
 - [x] Realicé testing de API con Postman.
 - [x] **Tecnologías utilizadas**: Java + Spring Boot + Spring Security, MySQL, Swagger, Trello.
 
@@ -73,7 +78,7 @@ Código: [Back-End](https://github.com/puriihuaman/api-electro)
 
 ---
 
-> :seedling: Actualmente sigo aprendiendo **SpringBoot | Docker | Laravel**.
+> :seedling: Actualmente sigo aprendiendo **SpringBoot | Docker | IA**.
 >
 > :globe_with_meridians: Todos mis proyectos están disponibles
 > en [Puriihuaman](https://puriihuaman.netlify.app/) o [GitHub](https://github.com/puriihuaman)
@@ -85,13 +90,7 @@ Código: [Back-End](https://github.com/puriihuaman/api-electro)
 
 ---
 
-#### Instituto El Buen Pastor
-
-[Desarrollo de Sistemas de Información](https://www.ibp.edu.pe/dsi.php)
-
-#### Alura Latam - Oracle
-
-Oracle Next Education
+**Desarrollo de Sistema de Información** | _Instituto El Buen Pastor_
 
 **Cursos**
 
@@ -106,32 +105,41 @@ Oracle Next Education
 
 <!-- skills -->
 
-*Tecnología Back End*
+_Tecnología Back End_
+
 <!-- Java -->
+
 [![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=square&logo=openjdk&logoColor=white)](https://docs.oracle.com/javase/8/docs/api/)<!-- Spring -->
 [![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=square&logo=spring&logoColor=white)](https://spring.io/)<!-- Spring boot -->
 [![Static Badge](https://img.shields.io/badge/Spring_Boot-springboot?style=square&logo=springboot&logoColor=white&labelColor=green&color=green)](https://spring.io/projects/spring-boot)<!-- PHP -->
 [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=square&logo=php&logoColor=white)](https://www.php.net/docs.php)<!-- PHP -->
 [![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=square&logo=laravel&logoColor=white)](https://laravel.com/)
 
-*Bases de datos*
+_Bases de datos_
+
 <!-- MySql -->
+
 [![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=square&logo=mysql&logoColor=white)](https://dev.mysql.com/doc/)
 
-*Tecnología Front End*
+_Tecnología Front End_
+
 <!-- Javascript -->
+
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=square&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<!-- Typescript -->
-[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)<!-- Vue -->
-[![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=square&logo=vuedotjs&logoColor=%234FC08D)](https://vuejs.org/)<!-- Html -->
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)<!-- Html -->
 [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=square&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)<!-- Css -->
 [![CSS](https://img.shields.io/badge/css-%23663399.svg?style=square&logo=css&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)<!-- Tailwind CSS -->
 [![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 <!-- React -->
 <!-- [![Static Badge](https://img.shields.io/badge/React-react?style=square&logo=react&labelColor=black&color=%230284c7)](https://react.dev/) -->
+<!-- Vue -->
+<!-- ([![Vue.js]&#40;https://img.shields.io/badge/vuejs-%2335495e.svg?style=square&logo=vuedotjs&logoColor=%234FC08D&#41;]&#40;https://vuejs.org/&#41;)-->
 
-*Otras tecnologías*
+_Otras tecnologías_
+
 <!-- Git -->
+
 [![Static Badge](https://img.shields.io/badge/Git-git?style=square&logo=git&logoColor=white&labelColor=orangered&color=orangered)](https://git-scm.com/)<!-- Postman -->
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=square&logo=postman&logoColor=white)](https://www.postman.com/)<!-- Docker -->
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=square&logo=docker&logoColor=white)](https://www.docker.com/)
@@ -158,7 +166,7 @@ Oracle Next Education
 ¡Estoy abierto a conexiones! Si deseas colaborar en proyectos interesantes o simplemente
 intercambiar experiencias, no dudes en contactarme.
 
-[Mi Curriculum](https://drive.google.com/file/d/1tWEvwI_DwndsaO8sf9c-ED6hGLyFr_bQ/view?usp=sharing)
+[Mi Curriculum](https://drive.google.com/file/d/1tWEvwI_DwndsaO8sf9c-ED6hGLyFr_bQ/view?usp=sharing) :arrow_down:
 
 [![Static Badge](https://img.shields.io/badge/LinkedIn-Pedro%20Purihuaman?style=social&logo=linkedin&label=Pedro%20Purihuaman)](https://www.linkedin.com/in/puriihuaman/)
 ![Static Badge](https://img.shields.io/badge/Gmail-pedropuriihuaman?style=social&logo=Gmail&label=pedropuriihuaman%40gmail.com)
