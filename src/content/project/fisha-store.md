@@ -5,8 +5,8 @@ title: Fisha Store
 
 image: "/src/assets/images/webp/coworking-space.webp"
 
-startDate: "Jun. 2026"
-deadline: "Jul. 2026"
+startDate: "2026-06-01"
+deadline: "2026-07-20"
 
 demoLink: https://github.com/puriihuaman/fisha-store-app
 codeLink: https://github.com/puriihuaman/fisha-store

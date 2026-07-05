@@ -5,8 +5,8 @@ title: "Coworking Space"
 
 image: "/src/assets/images/webp/coworking-space.webp"
 
-startDate: "2025"
-deadline: "2025"
+startDate: "2025-02-15"
+deadline: "2025-03-05"
 
 demoLink: "https://github.com/karlosvas/coworking-space"
 codeLink: "https://github.com/karlosvas/coworking-space"
