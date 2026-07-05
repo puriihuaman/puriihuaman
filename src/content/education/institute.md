@@ -1,13 +1,13 @@
 ---
-type: institute
+title: Formación Técnica
 
-title: "Formación Técnica"
+type: degree
 
-training: "Desarrollo de Sistemas"
-institute: "Instituto El Buen Pastor (IBP)"
+organization: Instituto El Buen Pastor (IBP)
+program: Desarrollo de Sistemas
 
 startDate: "2017"
-graduationDate: "2022"
+endDate: "2022"
 
 skills:
   - category: Tecnologías
@@ -18,11 +18,11 @@ skills:
       - JavaScript
   - category: Metodologías
     items:
-      - "SCRUM"
-  - category: "Habilidades blandas"
+      - SCRUM
+  - category: Habilidades blandas
     items:
-      - "Trabajo en equipo"
-      - "Resolución de problemas"
+      - Trabajo en equipo
+      - Resolución de problemas
 ---
 
 Carrera enfocada en formar profesionales en tecnologías de la

@@ -5,54 +5,21 @@ import Hero from "@components/Hero.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection, getEntry } from "astro:content";
 import Skill from "./_partial/Skill.astro";
+import ProfileSummary from "./_partial/ProfileSummary.astro";
 
 const about = await getEntry("about", "about-me");
-const education = await getCollection("education");
 
-type EducationEntry = (typeof education)[number];
-type EducationType = EducationEntry["data"]["type"];
+const trainingSessions = await getCollection("education");
 
-function getEducationByType<T extends EducationType>(type: T) {
-  return education.find(
-    (item): item is Extract<EducationEntry, { data: { type: T } }> =>
-      item.data.type === type,
-  );
+if (!trainingSessions) {
+  return Astro.redirect("/404");
 }
-
-async function renderEntry<T extends { render(): Promise<any>; data: any }>(
-  entry: T,
-) {
-  return {
-    data: entry.data,
-    ...(await entry.render()),
-  };
-}
-
-const summaryEntry = getEducationByType("summary");
-const instituteEntry = getEducationByType("institute");
-const oracleNextEducationEntry = getEducationByType("certification");
 
 if (!about) {
   throw new Error("No se encontró el archivo markdown 'about-me'");
 }
 
-if (!education)
-  throw new Error("No se encontró el archivo markdown 'education'");
-
-if (!summaryEntry)
-  throw new Error("No se encontró el archivo markdown 'summary'");
-
-if (!instituteEntry)
-  throw new Error("No se encontró el archivo markdown 'institute'");
-
-if (!oracleNextEducationEntry)
-  throw new Error("No se encontró el archivo markdown 'oracle education'");
-
 const { Content: ContentAbout } = await about.render();
-
-const summary = await renderEntry(summaryEntry);
-const institute = await renderEntry(instituteEntry);
-const oracleCertification = await renderEntry(oracleNextEducationEntry);
 
 const title = "Puriihuaman — Desarrollador Back End Java & Spring Boot";
 const description =
@@ -62,7 +29,6 @@ const description =
 <BaseLayout title={title} description={description}>
   <Hero />
 
-  <!-- min-h-screen max-w-5xl mx-auto px-4 md:px-6 space-y-6 md:space-y-8 section__inner -->
   <section class="relative z-10 max-w-300 mx-auto px-5 md:px-7 lg:px-8">
     <section class="py-14 space-y-8">
       <!-- about -->
@@ -83,59 +49,7 @@ const description =
       </div>
 
       <!-- Training - Experience - Specialty -->
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-        <article
-          class="flex-1 space-y-2 px-5 md:px-6 py-8 border border-night-700/60 rounded-xl shadow-sm bg-night-800"
-        >
-          <div class="space-y-3 text-center">
-            <div class="text-4xl">{summary.data.training.icon}</div>
-            <strong class="text-night-100">
-              {summary.data.training.title.toUpperCase()}
-            </strong>
-          </div>
-
-          {
-            summary.data.training.items.map((item: string) => (
-              <p class="text-night-300 font-light text-sm">{item}</p>
-            ))
-          }
-        </article>
-
-        <article
-          class="flex-1 space-y-2 px-5 md:px-6 py-8 border border-night-700/60 rounded-xl shadow-sm bg-night-800"
-        >
-          <div class="space-y-3 text-center">
-            <div class="text-4xl">{summary.data.experience.icon}</div>
-            <strong class="text-night-100">
-              {summary.data.experience.title.toUpperCase()}
-            </strong>
-          </div>
-
-          {
-            summary.data.experience.items.map((item: string) => (
-              <p class="text-night-300 font-light text-sm">{item}</p>
-            ))
-          }
-        </article>
-
-        <article
-          class="flex-1 space-y-2 px-5 md:px-6 py-8 border border-night-700/60 rounded-xl shadow-sm bg-night-800"
-        >
-          <div class="space-y-3 text-center">
-            <div class="text-4xl">{summary.data.specialty.icon}</div>
-
-            <strong class="text-night-100">
-              {summary.data.specialty.title.toUpperCase()}
-            </strong>
-          </div>
-
-          {
-            summary.data.specialty.items.map((item: string) => (
-              <p class="text-night-300 font-light text-sm">{item}</p>
-            ))
-          }
-        </article>
-      </div>
+      <ProfileSummary />
     </section>
 
     <!-- Education -->
@@ -143,25 +57,19 @@ const description =
       <h3 class="text-center font-bold text-2xl md:text-3xl">Education</h3>
 
       <div class="flex flex-col gap-6">
-        <CardEducation
-          title={institute.data.training}
-          subtitle={institute.data.institute}
-          startDate={institute.data.startDate}
-          graduationDate={institute.data.graduationDate}
-          skills={institute.data.skills}
-        >
-          <institute.Content />
-        </CardEducation>
-
-        <CardEducation
-          title={oracleCertification.data.title}
-          subtitle={oracleCertification.data.company}
-          startDate={oracleCertification.data.startDate}
-          graduationDate={oracleCertification.data.graduationDate}
-          skills={oracleCertification.data.skills}
-        >
-          <oracleCertification.Content />
-        </CardEducation>
+        {
+          trainingSessions.map((item) => (
+            <CardEducation
+              title={item.data.title}
+              subtitle={item.data.organization}
+              startDate={item.data.startDate}
+              graduationDate={item.data.endDate}
+              skills={item.data.skills}
+            >
+              {item.body}
+            </CardEducation>
+          ))
+        }
       </div>
     </section>
 

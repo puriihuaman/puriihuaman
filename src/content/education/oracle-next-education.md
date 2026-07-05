@@ -1,28 +1,29 @@
 ---
+title: Oracle Next Education
+
 type: certification
 
-title: "Oracle Next Education"
-
-company: "Alura Latam - Oracle"
+organization: Alura Latam - Oracle
+program: Oracle Next Education
 
 startDate: "Ene. 2025"
-graduationDate: "Jun. 2025"
+endDate: "Jun. 2025"
 
 skills:
   - category: Tecnologías
     items:
       - Java
-      - "Spring Boot"
+      - Spring Boot
       - SQL
       - JavaScript
-      - "HTML + CSS"
+      - HTML + CSS
   - category: Metodologías
     items:
-      - "SCRUM"
-  - category: "Habilidades blandas"
+      - SCRUM
+  - category: Habilidades blandas
     items:
-      - "Resolución de problemas"
-      - "Trabajo en equipo"
+      - Resolución de problemas
+      - Trabajo en equipo
 ---
 
 Programa educativo de Oracle en colaboración con Alura Latam que
