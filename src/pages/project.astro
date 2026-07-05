@@ -1,41 +1,92 @@
 ---
-import { fetchRepositories } from "@services/fetch-repositories.ts";
-import { projects, type Project } from "@data/projects";
-
-import AlertMessage from "@components/AlertMessage.astro";
-import Loading from "@components/Loading.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
-import type { Repository } from "@models/repository.ts";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
 
-const { repositories, hasError, isLoading, error } = await fetchRepositories();
+const coworkingSpaceEntry = await getEntry("project", "coworking-space");
+const santasSightEntry = await getEntry("project", "santas-sight");
+
+if (!coworkingSpaceEntry) {
+  throw new Error("No se encontró el archivo markdown 'coworking-space'");
+}
+
+if (!santasSightEntry) {
+  throw new Error("No se encontró el archivo markdown 'santas-sight'");
+}
+
+const { Content: CoworkingContent } = await coworkingSpaceEntry.render();
+const { Content: SantasContent } = await santasSightEntry.render();
+
 const title = "Proyectos | Puriihuaman";
 const description =
   "Proyectos y repositorios de Puriihuaman — desarrollo back-end con Java, Spring Boot y más.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="max-w-5xl min-h-screen mx-auto px-4">
-    <div class="space-y-8 py-8">
-      <h1 class="text-center font-bold text-3xl md:text-5xl">Proyectos</h1>
+  <section class="relative py-21 bg-night-950">
+    <div class="relative z-10 max-w-300 mx-auto px-5 md:px-7 lg:px-8">
+      <div class="text-left mb-12 max-w-195 md:text-center md:mx-auto md:pb-14">
+        <h1
+          class="text-night-50 leading-snug font-semibold text-[32px] mb-7 md:text-[42px] md:leading-[1.15] lg:text-[54px] is-visible"
+        >
+          Proyectos
+        </h1>
 
-      {isLoading && <Loading />}
+        <p
+          class="text-base font-light text-night-200 leading-7"
+          data-animate="fade-up"
+          data-delay="160"
+          data-duration="800"
+        >
+          Cada proyecto combina diseño, automatización y tecnología para generar
+          impacto real en operaciones y crecimiento.
+        </p>
+      </div>
 
-      {error && <AlertMessage error={error} />}
+      <!-- {isLoading && <Loading />} -->
 
-      {
-        !hasError && (
-          <div class="grid grid-cols-1 gap-8">
-            {              projects.map((project: Project) => (
-              <ProjectCard project={project} repository={null} />
-            ))}
+      <!-- {error && <AlertMessage error={error} />} -->
 
-            {repositories.map((repository: Repository) => (
-              <ProjectCard project={null} repository={repository} />
-            ))}
-          </div>
-        )
-      }
+      <div class="flex flex-col">
+        <ProjectCard project={coworkingSpaceEntry.data}>
+          <CoworkingContent />
+        </ProjectCard>
+
+        <ProjectCard project={santasSightEntry.data}>
+          <SantasContent />
+        </ProjectCard>
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  [data-animate][data-delay="120"] {
+    animation-delay: 0.12s;
+  }
+  [data-animate][data-duration="1000"] {
+    --data-animate-duration: 1s;
+  }
+
+  [data-animate="fade-up"].is-visible {
+    animation-name: animate-fade-up;
+    animation-duration: var(--data-animate-duration);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
+  }
+
+  [data-animate][data-delay="160"] {
+    animation-delay: 0.16s;
+  }
+
+  [data-animate][data-duration="800"] {
+    --data-animate-duration: 0.8s;
+  }
+
+  [data-animate="fade-up"].is-visible {
+    animation-name: animate-fade-up;
+    animation-duration: var(--data-animate-duration);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
+  }
+</style>
