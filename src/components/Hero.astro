@@ -3,24 +3,61 @@ import Contact from "./Contact.astro";
 import heroBg from "@assets/images/webp/hero.webp";
 ---
 
-<section class="bg-center bg-no-repeat bg-origin-border bg-clip-border bg-blend-multiply bg-fixed bg-zinc-900/60" style={{backgroundImage: `url(${heroBg.src})`}}>
-  <div class="max-w-5xl mx-auto px-4">
-    <section
-      class="min-h-screen relative z-10 flex flex-col items-center justify-center gap-4 h-full text-center px-4">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-bold text-zinc-50 text-shadow mt-10">Pedro
-          Purihuaman</h1>
-        <p class="notranslate mt-5 text-xl font-bold">
-          Desarrollador Back End / Desarrollo de Software
-        </p>
+<section
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-night-950"
+>
+  <!-- Background image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+    aria-hidden="true"
+    style={{ backgroundImage: `url(${heroBg.src})` }}
+  >
+  </div>
 
-        <p class="text-sm md:text-xl text-zinc-400 mx-auto max-w-sm md:max-w-xl mt-4">
-          Desarrollando el núcleo robusto y escalable de tu aplicación con
-          tecnología moderna y alto rendimiento.
-        </p>
-      </div>
+  <!-- Gradient overlays: deep vignette with a subtle mid-toned breathing room -->
+  <div
+    class="absolute inset-0 bg-linear-to-b from-night-950/85 via-night-950/40 to-night-950/90"
+    aria-hidden="true"
+  >
+  </div>
 
-      <Contact/>
-    </section>
+  <!-- Content -->
+  <div
+    class="relative z-10 w-full max-w-5xl mx-auto px-4 py-24 md:py-32 text-center"
+  >
+    <div class="animate-fade-in-up">
+      <p
+        class="notranslate text-sm md:text-sm font-semibold tracking-[0.25em] uppercase text-indigo-400 mb-4 md:mb-5"
+      >
+        Desarrollador Back End / Desarrollo de Software
+      </p>
+
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-none mb-4 md:mb-5 tracking-tight bg-linear-to-b from-night-50 to-night-200 bg-clip-text text-transparent"
+      >
+        Pedro Purihuaman
+      </h1>
+
+      <p
+        class="text-base md:text-lg text-night-300 max-w-xl mx-auto leading-relaxed px-2"
+      >
+        Desarrollando el núcleo robusto y escalable de tu aplicación con
+        tecnología moderna y alto rendimiento.
+      </p>
+    </div>
+
+    <div
+      class="animate-fade-in-up mt-8 md:mt-10"
+      style="animation-delay: 200ms"
+    >
+      <Contact />
+    </div>
+  </div>
+
+  <!-- Smooth transition to next section -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-linear-to-t from-night-950 to-transparent pointer-events-none"
+    aria-hidden="true"
+  >
   </div>
 </section>

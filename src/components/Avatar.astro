@@ -1,21 +1,16 @@
 ---
-import puriihuamanWebp from "@assets/images/webp/puriihuaman.webp";
-import puriihuamanPng from "@assets/images/puriihuaman.png";
+import { Picture } from "astro:assets";
 
-const imageWebp = puriihuamanWebp.src;
-const imagePng = puriihuamanPng.src;
+import puriihuamanPng from "@assets/images/puriihuaman.png";
 ---
 
-<picture class="w-full overflow-hidden rounded-2xl md:w-1/5">
-	<source srcset={imageWebp} type="image/webp" class="h-full w-full object-cover" />
-
-	<img
-		class="h-full w-full object-cover mask-b-from-20%"
-		alt="Foto Pedro Purihuaman"
-		src={imagePng}
-		width="125"
-		height="125"
-		decoding="async"
-		loading="lazy"
-	/>
-</picture>
+<div class="w-full overflow-hidden rounded-2xl md:w-1/5">
+  <Picture
+    src={puriihuamanPng}
+    formats={["webp", "png"]}
+    width={125}
+    height={125}
+    alt="Foto Pedro Purihuaman"
+    class:list={["h-full", "w-full", "object-cover", "mask-b-from-20%"]}
+  />
+</div>
