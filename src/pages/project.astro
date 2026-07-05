@@ -1,21 +1,13 @@
 ---
 import ProjectCard from "@components/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
-const coworkingSpaceEntry = await getEntry("project", "coworking-space");
-const santasSightEntry = await getEntry("project", "santas-sight");
+const projects = await getCollection("project");
 
-if (!coworkingSpaceEntry) {
-  throw new Error("No se encontró el archivo markdown 'coworking-space'");
+if (!projects) {
+  return Astro.redirect("/404");
 }
-
-if (!santasSightEntry) {
-  throw new Error("No se encontró el archivo markdown 'santas-sight'");
-}
-
-const { Content: CoworkingContent } = await coworkingSpaceEntry.render();
-const { Content: SantasContent } = await santasSightEntry.render();
 
 const title = "Proyectos | Puriihuaman";
 const description =
@@ -48,13 +40,11 @@ const description =
       <!-- {error && <AlertMessage error={error} />} -->
 
       <div class="flex flex-col">
-        <ProjectCard project={coworkingSpaceEntry.data}>
-          <CoworkingContent />
-        </ProjectCard>
-
-        <ProjectCard project={santasSightEntry.data}>
-          <SantasContent />
-        </ProjectCard>
+        {
+          projects.map((item) => (
+            <ProjectCard project={item.data}>{item.body}</ProjectCard>
+          ))
+        }
       </div>
     </div>
   </section>
