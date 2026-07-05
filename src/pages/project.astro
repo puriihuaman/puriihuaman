@@ -41,8 +41,10 @@ const description =
 
       <div class="flex flex-col">
         {
-          projects.map((item) => (
-            <ProjectCard project={item.data}>{item.body}</ProjectCard>
+          projects.map((item, index) => (
+            <ProjectCard project={item.data} reverse={index % 2 === 0}>
+              {item.body}
+            </ProjectCard>
           ))
         }
       </div>

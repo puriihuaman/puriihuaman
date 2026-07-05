@@ -18,10 +18,18 @@ interface Props {
     codeLink: string;
     stack: string[];
   };
+  reverse: boolean;
 }
+
+const formatter = (date: string) =>
+  new Intl.DateTimeFormat("es-PE", {
+    year: "numeric",
+    month: "short",
+  }).format(new Date(date));
 
 const {
   project: { image, title, startDate, deadline, demoLink, codeLink, stack },
+  reverse,
 } = Astro.props;
 ---
 
@@ -31,7 +39,8 @@ const {
   <a
     href={demoLink}
     title={title}
-    class="block w-full rounded-lg overflow-hidden group md:[grid-area:image] lg:w-140"
+    class="block w-full rounded-lg overflow-hidden group lg:w-140"
+    class:list={reverse ? "md:[grid-area:image]" : "md:[grid-area:content]"}
   >
     <Image
       src={image}
@@ -43,7 +52,10 @@ const {
     />
   </a>
 
-  <div class="flex flex-col md:[grid-area:content]">
+  <div
+    class="flex flex-col"
+    class:list={reverse ? "md:[grid-area:content]" : "md:[grid-area:image]"}
+  >
     <h3
       class="text-xl mb-4 font-bold leading-snug capitalize text-night-50 lg:text-[26px] group"
     >
@@ -58,12 +70,12 @@ const {
 
     <div class="flex items-center gap-2 text-sm text-night-400 my-2">
       <div class="flex items-center gap-2 w-min">
-        <span class="text-nowrap">
-          {startDate}
+        <span class="text-nowrap capitalize">
+          {formatter(startDate)}
         </span>
         <span class="inline-block h-1 w-1 bg-night-400 rounded-full"></span>
-        <span class="text-nowrap">
-          {deadline}
+        <span class="text-nowrap capitalize">
+          {formatter(deadline)}
         </span>
       </div>
 
