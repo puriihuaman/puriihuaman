@@ -2,6 +2,7 @@
 import "@assets/styles/styles.css";
 import Header from "@components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
+import Footer from "./_partial/Footer.astro";
 
 interface Props {
   title: string;
@@ -100,26 +101,6 @@ const verifiedOn = [
       <slot />
     </main>
 
-    <footer
-      class="relative bg-night-95 overflow-hidden before:block before:h-0.5 footer"
-    >
-      <div class="max-w-7xl w-full mx-auto p-14 md:p-16 lg:p-18">
-        <p class="text-center text-night-200 font-medium">
-          &copy; 2026 Puriihuaman. Todos los derechos reservados
-        </p>
-      </div>
-    </footer>
-
-    <style>
-      .footer:before {
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          var(--color-indigo-600) 35%,
-          var(--color-indigo-800) 65%,
-          transparent 100%
-        );
-      }
-    </style>
+    <Footer />
   </body>
 </html>

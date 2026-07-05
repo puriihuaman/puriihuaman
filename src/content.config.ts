@@ -1,3 +1,4 @@
+import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 import { defineMiddleware } from "astro:middleware";
 
@@ -32,10 +33,19 @@ const about = defineCollection({
   }),
 });
 
-const sectionSchema = z.object({
+const cardSchema = z.object({
+  id: z.enum(["education", "experience", "specialty"]),
   title: z.string(),
   icon: z.string(),
   items: z.array(z.string()),
+});
+
+const profile = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    cards: z.array(cardSchema),
+  }),
 });
 
 const skillGroupSchema = z.object({
@@ -43,45 +53,20 @@ const skillGroupSchema = z.object({
   items: z.array(z.string()),
 });
 
-export const summarySchema = z.object({
-  type: z.literal("summary"),
-  title: z.string(),
-
-  training: sectionSchema,
-  experience: sectionSchema,
-  specialty: sectionSchema,
-});
-
-const instituteSchema = z.object({
-  type: z.literal("institute"),
-  title: z.string(),
-  training: z.string(),
-  institute: z.string(),
-
-  startDate: z.string(),
-  graduationDate: z.string(),
-
-  skills: z.array(skillGroupSchema),
-});
-
-const certificationSchema = z.object({
-  type: z.literal("certification"),
-  title: z.string(),
-  company: z.string(),
-
-  startDate: z.string(),
-  graduationDate: z.string(),
-
-  skills: z.array(skillGroupSchema),
-});
-
 const education = defineCollection({
   type: "content",
-  schema: z.discriminatedUnion("type", [
-    summarySchema,
-    instituteSchema,
-    certificationSchema,
-  ]),
+  schema: z.object({
+    title: z.string(),
+    type: z.enum(["degree", "certification", "course", "bootcamp"]),
+
+    organization: z.string(),
+    program: z.string().optional(),
+
+    startDate: z.string(),
+    endDate: z.string(),
+
+    skills: z.array(skillGroupSchema).default([]),
+  }),
 });
 
 /**
@@ -145,6 +130,7 @@ export const collections = {
   menu,
   service: serviceCollection,
   about,
+  profile,
   education,
   project,
   tech,
