@@ -91,11 +91,35 @@ const verifiedOn = [
     <ViewTransitions />
   </head>
 
-  <body class="grid grid-cols-1 grid-rows-[auto_1fr] text-slate-50 bg-zinc-950">
+  <body
+    class="grid grid-cols-1 grid-rows-[auto_1fr] text-night-50 bg-night-950"
+  >
     <Header />
 
     <main>
       <slot />
     </main>
+
+    <footer
+      class="relative bg-night-95 overflow-hidden before:block before:h-0.5 footer"
+    >
+      <div class="max-w-7xl w-full mx-auto p-14 md:p-16 lg:p-18">
+        <p class="text-center text-night-200 font-medium">
+          &copy; 2026 Puriihuaman. Todos los derechos reservados
+        </p>
+      </div>
+    </footer>
+
+    <style>
+      .footer:before {
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--color-indigo-600) 35%,
+          var(--color-indigo-800) 65%,
+          transparent 100%
+        );
+      }
+    </style>
   </body>
 </html>

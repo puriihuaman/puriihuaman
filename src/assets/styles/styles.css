@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@theme {
+  --color-night-50: #f0f2f5;
+  --color-night-100: #dce0e8;
+  --color-night-200: #c2c8d4;
+  --color-night-300: #a4abbc;
+  --color-night-400: #838b9e;
+  --color-night-500: #646b7d;
+  --color-night-600: #4a5060;
+  --color-night-700: #333846;
+  --color-night-800: #1e222e;
+  --color-night-900: #0f121b;
+  --color-night-950: #020310;
+  --animate-fade-in-up: fade-in-up 0.7s ease-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

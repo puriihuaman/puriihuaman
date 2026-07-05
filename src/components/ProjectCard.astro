@@ -1,90 +1,100 @@
 ---
-import type { Project } from "@data/projects.ts";
-import type { Image } from "@models/image.ts";
-import type { Repository } from "@models/repository.ts";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 interface Props {
-  project: Project | null;
-  repository: Repository | null;
+  project: {
+    id: string;
+    image: {
+      height: number;
+      src: string;
+      width: number;
+      format: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif";
+    };
+    title: string;
+    startDate: string;
+    deadline: string;
+    demoLink: string;
+    codeLink: string;
+    stack: string[];
+  };
 }
 
-const { project, repository } = Astro.props;
+const {
+  project: { image, title, startDate, deadline, demoLink, codeLink, stack },
+} = Astro.props;
 ---
 
 <article
-  class="w-full mx-auto flex flex-col items-center p-6 border space-y-4 bg-zinc-900 border-zinc-800 rounded shadow-xs md:flex-row md:max-w-4/5"
+  class="flex flex-col items-center gap-8 border-b border-night-700/60 py-14 lg:grid lg:grid-cols-[1fr_1fr] lg:[grid-template-areas:'content_image'] lg:gap-16 lg:items-center lg:py-18"
 >
-  {
-    project ? (
-      <img
-        src={project.image.src}
-        alt={project.title}
-        loading="lazy"
-        width="100"
-        height="100"
-        class="w-full h-64 object-cover md:w-48 md:h-auto"
-      />
-    ) : repository ? (
-      repository.images.map((image: Image): any => {
-        const path: string = image.downloadUrl || image.htmlUrl;
-        return (
-          <img
-            src={path}
-            alt={repository?.name}
-            loading="lazy"
-            width="100"
-            height="100"
-            class="w-full h-64 object-cover md:w-48 md:h-auto"
-          />
-        );
-      })
-    ) : (
-      <img
-        src="/assets/icons/skeleton.svg"
-        alt="Sin imagen"
-        class="w-full h-64 object-cover md:w-48 md:h-auto"
-      />
-    )
-  }
+  <a
+    href={demoLink}
+    title={title}
+    class="block w-full rounded-lg overflow-hidden group md:[grid-area:image] lg:w-140"
+  >
+    <Image
+      src={image}
+      alt={title}
+      width={1200}
+      height={800}
+      class="w-full h-full object-cover block transform ease-in duration-300 group-hover:scale-[1.04]"
+      loading="lazy"
+    />
+  </a>
 
-  <div class="w-full flex flex-col justify-between md:pl-4 leading-normal">
-    <strong class="mb-2 text-2xl font-bold tracking-tight capitalize">
-      {project?.title || repository?.name}
-      <span class="text-sm text-zinc1-400">
-        {project?.date || repository?.updatedAt}
-      </span>
-    </strong>
-    <p class="mb-6 text-base text-balance">
-      {project?.description || repository?.description}
-    </p>
+  <div class="flex flex-col md:[grid-area:content]">
+    <h3
+      class="text-xl mb-4 font-bold leading-snug capitalize text-night-50 lg:text-[26px] group"
+    >
+      <a
+        href={demoLink}
+        title={title}
+        class="group-hover:text-indigo-400 transition-colors duration-300"
+      >
+        {title}
+      </a>
+    </h3>
 
-    <ul class="mb-6">
-      <li class="capitalize">{project?.skills && project.skills.join(", ")}</li>
-      <li class="capitalize">{repository?.topics && repository.topics}</li>
+    <div class="flex items-center gap-2 text-sm text-night-400 my-2">
+      <div class="flex items-center gap-2 w-min">
+        <span>
+          {startDate}
+        </span>
+        <span class="inline-block h-1 w-1 bg-night-400 rounded-full"></span>
+        <span>
+          {deadline}
+        </span>
+      </div>
+
+      <span class="inline-block h-1 w-2 bg-indigo-400 rounded-full"></span>
+
+      <a
+        href={codeLink}
+        target="_blank"
+        rel="noopener"
+        class="border-b border-current inline-flex justify-center items-center gap-2 px-0 py-1 whitespace-nowrap outline-none font-light hover:text-indigo-400 hover:shadow-indigo-400/40 transition-all duration-300"
+      >
+        <span class="tex-xs">GitHub</span>
+        <Icon name="github" class="w-4 h-4 shrink-0" />
+      </a>
+    </div>
+
+    <div class="text-[15px] leading-relaxed text-balance text-night-200">
+      <slot />
+    </div>
+
+    <ul class="flex gap-1.5 flex-wrap mt-4 font-light text-xs">
+      {
+        stack.map((item) => (
+          <li
+            id={item}
+            class="capitalize text-night-400 border border-night-500 text-heading px-1.5 py-0.5 rounded-full whitespace-nowrap"
+          >
+            {item}
+          </li>
+        ))
+      }
     </ul>
-
-    <footer class="flex justify-between items-center gap-4">
-      <a
-        href={project?.demo || repository?.homepage}
-        title={project?.title || repository?.name}
-        aria-label="Go to project demo"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-        class="inline-flex items-center justify-center gap-2 text-sm whitespace-nowrap rounded-sm font-medium outline-none cursor-pointer aria-invalid:border-destructive h-9 px-4 py-2 focus-visible:ring bg-purple-700 text-zinc-50 hover:bg-purple-800 focus-visible:ring-purple-600 transition-colors duration-300"
-      >
-        Demo
-      </a>
-
-      <a
-        href={project?.code || repository?.htmlUrl}
-        title={project?.title || repository?.name}
-        aria-label="Go to project demo"
-        rel="nofollow noopener noreferrer"
-        target="_blank"
-        class="inline-flex items-center justify-center gap-2 text-sm whitespace-nowrap rounded-sm font-medium outline-none cursor-pointer aria-invalid:border-destructive h-9 px-4 py-2 focus-visible:ring bg-zinc-700 text-zinc-50 hover:bg-zinc-800 focus-visible:ring-zinc-600 transition-colors duration-300"
-      >
-        Código
-      </a>
-    </footer>
   </div>
 </article>

@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  category: string;
+
+  tech: { name: string; href: string; icon: string }[];
+}
+
+const { category, tech } = Astro.props;
+---
+
+<div class="space-y-4">
+  <h3 class="font-semibold capitalize text-lg text-night-100">
+    {category}
+  </h3>
+
+  <ul class="grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-3 sm:gap-4">
+    {
+      tech.map((item: { name: string; href: string; icon: string }) => (
+        <li>
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Documentación"
+            class="flex flex-col justify-center items-center w-full px-3 py-4 gap-2 bg-night-800 hover:bg-night-700/50 hover:border-night-600 shadow-sm rounded-xl border border-night-700/60 transition-all duration-300"
+          >
+            <Icon name={item.icon} class="w-6 h-6 shrink-0 text-night-200" />
+            <span class="text-xs text-nowrap">{item.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  startDate: string;
+  graduationDate: string;
+  skills: { category: string; items: string[] }[];
+}
+
+const { title, subtitle, startDate, graduationDate, skills } = Astro.props;
+---
+
+<article
+  class="space-y-4 p-5 md:p-8 shadow-sm rounded-xl border border-night-700/60 bg-night-800"
+>
+  <header class="space-y-2">
+    <div class="flex justify-between items-center">
+      <h3 class="text-lg font-semibold text-night-100">
+        {title}
+      </h3>
+      <span class="text-xs text-night-400">
+        {startDate} - {graduationDate}
+      </span>
+    </div>
+
+    <strong class="text-sm text-night-300">
+      {subtitle}
+    </strong>
+  </header>
+
+  <div class="institute-content">
+    <slot />
+  </div>
+
+  <footer class="space-y-2">
+    <p class="text-base font-light text-night-400">Habilidades principales:</p>
+
+    <ul class="list-disc ml-8 text-sm text-night-400 space-y-2">
+      {
+        skills.map((skill: { category: string; items: string[] }) => (
+          <li class="text-night-300">
+            {skill.category}
+
+            <ul class="flex gap-1.5 flex-wrap mt-2 font-light text-xs">
+              {skill.items.map((el: string) => (
+                <li
+                  id={el}
+                  class="text-night-400 border border-night-500 text-heading text-xs px-1.5 py-0.5 rounded whitespace-nowrap"
+                >
+                  {el}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </footer>
+</article>
+
+<style>
+  .institute-content,
+  .certification-content {
+    font-size: var(--text-sm);
+    color: var(--color-night-300);
+    text-wrap: pretty;
+  }
+</style>

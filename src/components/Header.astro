@@ -2,12 +2,56 @@
 import Navigation from "./Navigation.astro";
 ---
 
-<header class="header_ sticky top-0 z-40 bg-zinc-900">
-	<div class="max-w-5xl mx-auto px-4 flex justify-between items-center header-content_">
-		<div class="relative font-bold uppercase text-transparent bg-size-[200%_auto] bg-clip-text bg-gradient-to-r from-purple-500/80 via-sky-500 to-purple-500/80 animate-bounce">
-			<a href="/">Puri</a>
-		</div>
+<header
+  id="site-header"
+  class="header fixed top-0 left-0 w-full px-5 z-100 border-b border-transparent backdrop-blue-[32px] md:px-7 lg:px-8"
+>
+  <div
+    class="flex justify-between items-center mx-auto max-w-7xl py-3 lg:grid lg:grid-cols-[1fr_auto]"
+  >
+    <div
+      class="relative font-bold uppercase text-transparent bg-size-[200%_auto] bg-clip-text bg-linear-to-r from-indigo-400/80 via-indigo-500 to-indigo-400/80"
+    >
+      <a href="/">Puri</a>
+    </div>
 
-		<Navigation />
-	</div>
+    <Navigation />
+  </div>
 </header>
+
+<style>
+  .header {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      background 0.35s ease,
+      border-color 0.35s ease,
+      backdrop-filter 0.35s ease;
+  }
+
+  .header.header--scrolled {
+    background-color: color-mix(
+      in srgb,
+      var(--color-night-900) 80%,
+      transparent
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--color-night-800);
+  }
+</style>
+
+<script>
+  const header = document.querySelector("#site-header");
+
+  const onScroll = () => {
+    if (window.scrollY > 50) {
+      header?.classList.add("header--scrolled");
+    } else {
+      header?.classList.remove("header--scrolled");
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

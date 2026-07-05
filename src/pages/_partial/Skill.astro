@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import SkillCard from "./SkillCard.astro";
+
+const tech = await getCollection("tech");
+
+type TechEntry = (typeof tech)[number];
+type TechType = TechEntry["data"]["type"];
+
+function getTechByType<T extends TechType>(type: T) {
+  return tech.find(
+    (item): item is Extract<TechEntry, { data: { type: T } }> =>
+      item.data.type === type,
+  );
+}
+
+async function renderEntry<T extends { render(): Promise<any>; data: any }>(
+  entry: T,
+) {
+  return {
+    data: entry.data,
+    ...(await entry.render()),
+  };
+}
+
+const backendEntry = getTechByType("backend");
+const frontendEntry = getTechByType("frontend");
+const toolEntry = getTechByType("tool");
+
+if (!tech) {
+  throw new Error("No se encontró el directorio 'tech'");
+}
+
+if (!backendEntry) {
+  throw new Error("No se encontró el archivo markdown 'backend'");
+}
+
+if (!frontendEntry) {
+  throw new Error("No se encontró el archivo markdown 'frontend'");
+}
+
+if (!toolEntry) {
+  throw new Error("No se encontró el archivo markdown 'tool'");
+}
+
+const backend = await renderEntry(backendEntry);
+const frontend = await renderEntry(frontendEntry);
+const tool = await renderEntry(toolEntry);
+---
+
+<section class="py-14 space-y-8">
+  <h2 class="text-center font-bold text-2xl md:text-4xl">Tecnologías</h2>
+
+  <div class="skills-content_ space-y-6 md:space-y-8">
+    <SkillCard category={backend.data.category} tech={backend.data.tech} />
+    <SkillCard category={frontend.data.category} tech={frontend.data.tech} />
+    <SkillCard category={tool.data.category} tech={tool.data.tech} />
+  </div>
+</section>
