@@ -1,7 +1,7 @@
 ---
-title: "Sobre mí"
-author: "Puriihuaman"
-role: "Backend Developer"
+title: Sobre mí
+author: Puriihuaman
+role: Backend Developer
 yearsExperience: 2
 ---
 
