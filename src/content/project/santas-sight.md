@@ -5,8 +5,8 @@ title: "Santa's Sight"
 
 image: "/src/assets/images/webp/1.webp"
 
-startDate: "2024"
-deadline: "2024"
+startDate: "2024-11-01"
+deadline: "2024-11-30"
 
 demoLink: "https://santas-sight.vercel.app/dashboard"
 codeLink: "https://github.com/TEAM3-ED8"
