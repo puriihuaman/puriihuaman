@@ -1,23 +1,10 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import {Icon} from "astro-icon/components";
+import {Image} from "astro:assets";
+import type {Project} from "../data/project.ts";
 
 interface Props {
-  project: {
-    id: string;
-    image: {
-      height: number;
-      src: string;
-      width: number;
-      format: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif";
-    };
-    title: string;
-    startDate: string;
-    deadline: string;
-    demoLink: string;
-    codeLink: string;
-    stack: string[];
-  };
+  project: Project;
   reverse: boolean;
 }
 
@@ -28,36 +15,34 @@ const formatter = (date: string) =>
   }).format(new Date(date));
 
 const {
-  project: { image, title, startDate, deadline, demoLink, codeLink, stack },
+  project: {image, title, demoLink, codeLink, stack, summary},
   reverse,
 } = Astro.props;
 ---
 
 <article
-  class="flex flex-col items-center gap-8 border-b border-night-700/60 py-14 lg:grid lg:grid-cols-[1fr_1fr] lg:[grid-template-areas:'content_image'] lg:gap-16 lg:items-center lg:py-18"
+  class="flex flex-col items-center gap-4 overflow-hidden shadow border border-night-700/60 rounded-lg md:max-w-sm"
 >
   <a
     href={demoLink}
     title={title}
-    class="block w-full rounded-lg overflow-hidden group lg:w-140"
-    class:list={reverse ? "md:[grid-area:image]" : "md:[grid-area:content]"}
+    class="block w-full overflow-hidden group relative md:h-48"
   >
     <Image
       src={image}
       alt={title}
       width={1200}
       height={800}
-      class="w-full h-full object-cover block transform ease-in duration-300 group-hover:scale-[1.04]"
+      class="w-full aspect-video object-cover block transform ease-in duration-300 group-hover:scale-[1.04]"
       loading="lazy"
     />
   </a>
 
   <div
-    class="flex flex-col"
-    class:list={reverse ? "md:[grid-area:content]" : "md:[grid-area:image]"}
+    class="flex flex-col px-4 pb-4 gap-3"
   >
     <h3
-      class="text-xl mb-4 font-bold leading-snug capitalize text-night-50 lg:text-[26px] group"
+      class="text-lg font-bold leading-snug capitalize text-night-50 lg:text-[26px] group"
     >
       <a
         href={demoLink}
@@ -68,45 +53,33 @@ const {
       </a>
     </h3>
 
-    <div class="flex items-center gap-2 text-sm text-night-400 my-2">
-      <div class="flex items-center gap-2 w-min">
-        <span class="text-nowrap capitalize">
-          {formatter(startDate)}
-        </span>
-        <span class="inline-block h-1 w-1 bg-night-400 rounded-full"></span>
-        <span class="text-nowrap capitalize">
-          {formatter(deadline)}
-        </span>
-      </div>
-
-      <span class="inline-block h-1 w-2 bg-indigo-400 rounded-full"></span>
-
-      <a
-        href={codeLink}
-        target="_blank"
-        rel="noopener"
-        class="border-b border-current inline-flex justify-center items-center gap-2 px-0 py-1 whitespace-nowrap outline-none font-light hover:text-indigo-400 hover:shadow-indigo-400/40 transition-all duration-300"
-      >
-        <span class="tex-xs">GitHub</span>
-        <Icon name="github" class="w-4 h-4 shrink-0" />
-      </a>
+    <div>
+      <p class="text-sm">{summary}</p>
     </div>
 
-    <div class="text-[15px] leading-relaxed text-balance text-night-200">
-      <slot />
-    </div>
-
-    <ul class="flex gap-1.5 flex-wrap mt-4 font-light text-xs">
+    <ul class="flex gap-1.5 flex-wrap font-light text-xs">
       {
         stack.map((item) => (
           <li
             id={item}
-            class="capitalize text-night-400 border border-night-500 text-heading px-1.5 py-0.5 rounded-full whitespace-nowrap"
+            class="capitalize text-night-300 bg-night-900 text-heading px-1.5 py-0.5 rounded whitespace-nowrap"
           >
             {item}
           </li>
         ))
       }
     </ul>
+
+    <div class="flex items-center gap-2 text-sm text-night-400">
+      <a
+        href={codeLink}
+        target="_blank"
+        rel="noopener"
+        class="bg-night-800 border border-night-800 text-night-200 inline-flex justify-center items-center gap-2 px-4 py-1.5 rounded whitespace-nowrap outline-none font-light hover:text-indigo-400 hover:shadow-indigo-400/40 transition-all duration-300"
+      >
+        <span class="tex-xs">GitHub</span>
+        <Icon name="github" class="w-4 h-4 shrink-0"/>
+      </a>
+    </div>
   </div>
 </article>

@@ -42,7 +42,7 @@ Reference [project structure docs](https://docs.astro.build/en/basics/project-st
 - `public/*` - Non-code, unprocessed assets (fonts, icons, etc.); copied as-is to build output.
 - `package.json` - Project manifest.
 - `astro.config.{js,mjs,cjs,ts}` - Astro configuration file. (recommended)
-- `tsconfig.json` - TypeScript configuration file. (recommended)
+- `projects.json` - TypeScript configuration file. (recommended)
 
 ---
 

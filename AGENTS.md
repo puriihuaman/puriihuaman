@@ -19,7 +19,7 @@ npm run preview    # preview production build
 
 ## Path aliases
 
-Defined in `tsconfig.json` (strict preset): `@components/`, `@layouts/`, `@pages/`, `@data/`, `@models/`, `@services/`, `@markdown/`, `@assets/`.
+Defined in `projects.json` (strict preset): `@components/`, `@layouts/`, `@pages/`, `@data/`, `@models/`, `@services/`, `@markdown/`, `@assets/`.
 
 ## Environment
 
