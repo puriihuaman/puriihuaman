@@ -1,13 +1,14 @@
 ---
 import ProjectCard from "@components/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
+import type {Project} from "../data/project.ts";
 
-const projects = await getCollection("project");
+import projects from "../data/projects.json" assert {type: "json"};
 
 if (!projects) {
   return Astro.redirect("/404");
 }
+
 
 const title = "Proyectos | Puriihuaman";
 const description =
@@ -30,8 +31,8 @@ const description =
           data-delay="160"
           data-duration="800"
         >
-          Cada proyecto combina diseño, automatización y tecnología para generar
-          impacto real en operaciones y crecimiento.
+          Una selección de mis trabajos en desarrollo de software, que demuestra experiencia en
+          desarrollo front-end y back-end.
         </p>
       </div>
 
@@ -39,11 +40,10 @@ const description =
 
       <!-- {error && <AlertMessage error={error} />} -->
 
-      <div class="flex flex-col">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
-          projects.map((item, index) => (
-            <ProjectCard project={item.data} reverse={index % 2 === 0}>
-              {item.body}
+          projects.map((item: Project, index) => (
+            <ProjectCard project={item} reverse={index % 2 === 0}>
             </ProjectCard>
           ))
         }
@@ -53,32 +53,33 @@ const description =
 </BaseLayout>
 
 <style>
-  [data-animate][data-delay="120"] {
-    animation-delay: 0.12s;
-  }
-  [data-animate][data-duration="1000"] {
-    --data-animate-duration: 1s;
-  }
+    [data-animate][data-delay="120"] {
+        animation-delay: 0.12s;
+    }
 
-  [data-animate="fade-up"].is-visible {
-    animation-name: animate-fade-up;
-    animation-duration: var(--data-animate-duration);
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    animation-fill-mode: forwards;
-  }
+    [data-animate][data-duration="1000"] {
+        --data-animate-duration: 1s;
+    }
 
-  [data-animate][data-delay="160"] {
-    animation-delay: 0.16s;
-  }
+    [data-animate="fade-up"].is-visible {
+        animation-name: animate-fade-up;
+        animation-duration: var(--data-animate-duration);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        animation-fill-mode: forwards;
+    }
 
-  [data-animate][data-duration="800"] {
-    --data-animate-duration: 0.8s;
-  }
+    [data-animate][data-delay="160"] {
+        animation-delay: 0.16s;
+    }
 
-  [data-animate="fade-up"].is-visible {
-    animation-name: animate-fade-up;
-    animation-duration: var(--data-animate-duration);
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    animation-fill-mode: forwards;
-  }
+    [data-animate][data-duration="800"] {
+        --data-animate-duration: 0.8s;
+    }
+
+    [data-animate="fade-up"].is-visible {
+        animation-name: animate-fade-up;
+        animation-duration: var(--data-animate-duration);
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+        animation-fill-mode: forwards;
+    }
 </style>
