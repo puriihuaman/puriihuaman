@@ -180,9 +180,8 @@ intercambiar experiencias, no dudes en contactarme.
 [![Gmail](https://img.shields.io/badge/Email-white?style=social&logo=gmail&logoColor=red&label=pedropuriihuaman@gmail.com)]()
 ---
 
-![Puriihuaman's GitHub stats](https://github-readme-stats.vercel.app/api?username=puriihuaman&show_icons=true&&theme=tokyonight#gh-dark-mode-only)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=puriihuaman&layout=compact&show_icons=true&theme=tokyonight&show_icons=true&hide_border&rank_icon=percentile)
+![GitHub Stats Card](https://ghstats.dev/api/card?username=puriihuaman&theme=catppuccin)
+![Top Languages](https://ghstats.dev/api/langs?username=puriihuaman&theme=catppuccin&hide_border=true&layout=grid)
 
 ![Pedro Purihuaman](https://komarev.com/ghpvc/?username=puriihuaman&style=square&color=blueviolet)
 
